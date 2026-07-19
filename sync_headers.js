@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // ─── 1. Read homepage ───────────────────────────────────────────────
-const home = fs.readFileSync('homepage.html', 'utf8');
+const home = fs.readFileSync('index.html', 'utf8');
 
 // ─── 2. Extract the homepage header HTML (from <!-- HEADER --> to </header>) ──
 const headerHtmlStart = home.indexOf('    <!-- ============================ HEADER ============================ -->');
@@ -36,7 +36,7 @@ const resetCss = home.substring(resetStart, cssTier1);
 console.log('Reset CSS length:', resetCss.length);
 
 // ─── 6. Process each target file ──────────────────────────────────
-const files = fs.readdirSync('.').filter(f => f.endsWith('.html') && f !== 'homepage.html');
+const files = fs.readdirSync('.').filter(f => f.endsWith('.html') && f !== 'index.html');
 
 for (const f of files) {
   let content = fs.readFileSync(f, 'utf8');

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const filePath = 'd:/Files/Bazar/homepage.html';
+const filePath = 'd:/Files/Bazar/index.html';
 let content = fs.readFileSync(filePath, 'utf8');
 
 const cssTarget = `    .product-card__plus {

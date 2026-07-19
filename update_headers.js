@@ -1,7 +1,7 @@
 ﻿
 const fs = require('fs');
 
-const home = fs.readFileSync('homepage.html', 'utf8');
+const home = fs.readFileSync('index.html', 'utf8');
 const homeLines = home.split('\n');
 
 const cssStart = homeLines.findIndex(l => l.includes('HEADER — TIER 1'));
@@ -17,7 +17,7 @@ for(let i = cssStart + 1; i < homeLines.length; i++) {
 const newCss = homeLines.slice(cssStartLine, cssEndLine).join('\n');
 console.log('Homepage CSS extracted from ' + cssStartLine + ' to ' + cssEndLine);
 
-const files = fs.readdirSync('.').filter(f => f.endsWith('.html') && f !== 'homepage.html');
+const files = fs.readdirSync('.').filter(f => f.endsWith('.html') && f !== 'index.html');
 
 for(const f of files) {
     let fLines = fs.readFileSync(f, 'utf8').split('\n');
