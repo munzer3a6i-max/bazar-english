@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إتمام الطلب — بازار السعودية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* =====================================================================
+   DESIGN TOKENS — shared across the site
+   ===================================================================== */
+    :root {
+      --color-primary: #016342;
+      --color-primary-dark: #014d34;
+      --color-primary-hover: #01543a;
+      --color-secondary: #916f00;
+      --color-accent-gold: #dfba73;
+      --color-bg-page: #f7f7f5;
+      --color-bg-surface: #ffffff;
+      --color-mint: #ebf5f1;
+      --color-text-primary: #181a17;
+      --color-text-secondary: #43463f;
+      --color-text-muted: #7a7e73;
+      --color-heading: #1a1a1a;
+      --color-border: #e3e4de;
+      --color-border-strong: #c9cbc2;
+      --chip-bg-success: #dcfce7;
+      --font-ar: 'Cairo', system-ui, sans-serif;
+      --font-en: 'Inter', system-ui, sans-serif;
+      --radius-pill: 18px;
+      /* ---- Added for header ---- */
+      --color-text-on-primary: #ffffff;
+      --color-bg-subtle: #fcfcfc;
+      --color-text-gray: #111827;
+      --color-text-gray-soft: #6b7280;
+      --color-border-soft: #e5e7eb;
+      --radius-card: 24px;
+      --radius-img: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0
+    }
+
+    body {
+      font-family: var(--font-ar);
+      color: var(--color-text-primary);
+      background: var(--color-bg-page);
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: 0;
+      background: none
+    }
+
+    svg {
+      display: block
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none
+    }
+
+    input {
+      font-family: inherit
+    }
+
+    .page {
+      max-width: 1440px;
+      margin-inline: auto;
+      background: var(--color-bg-surface)
+    }
+
+    .container {
+      padding-inline: 32px
+    }
+
+    .divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255, 255, 255, .4);
+      flex: none
+    }
+
+    /* =====================================================================
+   HEADER — TIER 1: TOP BAR
+   ===================================================================== */
+    .topbar {
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 8px;
+    }
+
+    .topbar__group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topbar__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .topbar__item svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .topbar__lang {
+      color: inherit;
+      font-size: 12px;
+      padding: 0;
+    }
+
+    /* =====================================================================
+   HEADER — TIER 2: MAIN NAVBAR
+   ===================================================================== */
+    .navbar {
+      background: var(--color-bg-surface);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-block: 16px;
+    }
+
+    .logo {
+      line-height: 1;
+      text-align: right;
+    }
+
+    .logo__title {
+      font-size: 32px;
+      line-height: 46px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .logo__subtitle {
+      font-family: var(--font-en);
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.2px;
+      color: var(--color-secondary);
+    }
+
+    .delivery {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 58px;
+      padding: 9px 13px;
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .delivery svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text-secondary);
+      flex: none;
+    }
+
+    .delivery .chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    .delivery__label {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+
+    .delivery__value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .delivery__text {
+      text-align: right;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: stretch;
+      height: 48px;
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .search__categories {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      background: var(--color-bg-subtle);
+      border-left: 1px solid var(--color-border);
+      font-size: 12px;
+      color: var(--color-primary);
+      white-space: nowrap;
+    }
+
+    .search__categories .chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    .search__field {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      padding: 0 16px;
+      font-family: var(--font-ar);
+      font-size: 14px;
+      color: var(--color-text-primary);
+      text-align: right;
+    }
+
+    .search__field::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    .search__btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 24px;
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      font-size: 16px;
+      transition: background 0.15s ease;
+    }
+
+    .search__btn:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .search__btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .account {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: none;
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .login__text {
+      text-align: right;
+    }
+
+    .login__hi {
+      font-size: 10px;
+      line-height: 12px;
+      color: var(--color-text-gray-soft);
+    }
+
+    .login__cta {
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--color-text-gray);
+    }
+
+    .login__avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-bg-page);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+
+    .login__avatar svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-text-secondary);
+    }
+
+    .fav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .fav svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text-gray);
+    }
+
+    .fav span {
+      font-size: 12px;
+      color: var(--color-text-gray);
+    }
+
+    .cart {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 58px;
+      padding: 11px 17px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      background: var(--color-bg-surface);
+      white-space: nowrap;
+    }
+
+    .cart__text {
+      text-align: right;
+    }
+
+    .cart__label {
+      font-size: 12px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    .cart__price {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .cart__icon {
+      position: relative;
+      flex: none;
+    }
+
+    .cart__icon>svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text-primary);
+    }
+
+    .cart__badge {
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 3px;
+      border-radius: 999px;
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-gray);
+      font-size: 11px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* =====================================================================
+   HEADER — TIER 3: BOTTOM BAR (categories)
+   ===================================================================== */
+    .subnav {
+      background: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .subnav .container {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .subnav__all {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      font-size: 16px;
+      transition: background 0.15s ease;
+    }
+
+    .subnav__all:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .subnav__all svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .subnav__all .chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* =====================================================================
+   PROMO STRIP
+   ===================================================================== */
+    .promo-strip {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: linear-gradient(90deg, #fbf5e8, #f6ecd6);
+      color: var(--color-primary-dark);
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(145, 111, 0, 0.12);
+    }
+
+    .promo-strip__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .promo-strip__item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-secondary);
+    }
+
+    .promo-strip__sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(145, 111, 0, 0.25);
+    }
+
+    /* minimal checkout header: just the logo, centered focus, no distractions */
+    .checkout-header {
+      border-bottom: 1px solid var(--color-border);
+      background: #fff
+    }
+
+    .checkout-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-block: 16px;
+      height: 95px
+    }
+
+    .logo {
+      line-height: 1;
+      text-align: right
+    }
+
+    .logo__title {
+      font-size: 32px;
+      line-height: 46px;
+      font-weight: 700;
+      color: var(--color-primary)
+    }
+
+    .logo__subtitle {
+      font-family: var(--font-en);
+      font-size: 12px;
+      letter-spacing: .2px;
+      color: var(--color-secondary)
+    }
+
+    /* ============================  TITLE  ================================ */
+    .checkout-title {
+      padding: 36px 0 24px
+    }
+
+    .checkout-title__h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 46px;
+      color: var(--color-heading);
+      text-align: right
+    }
+
+    .checkout-title__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px
+    }
+
+    .checkout-title__date {
+      font-size: 16px;
+      color: var(--color-text-secondary)
+    }
+
+    .checkout-title__num {
+      font-size: 16px;
+      color: var(--color-text-secondary)
+    }
+
+    .checkout-title__num strong {
+      color: var(--color-text-primary);
+      font-weight: 600
+    }
+
+    /* ============================  LAYOUT  ================================ */
+    .checkout-main {
+      padding-bottom: 64px
+    }
+
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 444px;
+      gap: 24px;
+      align-items: start
+    }
+
+    /* =====================================================================
+   ORDER SUMMARY CARD (left)
+   ===================================================================== */
+    .order-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 20px;
+    }
+
+    .order-card__title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      color: var(--color-heading);
+      text-align: right
+    }
+
+    .order-product {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%
+    }
+
+    .order-product__img {
+      flex: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f7f7f5, #eef0ec);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .order-product__img svg {
+      width: 60%;
+      height: 60%;
+      color: #b0b5aa
+    }
+
+    .order-product__info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: right
+    }
+
+    .order-product__desc {
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--color-text-primary)
+    }
+
+    .order-product__price {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      justify-content: flex-end;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 28px;
+      color: var(--color-text-primary)
+    }
+
+    .order-pricing {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%
+    }
+
+    .order-pricing__rows {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%
+    }
+
+    .order-pricing__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-secondary)
+    }
+
+    .order-pricing__row .value.success {
+      color: var(--color-primary)
+    }
+
+    .order-promo {
+      display: flex;
+      gap: 8px;
+      width: 100%
+    }
+
+    .order-promo__apply {
+      border: 1px solid var(--color-primary);
+      border-radius: 12px;
+      padding: 11px 21px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-primary);
+      white-space: nowrap;
+      transition: background .15s;
+    }
+
+    .order-promo__apply:hover {
+      background: var(--color-mint)
+    }
+
+    .order-promo__input {
+      flex: 1;
+      background: var(--color-bg-page);
+      border: 1px solid var(--color-border-strong);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .order-promo__input input {
+      border: 0;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      text-align: right;
+      font-family: var(--font-ar);
+      font-size: 14px;
+      color: var(--color-text-primary)
+    }
+
+    .order-promo__input input::placeholder {
+      color: var(--color-text-muted)
+    }
+
+    .order-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--color-border);
+      border: 0
+    }
+
+    .order-total {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%
+    }
+
+    .order-total__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .order-total__label {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 28px;
+      color: var(--color-text-primary)
+    }
+
+    .order-total__price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px
+    }
+
+    .order-total__price .cur {
+      font-size: 14px;
+      color: var(--color-text-secondary)
+    }
+
+    .order-total__price .amount {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-text-primary)
+    }
+
+    .order-total__vat {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      text-align: right
+    }
+
+    .btn-confirm-order {
+      width: 100%;
+      height: 48px;
+      border-radius: 8px;
+      background: #006241;
+      border: 1px solid rgba(0, 98, 65, .2);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background .15s;
+    }
+
+    .btn-confirm-order:hover {
+      background: var(--color-primary-hover)
+    }
+
+    .btn-confirm-order svg {
+      width: 16px;
+      height: 16px
+    }
+
+    /* =====================================================================
+   ACCORDION STEPS (right)
+   ===================================================================== */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px
+    }
+
+    .step {
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff
+    }
+
+    .step__head {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 20px
+    }
+
+    .step__title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+      color: var(--color-text-secondary)
+    }
+
+    .step.is-reached .step__title {
+      color: var(--color-text-primary)
+    }
+
+    .step__badge {
+      flex: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--color-border);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+
+    .step.is-reached .step__badge {
+      background: var(--color-primary);
+      border-color: var(--chip-bg-success);
+      color: #fff
+    }
+
+    /* collapsed summary row (shown when a step is completed & not active) */
+    .step__summary {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px 20px
+    }
+
+    .step.is-collapsed .step__summary {
+      display: flex
+    }
+
+    .step.is-collapsed .step__head {
+      padding-bottom: 0
+    }
+
+    .step__edit {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary);
+      white-space: nowrap;
+      flex: none
+    }
+
+    .step__edit:hover {
+      text-decoration: underline
+    }
+
+    .step__summary-text {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start
+    }
+
+    .step__summary-inline {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .step__summary-detail {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      text-align: right
+    }
+
+    /* step body (expanded form area) */
+    .step__body {
+      display: none;
+      border-top: 1px solid var(--color-border);
+      padding: 24px 20px;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    .step.is-active .step__body {
+      display: flex
+    }
+
+    /* ---- address option ---- */
+    .addr-option {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+
+    .addr-option:hover {
+      border-color: var(--color-border-strong)
+    }
+
+    .addr-option.selected {
+      border-color: var(--color-primary)
+    }
+
+    .addr-option__info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: right
+    }
+
+    .addr-option__name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-heading)
+    }
+
+    .addr-option__address {
+      font-size: 16px;
+      color: var(--color-text-secondary)
+    }
+
+    .addr-option__radio {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .addr-option.selected .addr-option__radio {
+      border-color: var(--color-primary);
+      background: var(--color-primary)
+    }
+
+    .addr-option.selected .addr-option__radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff
+    }
+
+    .addr-add-new {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
+      border: 1px dashed var(--color-border-strong);
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary);
+      transition: background .15s;
+    }
+
+    .addr-add-new:hover {
+      background: var(--color-mint)
+    }
+
+    .addr-add-new svg {
+      width: 24px;
+      height: 24px
+    }
+
+    /* ---- delivery option ---- */
+    .deliv-option {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+
+    .deliv-option:hover {
+      border-color: var(--color-border-strong)
+    }
+
+    .deliv-option.selected {
+      border-color: var(--color-primary)
+    }
+
+    .deliv-option__body {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .deliv-option__text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right
+    }
+
+    .deliv-option__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-heading)
+    }
+
+    .deliv-option__eta {
+      font-size: 16px;
+      color: var(--color-text-secondary)
+    }
+
+    .deliv-option__price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text-primary)
+    }
+
+    .deliv-option__price.free {
+      color: var(--color-primary)
+    }
+
+    .deliv-option__radio {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .deliv-option.selected .deliv-option__radio {
+      border-color: var(--color-primary);
+      background: var(--color-primary)
+    }
+
+    .deliv-option.selected .deliv-option__radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff
+    }
+
+    /* ---- payment option ---- */
+    .pay-option {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+
+    .pay-option:hover {
+      border-color: var(--color-border-strong)
+    }
+
+    .pay-option.selected {
+      border-color: var(--color-primary)
+    }
+
+    .pay-option__body {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .pay-option__logos {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: none
+    }
+
+    .pay-logo {
+      height: 33px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
+      padding: 0 8px;
+      white-space: nowrap
+    }
+
+    .pay-option__text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right
+    }
+
+    .pay-option__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-heading)
+    }
+
+    .pay-option__sub {
+      font-size: 16px;
+      color: var(--color-text-secondary)
+    }
+
+    .pay-option__radio {
+      flex: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .pay-option.selected .pay-option__radio {
+      border-color: var(--color-primary);
+      background: var(--color-primary)
+    }
+
+    .pay-option.selected .pay-option__radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff
+    }
+
+    /* 3-across wallet row */
+    .pay-wallets {
+      display: flex;
+      gap: 16px;
+      width: 100%
+    }
+
+    .pay-wallet {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+
+    .pay-wallet:hover {
+      border-color: var(--color-border-strong)
+    }
+
+    .pay-wallet.selected {
+      border-color: var(--color-primary)
+    }
+
+    .pay-wallet__title {
+      font-family: var(--font-en);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-heading);
+      white-space: nowrap
+    }
+
+    .pay-section-label {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      text-align: right
+    }
+
+    /* step footer button */
+    .step__footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px
+    }
+
+    .btn-step-continue {
+      width: 209px;
+      height: 48px;
+      border-radius: 8px;
+      background: #006241;
+      border: 1px solid rgba(0, 98, 65, .2);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s;
+    }
+
+    .btn-step-continue:hover {
+      background: var(--color-primary-hover)
+    }
+
+    /* =====================================================================
+   FOOTER (shared)
+   ===================================================================== */
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      background: #fff;
+      padding: 65px 32px 32px
+    }
+
+    .site-footer__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 64px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start
+    }
+
+    .footer-col__title {
+      margin: 0 0 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      text-align: right
+    }
+
+    .footer-brand {
+      text-align: right
+    }
+
+    .footer-brand__logo {
+      font-size: 24px;
+      color: var(--color-primary);
+      letter-spacing: -.5px
+    }
+
+    .footer-brand__sub {
+      font-family: var(--font-en);
+      font-size: 12px;
+      letter-spacing: 1.35px;
+      text-transform: uppercase;
+      color: var(--color-accent-gold)
+    }
+
+    .footer-brand__desc {
+      margin: 10px 0 0;
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--color-text-secondary)
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: right
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color .15s
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary)
+    }
+
+    .footer-pay {
+      text-align: right
+    }
+
+    .footer-pay__methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px
+    }
+
+    .pay-badge {
+      font-family: var(--font-en);
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 4px 7px
+    }
+
+    .footer-pay__reg {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin: 4px 0 0
+    }
+
+    .footer-pay__certs {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px
+    }
+
+    .cert-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: var(--color-primary)
+    }
+
+    .cert-badge svg {
+      width: 20px;
+      height: 20px
+    }
+
+    .cert-badge span {
+      font-size: 8px;
+      color: var(--color-text-secondary)
+    }
+
+    .footer-news {
+      text-align: right
+    }
+
+    .footer-news__title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary)
+    }
+
+    .footer-news__title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 2px;
+      background: var(--color-accent-gold)
+    }
+
+    .footer-news__desc {
+      margin: 16px 0 0;
+      font-size: 12px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, .8)
+    }
+
+    .footer-news__form {
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      padding: 7px
+    }
+
+    .footer-news__input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      outline: none;
+      padding: 0 10px;
+      font-family: var(--font-ar);
+      font-size: 12px;
+      text-align: right;
+      color: var(--color-text-primary)
+    }
+
+    .footer-news__input::placeholder {
+      color: rgba(98, 98, 98, .6)
+    }
+
+    .footer-news__btn {
+      flex: none;
+      background: var(--color-accent-gold);
+      color: #111827;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: filter .15s
+    }
+
+    .footer-news__btn:hover {
+      filter: brightness(.95)
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px
+    }
+
+    .footer-social__label {
+      flex: 1;
+      text-align: right;
+      font-size: 10px;
+      color: rgba(0, 0, 0, .6)
+    }
+
+    .footer-social__icons {
+      display: flex;
+      gap: 8px
+    }
+
+    .footer-social__icons a {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      transition: background .15s, color .15s
+    }
+
+    .footer-social__icons a:hover {
+      background: var(--color-primary);
+      color: #fff
+    }
+
+    .footer-social__icons svg {
+      width: 16px;
+      height: 16px
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #becabd;
+      padding-top: 33px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-secondary)
+    }
+
+    /* ============================  RESPONSIVE  ========================== */
+    @media(max-width:1100px) {
+      .checkout-layout {
+        grid-template-columns: 1fr
+      }
+
+      .order-card {
+        position: static
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:860px) {
+      .pay-wallets {
+        flex-direction: column
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:520px) {
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .deliv-option__body,
+      .pay-option__body {
+        flex-wrap: wrap;
+        gap: 12px
+      }
+    }
+
+    .riyal-sym {
+      height: 1em;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -0.05em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ============================ HEADER ============================ -->
+    <header>
+
+      <!-- Tier 1: top bar -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar__group">
+            <button class="topbar__lang">English</button>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              920012345
+            </span>
+            <span class="divider"></span>
+            <a class="topbar__item" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16.5 9.4 7.5 4.21" />
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              تتبع طلبك
+            </a>
+          </div>
+
+          <div class="topbar__group">
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
+                <path d="M8 7h8M8 11h8M8 15h5" />
+              </svg>
+              الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              معروف الذهبي رقم ٢٩٨٤٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              متجر سعودي رسمي موثق
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 2: main navbar -->
+      <div class="navbar">
+        <div class="container">
+          <a class="logo" href="#">
+            <div class="logo__title">بازار السعودية</div>
+            <div class="logo__subtitle">SAUDI BAZAAR</div>
+          </a>
+
+          <button class="delivery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="delivery__text">
+              <div class="delivery__label">التوصيل إلى</div>
+              <div class="delivery__value">الرياض، المملكة</div>
+            </span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <div class="search">
+            <button class="search__categories">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+              كل الأقسام
+            </button>
+            <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
+            <button class="search__btn">
+              بحث
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="account">
+            <a class="login" href="#">
+              <span class="login__text">
+                <div class="login__hi">مرحباً</div>
+                <div class="login__cta">تسجيل الدخول</div>
+              </span>
+              <span class="login__avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+            </a>
+
+            <a class="fav" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              <span>المفضلة</span>
+            </a>
+
+            <a class="cart" href="#">
+              <span class="cart__text">
+                <div class="cart__label">سلة التسوق</div>
+                <div class="cart__price">٣٤٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></div>
+              </span>
+              <span class="cart__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="cart__badge">3</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 3: bottom bar -->
+      <div class="subnav">
+        <div class="container">
+          <button class="subnav__all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            جميع الأقسام
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ============================== MAIN ============================= -->
+    <main class="checkout-main container">
+
+      <div class="checkout-title">
+        <h1 class="checkout-title__h1">إتمام الطلب</h1>
+        <div class="checkout-title__meta">
+          <span class="checkout-title__num"><strong>SB‑2026‑784512</strong> رقم الطلب</span>
+          <span class="checkout-title__date">بتاريخ 6 يونيو 2026 · 2 منتجات</span>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+
+        <!-- =====================  ACCORDION STEPS (right)  ============== -->
+        <div class="steps">
+
+          <!-- ============ STEP 1 — ADDRESS ============ -->
+          <section class="step is-active is-reached" id="step-address" data-step="1">
+            <div class="step__head">
+              <span class="step__badge">١</span>
+              <span class="step__title">عنوان التوصيل</span>
+            </div>
+
+            <!-- collapsed summary (shown once completed) -->
+            <div class="step__summary">
+              <div class="step__summary-text">
+                <p class="step__summary-detail" id="addrSummaryText">حي الياسمين، شارع الأمير محمد بن سلمان، مبنى 4، شقة
+                  12 — الرياض 13325</p>
+              </div>
+              <button class="step__edit" onclick="goToStep(1)">تعديل</button>
+            </div>
+
+            <!-- expanded body -->
+            <div class="step__body">
+              <div class="addr-option selected" data-name="منذر عبد العاطي سعيد عبد الكريم"
+                data-address="حي الياسمين، شارع الأمير محمد بن سلمان، مبنى 4، شقة 12 — الرياض 13325"
+                onclick="selectAddress(this)">
+                <span class="addr-option__radio"></span>
+                <div class="addr-option__info">
+                  <span class="addr-option__name">منذر عبد العاطي سعيد عبد الكريم</span>
+                  <span class="addr-option__address">حي الياسمين، شارع الأمير محمد بن سلمان، مبنى ٤، شقة ١٢ — الرياض
+                    ١٣٣٢٥</span>
+                </div>
+              </div>
+              <div class="addr-option" data-name="منذر عبد العاطي سعيد عبد الكريم"
+                data-address="حي النرجس، شارع التخصصي، مبنى ٧، شقة ٣ — الرياض ١٢٤٤٤" onclick="selectAddress(this)">
+                <span class="addr-option__radio"></span>
+                <div class="addr-option__info">
+                  <span class="addr-option__name">منذر عبد العاطي سعيد عبد الكريم</span>
+                  <span class="addr-option__address">حي النرجس، شارع التخصصي، مبنى ٧، شقة ٣ — الرياض ١٢٤٤٤</span>
+                </div>
+              </div>
+              <button class="addr-add-new">
+                إضافة عنوان جديد
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="step__footer">
+                <button class="btn-step-continue" onclick="completeStep(1)">متابعة لطريقة التوصيل</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ STEP 2 — DELIVERY METHOD ============ -->
+          <section class="step" id="step-delivery" data-step="2">
+            <div class="step__head">
+              <span class="step__badge">٢</span>
+              <span class="step__title">طريقة التوصيل</span>
+            </div>
+
+            <div class="step__summary">
+              <div class="step__summary-text">
+                <p class="step__summary-detail" id="deliverySummaryText">التوصيل القياسي المجاني — يصل خلال ٢–٣ أيام عمل
+                </p>
+              </div>
+              <button class="step__edit" onclick="goToStep(2)">تعديل</button>
+            </div>
+
+            <div class="step__body">
+              <div class="deliv-option selected" data-title="التوصيل القياسي المجاني" data-cost="0"
+                onclick="selectDelivery(this)">
+                <span class="deliv-option__radio"></span>
+                <div class="deliv-option__body">
+                  <div class="deliv-option__text">
+                    <span class="deliv-option__title">التوصيل القياسي المجاني</span>
+                    <span class="deliv-option__eta">يصل خلال ٢–٣ أيام عمل · الأربعاء ١٠ يونيو</span>
+                  </div>
+                  <span class="deliv-option__price free">مجاني</span>
+                </div>
+              </div>
+              <div class="deliv-option" data-title="التوصيل السريع" data-cost="25" onclick="selectDelivery(this)">
+                <span class="deliv-option__radio"></span>
+                <div class="deliv-option__body">
+                  <div class="deliv-option__text">
+                    <span class="deliv-option__title">التوصيل السريع</span>
+                    <span class="deliv-option__eta">يصل خلال يوم عمل واحد · الإثنين ٨ يونيو</span>
+                  </div>
+                  <span class="deliv-option__price">٢٥.٠٠ ﷼</span>
+                </div>
+              </div>
+              <div class="deliv-option" data-title="الاستلام من المتجر" data-cost="0" onclick="selectDelivery(this)">
+                <span class="deliv-option__radio"></span>
+                <div class="deliv-option__body">
+                  <div class="deliv-option__text">
+                    <span class="deliv-option__title">الاستلام من المتجر</span>
+                    <span class="deliv-option__eta">جاهز خلال ساعتين · فرع الياسمين، الرياض</span>
+                  </div>
+                  <span class="deliv-option__price free">مجاني</span>
+                </div>
+              </div>
+              <div class="step__footer">
+                <button class="btn-step-continue" onclick="completeStep(2)">متابعة للدفع</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ STEP 3 — PAYMENT METHOD ============ -->
+          <section class="step" id="step-payment" data-step="3">
+            <div class="step__head">
+              <span class="step__badge">٣</span>
+              <span class="step__title">طريقة الدفع</span>
+            </div>
+
+            <div class="step__body">
+
+              <div class="pay-option selected" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">بطاقة مدى / ائتمانية</span>
+                    <span class="pay-option__sub">مدى · فيزا · ماستركارد</span>
+                  </div>
+                  <div class="pay-option__logos">
+                    <span class="pay-logo" style="background:#1a1f71">VISA</span>
+                    <span class="pay-logo" style="background:#eb001b">MC</span>
+                    <span class="pay-logo" style="background:#016342">mada</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pay-wallets">
+                <div class="pay-wallet" onclick="selectWallet(this)">
+                  <span class="pay-wallet__title">Samsung Pay</span>
+                </div>
+                <div class="pay-wallet" onclick="selectWallet(this)">
+                  <span class="pay-wallet__title">Google Pay</span>
+                </div>
+                <div class="pay-wallet" onclick="selectWallet(this)">
+                  <span class="pay-wallet__title">Apple Pay</span>
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">الدفع عن الإستلام</span>
+                    <span class="pay-option__sub">ادفع نقداً أو بالبطاقة عند وصول الطلب</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="pay-section-label">خيارات التقسيط والتمويل</p>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">قسّمها مع تمارا</span>
+                    <span class="pay-option__sub">4 دفعات بدون فوائد · متوافق مع الشريعة</span>
+                  </div>
+                  <span class="pay-logo" style="background:#f2a1c2;color:#5c1a3a">tamara</span>
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">قسّمها مع تابي</span>
+                    <span class="pay-option__sub">4 دفعات بدون فوائد · بدون أي رسوم</span>
+                  </div>
+                  <span class="pay-logo" style="background:#1ee2c4;color:#023d33">tabby</span>
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">قسّمها مع مدفوع</span>
+                    <span class="pay-option__sub">4 دفعات بدون فوائد · متوافق مع الشريعة</span>
+                  </div>
+                  <span class="pay-logo" style="background:#0369a1">madfu</span>
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">قسّمها مع Mis Pay</span>
+                    <span class="pay-option__sub">4 دفعات بدون فوائد · متوافق مع الشريعة</span>
+                  </div>
+                  <span class="pay-logo" style="background:#7c3aed">MisPay</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </div><!-- /steps -->
+
+        <!-- =====================  ORDER SUMMARY (left)  ================ -->
+        <aside class="order-card">
+          <h2 class="order-card__title">ملخص الطلب</h2>
+
+          <div class="order-product">
+            <div class="order-product__info">
+              <p class="order-product__desc">دفاية كهربائية زيت يوجين ١٥ ريشة ٢٥٠٠ واط بمنشر غسيل</p>
+              <span class="order-product__price"><span>ريال</span><span>٤٤٥.٨٩</span></span>
+            </div>
+            <div class="order-product__img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <line x1="7" y1="9" x2="7" y2="15" />
+                <line x1="12" y1="9" x2="12" y2="15" />
+                <line x1="17" y1="9" x2="17" y2="15" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="order-pricing">
+            <div class="order-pricing__rows">
+              <div class="order-pricing__row"><span>المجموع الفرعي (٢)</span><span class="value">٤٠٥ ريال</span></div>
+              <div class="order-pricing__row"><span>الخصم (وفر ١٢%)</span><span class="value success">٦٠ ريال</span>
+              </div>
+              <div class="order-pricing__row"><span>الشحن</span><span class="value success"
+                  id="shippingCostLabel">مجاني</span></div>
+            </div>
+            <div class="order-promo">
+              <button class="order-promo__apply">تطبيق</button>
+              <div class="order-promo__input"><input type="text" placeholder="هل لديك كود خصم ؟" /></div>
+            </div>
+          </div>
+
+          <hr class="order-divider" />
+
+          <div class="order-total">
+            <div class="order-total__row">
+              <span class="order-total__label">الإجمالي</span>
+              <span class="order-total__price"><span class="cur">ر.س</span><span class="amount"
+                  id="grandTotal">١٬٨٩٩</span></span>
+            </div>
+            <p class="order-total__vat">شامل ضريبة القيمة المضافة (١٥%): ٥٨.١٦ ﷼</p>
+          </div>
+
+          <button class="btn-confirm-order">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            تأكيد الطلب &nbsp; 405 ريال
+          </button>
+        </aside>
+      </div><!-- /checkout-layout -->
+    </main>
+
+    <!-- ============================= FOOTER ============================ -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-brand__logo">بازار السعودية</div>
+            <div class="footer-brand__sub">SAUDI BAZAAR</div>
+            <p class="footer-brand__desc">المنصة السعودية الرائدة للتسوق الإلكتروني، نوفر لك أفضل المنتجات العالمية
+              والمحلية بجودة عالية وأسعار منافسة.</p>
+          </div>
+          <div>
+            <h3 class="footer-col__title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="#">عن الشركة</a></li>
+              <li><a href="#">اتصل بنا</a></li>
+              <li><a href="#">الأسئلة الشائعة</a></li>
+              <li><a href="#">المدونة</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-col__title">السياسات</h3>
+            <ul class="footer-links">
+              <li><a href="#">الشروط والأحكام</a></li>
+              <li><a href="#">سياسة الخصوصية</a></li>
+              <li><a href="#">سياسة الاسترجاع</a></li>
+              <li><a href="#">سياسة الشحن</a></li>
+            </ul>
+          </div>
+          <div class="footer-pay">
+            <h3 class="footer-col__title">التوثيق والدفع</h3>
+            <div class="footer-pay__methods"><span class="pay-badge">mada</span><span class="pay-badge">VISA</span><span
+                class="pay-badge">Mastercard</span><span class="pay-badge">Apple Pay</span><span
+                class="pay-badge">تمارا</span></div>
+            <p class="footer-pay__reg">الرقم الضريبي: 300123456700003</p>
+            <p class="footer-pay__reg">السجل التجاري: 1010123456</p>
+            <div class="footer-pay__certs"><span class="cert-badge"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg><span>متجر موثّق</span></span><span class="cert-badge"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                </svg><span>معروف</span></span></div>
+          </div>
+          <div class="footer-news">
+            <div class="footer-news__title">كن أول من يعرف بالعروض</div>
+            <p class="footer-news__desc">اشترك في نشرتنا البريدية لتصلك أقوى كوبونات التوفير الحصرية فور صدورها.</p>
+            <div class="footer-news__form"><input class="footer-news__input" type="email"
+                placeholder="أدخل بريدك الإلكتروني" /><button class="footer-news__btn">اشتراك</button></div>
+            <div class="footer-social"><span class="footer-social__label">تابعنا على شبكاتنا:</span><span
+                class="footer-social__icons"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg></a><a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                  </svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg></a></span></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
+          <p>© 2026 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /page -->
+
+  <script>
+    var currentStep = 1;
+    var shippingCost = 0;
+    var subtotalAfterDiscount = 345; // 405 - 60 discount, mock base
+
+    function updateStepClasses() {
+      document.querySelectorAll('.step').forEach(function (step) {
+        var n = +step.dataset.step;
+        step.classList.toggle('is-reached', n <= currentStep);
+        step.classList.toggle('is-active', n === currentStep);
+        step.classList.toggle('is-collapsed', n < currentStep);
+      });
+    }
+
+    function goToStep(n) {
+      currentStep = n;
+      updateStepClasses();
+      document.getElementById('step-' + (n === 1 ? 'address' : n === 2 ? 'delivery' : 'payment'))
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function completeStep(n) {
+      currentStep = n + 1;
+      updateStepClasses();
+      if (n + 1 <= 3) {
+        var ids = { 2: 'step-delivery', 3: 'step-payment' };
+        var el = document.getElementById(ids[n + 1]);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function selectAddress(el) {
+      document.querySelectorAll('.addr-option').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      document.getElementById('addrSummaryText').textContent = el.dataset.address;
+    }
+
+    function selectDelivery(el) {
+      document.querySelectorAll('.deliv-option').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      document.getElementById('deliverySummaryText').textContent =
+        el.dataset.title + (el.dataset.title === 'التوصيل القياسي المجاني' ? ' — يصل خلال ٢–٣ أيام عمل' :
+          el.dataset.title === 'التوصيل السريع' ? ' — يصل خلال يوم عمل واحد' : ' — جاهز خلال ساعتين');
+      shippingCost = +el.dataset.cost;
+      recalcTotal();
+    }
+
+    function selectPayment(el) {
+      document.querySelectorAll('.pay-option').forEach(function (o) { o.classList.remove('selected'); });
+      document.querySelectorAll('.pay-wallet').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+    }
+    function selectWallet(el) {
+      document.querySelectorAll('.pay-option').forEach(function (o) { o.classList.remove('selected'); });
+      document.querySelectorAll('.pay-wallet').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+    }
+
+    function toArabicNumerals(n) {
+      var ar = '٠١٢٣٤٥٦٧٨٩';
+      return String(n).replace(/[0-9]/g, function (d) { return ar[+d]; });
+    }
+
+    function recalcTotal() {
+      var total = subtotalAfterDiscount + shippingCost;
+      document.getElementById('grandTotal').textContent = toArabicNumerals(total.toLocaleString('en-US'));
+      document.getElementById('shippingCostLabel').textContent = shippingCost === 0 ? 'مجاني' : shippingCost.toFixed(2) + ' ﷼';
+      document.getElementById('shippingCostLabel').classList.toggle('success', shippingCost === 0);
+    }
+
+    updateStepClasses();
+  </script>
+</body>
+
+</html>

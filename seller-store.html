@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متجر يوجين — بازار السعودية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* =====================================================================
+   DESIGN TOKENS — shared across the site
+   ===================================================================== */
+    :root {
+      --color-primary: #016342;
+      --color-primary-dark: #014d34;
+      --color-primary-hover: #01543a;
+      --color-secondary: #916f00;
+      --color-accent-gold: #dfba73;
+      --color-bg-page: #f7f7f5;
+      --color-bg-surface: #ffffff;
+      --color-bg-subtle: #fcfcfc;
+      --color-mint: #ebf5f1;
+      --color-text-primary: #181a17;
+      --color-text-secondary: #43463f;
+      --color-text-muted: #7a7e73;
+      --color-text-gray: #111827;
+      --color-heading: #1a1a1a;
+      --color-border: #e3e4de;
+      --color-border-strong: #c9cbc2;
+      --chip-bg-neutral: #f3f4f6;
+      --chip-text-neutral: #374151;
+      --chip-bg-success: #dcfce7;
+      --chip-text-success: #166534;
+      --chip-bg-promo: #fee2e2;
+      --chip-text-promo: #b42318;
+      --color-rating: #b7791f;
+      --font-ar: 'Cairo', system-ui, sans-serif;
+      --font-en: 'Inter', system-ui, sans-serif;
+      --radius-pill: 18px;
+          /* ---- Added for header ---- */
+      --color-text-on-primary: #ffffff;
+      --color-text-gray-soft: #6b7280;
+      --color-border-soft: #e5e7eb;
+      --radius-card: 24px;
+      --radius-img: 12px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0
+    }
+
+    body {
+      font-family: var(--font-ar);
+      color: var(--color-text-primary);
+      background: var(--color-bg-page);
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: 0;
+      background: none
+    }
+
+    svg {
+      display: block
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none
+    }
+
+    .page {
+      max-width: 1440px;
+      margin-inline: auto;
+      background: var(--color-bg-surface)
+    }
+
+    .container {
+      padding-inline: 32px
+    }
+
+    .divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255, 255, 255, .4);
+      flex: none
+    }
+
+    /* =====================================================================
+   HEADER — TIER 1: TOP BAR
+   ===================================================================== */
+    .topbar {
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 8px;
+    }
+
+    .topbar__group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topbar__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .topbar__item svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .topbar__lang {
+      color: inherit;
+      font-size: 12px;
+      padding: 0;
+    }
+
+    /* =====================================================================
+   HEADER — TIER 2: MAIN NAVBAR
+   ===================================================================== */
+    .navbar {
+      background: var(--color-bg-surface);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-block: 16px;
+    }
+
+    .logo {
+      line-height: 1;
+      text-align: right;
+    }
+
+    .logo__title {
+      font-size: 32px;
+      line-height: 46px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .logo__subtitle {
+      font-family: var(--font-en);
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.2px;
+      color: var(--color-secondary);
+    }
+
+    .delivery {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 58px;
+      padding: 9px 13px;
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .delivery svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text-secondary);
+      flex: none;
+    }
+
+    .delivery .chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    .delivery__label {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+
+    .delivery__value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .delivery__text {
+      text-align: right;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: stretch;
+      height: 48px;
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .search__categories {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 12px;
+      background: var(--color-bg-subtle);
+      border-left: 1px solid var(--color-border);
+      font-size: 12px;
+      color: var(--color-primary);
+      white-space: nowrap;
+    }
+
+    .search__categories .chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    .search__field {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      padding: 0 16px;
+      font-family: var(--font-ar);
+      font-size: 14px;
+      color: var(--color-text-primary);
+      text-align: right;
+    }
+
+    .search__field::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    .search__btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 24px;
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      font-size: 16px;
+      transition: background 0.15s ease;
+    }
+
+    .search__btn:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .search__btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .account {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: none;
+    }
+
+    .login {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .login__text {
+      text-align: right;
+    }
+
+    .login__hi {
+      font-size: 10px;
+      line-height: 12px;
+      color: var(--color-text-gray-soft);
+    }
+
+    .login__cta {
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--color-text-gray);
+    }
+
+    .login__avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-bg-page);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+
+    .login__avatar svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-text-secondary);
+    }
+
+    .fav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .fav svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text-gray);
+    }
+
+    .fav span {
+      font-size: 12px;
+      color: var(--color-text-gray);
+    }
+
+    .cart {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 58px;
+      padding: 11px 17px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      background: var(--color-bg-surface);
+      white-space: nowrap;
+    }
+
+    .cart__text {
+      text-align: right;
+    }
+
+    .cart__label {
+      font-size: 12px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    .cart__price {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .cart__icon {
+      position: relative;
+      flex: none;
+    }
+
+    .cart__icon>svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text-primary);
+    }
+
+    .cart__badge {
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 3px;
+      border-radius: 999px;
+      background: var(--color-bg-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-gray);
+      font-size: 11px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* =====================================================================
+   HEADER — TIER 3: BOTTOM BAR (categories)
+   ===================================================================== */
+    .subnav {
+      background: var(--color-bg-surface);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .subnav .container {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .subnav__all {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--color-primary);
+      color: var(--color-text-on-primary);
+      font-size: 16px;
+      transition: background 0.15s ease;
+    }
+
+    .subnav__all:hover {
+      background: var(--color-primary-hover);
+    }
+
+    .subnav__all svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .subnav__all .chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* =====================================================================
+   PROMO STRIP
+   ===================================================================== */
+    .promo-strip {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: linear-gradient(90deg, #fbf5e8, #f6ecd6);
+      color: var(--color-primary-dark);
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(145, 111, 0, 0.12);
+    }
+
+    .promo-strip__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .promo-strip__item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-secondary);
+    }
+
+    .promo-strip__sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(145, 111, 0, 0.25);
+    }
+
+
+    /* ============================  STORE BANNER  ========================= */
+    .store-banner {
+      margin-top: 0
+    }
+
+    .store-banner__cover {
+      width: 100%;
+      height: 358px;
+      background: linear-gradient(120deg, #0c6538 0%, #139551 60%, #1fae63 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .store-banner__cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 25% 30%, rgba(255, 255, 255, .12), transparent 55%),
+        radial-gradient(circle at 80% 75%, rgba(0, 0, 0, .1), transparent 50%);
+    }
+
+    .store-banner__info {
+      background: #fff;
+      border-radius: 0 0 12px 12px;
+      padding: 20px 32px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* store identity cluster (right) */
+    .store-identity {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: flex-start
+    }
+
+    .store-identity__logo {
+      flex: none;
+      width: 97px;
+      height: 97px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .store-identity__logo svg {
+      width: 100%;
+      height: 100%;
+      color: var(--color-primary)
+    }
+
+    .store-identity__text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start
+    }
+
+    .store-identity__name-row {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .store-identity__name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-heading)
+    }
+
+    .store-verified-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 30px;
+      padding: 2px 8px;
+      background: var(--chip-bg-success);
+      color: var(--chip-text-success);
+      border-radius: 16px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .store-verified-chip svg {
+      width: 16px;
+      height: 16px
+    }
+
+    .store-identity__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      flex-wrap: wrap;
+      justify-content: flex-start
+    }
+
+    .store-identity__meta .rating {
+      color: var(--color-rating);
+      white-space: nowrap
+    }
+
+    .store-identity__tagline {
+      font-size: 14px;
+      color: var(--color-text-secondary)
+    }
+
+    /* action buttons (left) */
+    .store-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px
+    }
+
+    .btn-store-follow {
+      height: 48px;
+      padding: 0 21px;
+      border-radius: 8px;
+      background: #006241;
+      border: 1px solid rgba(0, 98, 65, .2);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+
+    .btn-store-follow:hover {
+      background: var(--color-primary-hover)
+    }
+
+    .btn-store-msg {
+      height: 48px;
+      padding: 0 17px;
+      border-radius: 8px;
+      border: 1px solid var(--color-border-strong);
+      background: #fff;
+      color: var(--color-text-secondary);
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+
+    .btn-store-msg:hover {
+      background: var(--color-bg-page)
+    }
+
+    .store-actions svg {
+      width: 16px;
+      height: 16px
+    }
+
+    /* ============================  MAIN LAYOUT  =========================== */
+    .store-main {
+      padding: 32px 0 64px
+    }
+
+    .store-layout {
+      display: grid;
+      grid-template-columns: 326px 1fr;
+      gap: 24px;
+      align-items: start
+    }
+
+    /* ---- Sidebar (right, 326px) ---- */
+    .store-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: 20px
+    }
+
+    .sidebar-block {
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff
+    }
+
+    .sidebar-block__head {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--color-border)
+    }
+
+    .sidebar-block__head svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-primary)
+    }
+
+    .sidebar-block__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text-primary)
+    }
+
+    .sidebar-block__body {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: flex-start
+    }
+
+    .sidebar-block__desc {
+      font-size: 16px;
+      line-height: 32px;
+      color: var(--color-text-primary);
+      text-align: right
+    }
+
+    .sidebar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right;
+      align-items: flex-start
+    }
+
+    .sidebar-row__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text-primary)
+    }
+
+    .sidebar-row__sub {
+      font-size: 16px;
+      color: var(--color-text-secondary)
+    }
+
+    .sidebar-row--single {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      text-align: right
+    }
+
+    /* ---- Products column (left, 1fr) ---- */
+    .store-products {
+      display: flex;
+      flex-direction: column;
+      gap: 60px
+    }
+
+    .product-section {
+      display: flex;
+      flex-direction: column;
+      gap: 24px
+    }
+
+    .product-section__title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+      color: var(--color-heading);
+      text-align: right
+    }
+
+    .product-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    .store-promo-banner {
+      width: 100%;
+      height: 240px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(115deg, #0c6538 0%, #139551 60%, #dfba73 130%);
+    }
+
+    .store-promo-banner__inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0 40px;
+      gap: 8px;
+      text-align: right;
+    }
+
+    .store-promo-banner__title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff
+    }
+
+    .store-promo-banner__sub {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .9)
+    }
+
+    /* =====================================================================
+   PRODUCT CARD  — exact markup/CSS as provided, unmodified
+   ===================================================================== */
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-bg-surface);
+      border: 0.5px solid var(--color-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .product-card__media {
+      position: relative;
+      margin: 10px 10px 0;
+    }
+
+    .product-card__img {
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f7f7f5, #eef0ec);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-card__img svg {
+      width: 42%;
+      height: 42%;
+      color: #c4c8bf;
+    }
+
+    .product-card__promo {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--chip-bg-promo);
+      color: var(--chip-text-promo);
+      border-radius: 4px;
+      padding: 3px 6px;
+      z-index: 3;
+    }
+
+    .product-card__promo .discount {
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 16px;
+    }
+
+    .product-card__promo .timer {
+      font-family: var(--font-en);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .product-card__wishlist {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-card__wishlist svg {
+      width: 22px;
+      height: 22px;
+      color: var(--color-text-secondary);
+      transition: color 0.15s ease;
+    }
+
+    .product-card__wishlist:hover svg {
+      color: var(--chip-text-promo);
+    }
+
+    .product-card__overlay-bottom {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-card__dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .product-card__dots i {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #d1d5db;
+    }
+
+    .product-card__dots i.on {
+      background: var(--color-text-secondary);
+    }
+
+    .product-card__plus {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-primary);
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .product-card__plus:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .product-card__plus svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .product-card__body {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 12px 14px;
+    }
+
+    .product-card__title {
+      margin: 0 0 8px;
+      text-align: right;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--color-heading);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 48px;
+    }
+
+    .product-card__rating {
+      margin: 0 0 10px;
+      text-align: right;
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--color-rating);
+    }
+
+    .product-card__rating .stars {
+      letter-spacing: 1px;
+    }
+
+    .product-card__rating .count {
+      color: var(--color-text-muted);
+    }
+
+    .product-card__price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .price-new {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price-new .amount {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 26px;
+      color: var(--color-text-primary);
+    }
+
+    .price-new .cur {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+
+    .price-old {
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+    }
+
+    .price-discount {
+      color: var(--color-primary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .riyal-sym {
+      height: 12px;
+      width: auto;
+      vertical-align: middle;
+      margin-inline-start: 1px;
+    }
+
+    .carousel-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform .3s ease
+    }
+
+    .carousel-slide {
+      flex: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px
+    }
+
+    .carousel-slide svg {
+      width: 42%;
+      height: 42%;
+      color: #c4c8bf
+    }
+
+    /* =====================================================================
+   FOOTER (shared)
+   ===================================================================== */
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      background: #fff;
+      padding: 65px 32px 32px
+    }
+
+    .site-footer__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 64px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start
+    }
+
+    .footer-col__title {
+      margin: 0 0 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      text-align: right
+    }
+
+    .footer-brand {
+      text-align: right
+    }
+
+    .footer-brand__logo {
+      font-size: 24px;
+      color: var(--color-primary);
+      letter-spacing: -.5px
+    }
+
+    .footer-brand__sub {
+      font-family: var(--font-en);
+      font-size: 12px;
+      letter-spacing: 1.35px;
+      text-transform: uppercase;
+      color: var(--color-accent-gold)
+    }
+
+    .footer-brand__desc {
+      margin: 10px 0 0;
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--color-text-secondary)
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: right
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: color .15s
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary)
+    }
+
+    .footer-pay {
+      text-align: right
+    }
+
+    .footer-pay__methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px
+    }
+
+    .pay-badge {
+      font-family: var(--font-en);
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 4px 7px
+    }
+
+    .footer-pay__reg {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin: 4px 0 0
+    }
+
+    .footer-pay__certs {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px
+    }
+
+    .cert-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: var(--color-primary)
+    }
+
+    .cert-badge svg {
+      width: 20px;
+      height: 20px
+    }
+
+    .cert-badge span {
+      font-size: 8px;
+      color: var(--color-text-secondary)
+    }
+
+    .footer-news {
+      text-align: right
+    }
+
+    .footer-news__title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary)
+    }
+
+    .footer-news__title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 2px;
+      background: var(--color-accent-gold)
+    }
+
+    .footer-news__desc {
+      margin: 16px 0 0;
+      font-size: 12px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, .8)
+    }
+
+    .footer-news__form {
+      display: flex;
+      align-items: center;
+      margin-top: 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      padding: 7px
+    }
+
+    .footer-news__input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      outline: none;
+      padding: 0 10px;
+      font-family: var(--font-ar);
+      font-size: 12px;
+      text-align: right;
+      color: var(--color-text-primary)
+    }
+
+    .footer-news__input::placeholder {
+      color: rgba(98, 98, 98, .6)
+    }
+
+    .footer-news__btn {
+      flex: none;
+      background: var(--color-accent-gold);
+      color: #111827;
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: filter .15s
+    }
+
+    .footer-news__btn:hover {
+      filter: brightness(.95)
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px
+    }
+
+    .footer-social__label {
+      flex: 1;
+      text-align: right;
+      font-size: 10px;
+      color: rgba(0, 0, 0, .6)
+    }
+
+    .footer-social__icons {
+      display: flex;
+      gap: 8px
+    }
+
+    .footer-social__icons a {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      transition: background .15s, color .15s
+    }
+
+    .footer-social__icons a:hover {
+      background: var(--color-primary);
+      color: #fff
+    }
+
+    .footer-social__icons svg {
+      width: 16px;
+      height: 16px
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #becabd;
+      padding-top: 33px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-secondary)
+    }
+
+    /* ============================  RESPONSIVE  ========================== */
+    @media(max-width:1300px) {
+      .product-grid-3 {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:1100px) {
+      .store-layout {
+        grid-template-columns: 1fr
+      }
+
+      .store-sidebar {
+        position: static
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    @media(max-width:860px) {
+      .product-grid-3 {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .store-banner__info {
+        flex-direction: column;
+        align-items: flex-end
+      }
+
+      .store-identity {
+        flex-wrap: wrap
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:520px) {
+      .product-grid-3 {
+        grid-template-columns: 1fr
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .store-banner__cover {
+        height: 200px
+      }
+
+      .store-actions {
+        flex-wrap: wrap
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ============================ HEADER ============================ -->
+    <header>
+
+      <!-- Tier 1: top bar -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar__group">
+            <button class="topbar__lang">English</button>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              920012345
+            </span>
+            <span class="divider"></span>
+            <a class="topbar__item" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16.5 9.4 7.5 4.21" />
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              تتبع طلبك
+            </a>
+          </div>
+
+          <div class="topbar__group">
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
+                <path d="M8 7h8M8 11h8M8 15h5" />
+              </svg>
+              الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              معروف الذهبي رقم ٢٩٨٤٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              متجر سعودي رسمي موثق
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 2: main navbar -->
+      <div class="navbar">
+        <div class="container">
+          <a class="logo" href="#">
+            <div class="logo__title">بازار السعودية</div>
+            <div class="logo__subtitle">SAUDI BAZAAR</div>
+          </a>
+
+          <button class="delivery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="delivery__text">
+              <div class="delivery__label">التوصيل إلى</div>
+              <div class="delivery__value">الرياض، المملكة</div>
+            </span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <div class="search">
+            <button class="search__categories">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+              كل الأقسام
+            </button>
+            <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
+            <button class="search__btn">
+              بحث
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="account">
+            <a class="login" href="#">
+              <span class="login__text">
+                <div class="login__hi">مرحباً</div>
+                <div class="login__cta">تسجيل الدخول</div>
+              </span>
+              <span class="login__avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+            </a>
+
+            <a class="fav" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              <span>المفضلة</span>
+            </a>
+
+            <a class="cart" href="#">
+              <span class="cart__text">
+                <div class="cart__label">سلة التسوق</div>
+                <div class="cart__price">٣٤٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></div>
+              </span>
+              <span class="cart__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="cart__badge">3</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 3: bottom bar -->
+      <div class="subnav">
+        <div class="container">
+          <button class="subnav__all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            جميع الأقسام
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ========================== STORE BANNER ========================= -->
+    <section class="store-banner">
+      <div class="store-banner__cover"></div>
+
+      <div class="store-banner__info">
+
+        <!-- store identity (right, first in DOM) -->
+        <div class="store-identity">
+          <div class="store-identity__logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="7" width="18" height="13" rx="2" />
+              <path d="M8 7V5a4 4 0 0 1 8 0v2" />
+            </svg>
+          </div>
+          <div class="store-identity__text">
+            <div class="store-identity__name-row">
+              <span class="store-identity__name">يوجين</span>
+              <span class="store-verified-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg> بائع موثق</span>
+            </div>
+            <div class="store-identity__meta">
+              <span class="rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</span>
+              <span>2,410 تقييم</span>
+              <span>جدة، المملكة العربية السعودية</span>
+              <span>12,400 متابع</span>
+            </div>
+            <p class="store-identity__tagline">إلكترونيات منزلية وترفيهية أصلية بضمان الوكيل</p>
+          </div>
+        </div>
+
+        <!-- action buttons (left, second in DOM) -->
+        <div class="store-actions">
+          <button class="btn-store-follow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg> متابعة المتجر</button>
+          <button class="btn-store-msg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z" />
+            </svg> مراسلة</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================== MAIN ============================= -->
+    <main class="container store-main">
+      <div class="store-layout">
+
+        <!-- ==================  SIDEBAR (right, 326px)  =================== -->
+        <aside class="store-sidebar">
+
+          <div class="sidebar-block">
+            <div class="sidebar-block__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <span class="sidebar-block__title">عن المتجر</span>
+            </div>
+            <div class="sidebar-block__body">
+              <p class="sidebar-block__desc">متجر «هاي لايف» متخصص منذ ٢٠٢٠ في بيع الأجهزة الإلكترونية المنزلية
+                والترفيهية الأصلية. نوفّر منتجات أورورا ونوفا فيو بضمان الوكيل الرسمي، مع شحن سريع وخدمة عملاء على مدار
+                الأسبوع.</p>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-block__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <span class="sidebar-block__title">سياسات المتجر</span>
+            </div>
+            <div class="sidebar-block__body">
+              <div class="sidebar-row">
+                <span class="sidebar-row__title">شحن سريع</span>
+                <span class="sidebar-row__sub">تسليم خلال ٢–٣ أيام عمل</span>
+              </div>
+              <div class="sidebar-row">
+                <span class="sidebar-row__title">إرجاع مجاني</span>
+                <span class="sidebar-row__sub">خلال ١٤ يوماً من الاستلام</span>
+              </div>
+              <div class="sidebar-row">
+                <span class="sidebar-row__title">ضمان الوكيل</span>
+                <span class="sidebar-row__sub">حتى ٢٤ شهراً على الأجهزة</span>
+              </div>
+              <div class="sidebar-row">
+                <span class="sidebar-row__title">منتجات أصلية</span>
+                <span class="sidebar-row__sub">موزّع معتمد رسمياً</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-block__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span class="sidebar-block__title">معلومات المتجر</span>
+            </div>
+            <div class="sidebar-block__body">
+              <span class="sidebar-row--single">انضم في مارس ٢٠٢٠</span>
+              <span class="sidebar-row--single">الموقع: جدة، المملكة العربية السعودية</span>
+              <span class="sidebar-row--single">وقت الرد: ساعة</span>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- ==================  PRODUCTS (left, 1fr)  ====================== -->
+        <div class="store-products">
+
+          <!-- الأكثر مبيعاً في المتجر -->
+          <section class="product-section">
+            <h2 class="product-section__title">الأكثر مبيعاً في المتجر</h2>
+            <div class="product-grid-3">
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ٢٠%</span><span
+                      class="timer">06:05:11</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">ساعة أبل الذكية سلسلة ٩ مقاس ٤٥ ملم</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
+                      class="count">(321 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٤٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">١٬٧٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ١٥%</span><span
+                      class="timer">04:12:47</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">سماعات لاسلكية عازلة للضوضاء بجودة عالية</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.7</span> <span
+                      class="count">(892 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">٩٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">١٬١٧٥ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ٣٠%</span><span
+                      class="timer">08:19:34</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">مكنسة كهربائية لاسلكية بقوة شفط عالية</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.8</span> <span
+                      class="count">(540 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٦٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٢٬١٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ١٨%</span><span
+                      class="timer">03:40:12</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">جهاز تحكم لاسلكي دوال سينس لجهاز بلاي ستيشن ٥</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.8</span> <span
+                      class="count">(456 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٢٬٤٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- كل منتجات المتجر (1) -->
+          <section class="product-section">
+            <h2 class="product-section__title">كل منتجات المتجر</h2>
+            <div class="product-grid-3">
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ٢٥%</span><span
+                      class="timer">11:30:00</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة أوتوماتيكية 8 كيلو — فضي</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
+                      class="count">(456 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٢٬٤٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ٢٠%</span><span
+                      class="timer">08:15:00</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة أوتوماتيكية 10 كيلو بشاشة رقمية</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.7</span> <span
+                      class="count">(231 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">٢٬٥٤٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٣٬١٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ١٥%</span><span
+                      class="timer">09:00:00</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة 6 كيلو شحن علوي بسعر مميز</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★</span> <span class="num">4.2</span> <span
+                      class="count">(98 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬١٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">١٬٤٠٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ١٢%</span><span
+                      class="timer">01:20:33</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة بانسونيك 7.5 كيلو بتقنية StainMaster</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★</span> <span class="num">4.3</span> <span
+                      class="count">(64 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٤٣٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">١٬٨٠٠ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- promo banner -->
+          <div class="store-promo-banner">
+            <div class="store-promo-banner__inner">
+              <div class="store-promo-banner__title">عروض حصرية من متجر يوجين</div>
+              <div class="store-promo-banner__sub">خصومات تصل إلى ٣٠٪ على تشكيلة مختارة — لفترة محدودة</div>
+            </div>
+          </div>
+
+          <!-- كل منتجات المتجر (2) -->
+          <section class="product-section">
+            <h2 class="product-section__title">كل منتجات المتجر</h2>
+            <div class="product-grid-3">
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ٣٠%</span><span
+                      class="timer">04:30:22</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة صحون 12 طقم بتقنية نانو الفضة</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.5</span> <span
+                      class="count">(127 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٤٦٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٢٬١٠٠ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ٢٢%</span><span
+                      class="timer">07:10:05</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة 12 كيلو بتقنية QuickDrive وشاشة لمس</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
+                      class="count">(502 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">٣٬٨٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٤٬٩٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ١٧%</span><span
+                      class="timer">02:55:40</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">غسالة FullSense 8 كيلو بمحرك إنفرتر مباشر</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.7</span> <span
+                      class="count">(219 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">١٬٩٧٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٢٬٤٠٠ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card">
+                <div class="product-card__media">
+                  <span class="product-card__promo"><span class="discount">تخفيض ١٠%</span><span
+                      class="timer">11:00:00</span></span>
+                  <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg></button>
+                  <div class="product-card__img">
+                    <div class="carousel-track">
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <line x1="9" y1="12" x2="15" y2="12" />
+                        </svg></div>
+                      <div class="carousel-slide" style="background:linear-gradient(135deg,#fdf4ff,#f3e8ff)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="6" y="6" width="12" height="12" rx="3" />
+                          <path d="M9 4l.4-1.5h5.2L15 4M9 20l.4 1.5h5.2L15 20" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    </div>
+                  </div>
+                  <div class="product-card__overlay-bottom">
+                    <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                    <button class="product-card__plus" aria-label="أضف للسلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg></button>
+                  </div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">تلفزيون سامسونج ذكي ٦٥ بوصة بدقة 4K</h3>
+                  <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.6</span> <span
+                      class="count">(210 تقييم)</span></div>
+                  <div class="product-card__price">
+                    <span class="price-new"><span class="amount">٢٬٧٩٩</span><span class="cur"><img
+                          src="Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                    <span class="price-old">٣٬٩٩٩ <img src="Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                        alt="ر.س" /></span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+        </div><!-- /store-products -->
+
+      </div><!-- /store-layout -->
+    </main>
+
+    <!-- ============================= FOOTER ============================ -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-brand__logo">بازار السعودية</div>
+            <div class="footer-brand__sub">SAUDI BAZAAR</div>
+            <p class="footer-brand__desc">المنصة السعودية الرائدة للتسوق الإلكتروني، نوفر لك أفضل المنتجات العالمية
+              والمحلية بجودة عالية وأسعار منافسة.</p>
+          </div>
+          <div>
+            <h3 class="footer-col__title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="#">عن الشركة</a></li>
+              <li><a href="#">اتصل بنا</a></li>
+              <li><a href="#">الأسئلة الشائعة</a></li>
+              <li><a href="#">المدونة</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-col__title">السياسات</h3>
+            <ul class="footer-links">
+              <li><a href="#">الشروط والأحكام</a></li>
+              <li><a href="#">سياسة الخصوصية</a></li>
+              <li><a href="#">سياسة الاسترجاع</a></li>
+              <li><a href="#">سياسة الشحن</a></li>
+            </ul>
+          </div>
+          <div class="footer-pay">
+            <h3 class="footer-col__title">التوثيق والدفع</h3>
+            <div class="footer-pay__methods"><span class="pay-badge">mada</span><span class="pay-badge">VISA</span><span
+                class="pay-badge">Mastercard</span><span class="pay-badge">Apple Pay</span><span
+                class="pay-badge">تمارا</span></div>
+            <p class="footer-pay__reg">الرقم الضريبي: 300123456700003</p>
+            <p class="footer-pay__reg">السجل التجاري: 1010123456</p>
+            <div class="footer-pay__certs"><span class="cert-badge"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg><span>متجر موثّق</span></span><span class="cert-badge"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                </svg><span>معروف</span></span></div>
+          </div>
+          <div class="footer-news">
+            <div class="footer-news__title">كن أول من يعرف بالعروض</div>
+            <p class="footer-news__desc">اشترك في نشرتنا البريدية لتصلك أقوى كوبونات التوفير الحصرية فور صدورها.</p>
+            <div class="footer-news__form"><input class="footer-news__input" type="email"
+                placeholder="أدخل بريدك الإلكتروني" /><button class="footer-news__btn">اشتراك</button></div>
+            <div class="footer-social"><span class="footer-social__label">تابعنا على شبكاتنا:</span><span
+                class="footer-social__icons"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg></a><a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                  </svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg></a></span></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
+          <p>© 2026 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /page -->
+
+  <script>
+    // carousel slides in product cards
+    document.querySelectorAll('.product-card__img').forEach(function (img) {
+      var track = img.querySelector('.carousel-track');
+      if (!track) return;
+      var slides = track.querySelectorAll('.carousel-slide');
+      var media = img.closest('.product-card__media');
+      var dots = media ? media.querySelectorAll('.product-card__dots i') : [];
+      var current = 0;
+      function go(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(' + (current * 100) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('on', i === current); });
+      }
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+      var plus = media && media.querySelector('.product-card__plus');
+      if (plus) plus.addEventListener('click', function (e) { e.stopPropagation(); go(current + 1); });
+    });
+  </script>
+</body>
+
+</html>
