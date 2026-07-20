@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>تتبع الطلب — بازار السعودية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/order-tracking.css">
+</head>
+<body>
+<div class="page">
+
+    <!-- ============================ HEADER ============================ -->
+    <div id="header-placeholder"></div>
+
+  <!-- ============================== MAIN ============================= -->
+  <main class="container">
+
+    <div class="track-title">
+      <h1 class="track-title__h1">تتبع الطلب</h1>
+      <div class="track-title__meta">
+        <span class="track-title__num"><strong>SB‑2026‑784512</strong> رقم الطلب</span>
+        <span class="track-title__date">بتاريخ 6 يونيو 2026 · 2 منتجات</span>
+      </div>
+    </div>
+
+    <div class="track-main">
+
+      <!-- ---- Status card ---- -->
+      <div class="status-card">
+        <div class="status-card__message">
+          <span class="status-card__icon-ring">
+            <span class="status-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+          </span>
+          <div class="status-card__text">
+            <h2 class="status-card__title">تم تأكيد طلبك</h2>
+            <p class="status-card__desc">استلمنا طلبك وتم تأكيد الدفع بنجاح — سنبدأ بتجهيزه الآن وإعلامك بكل خطوة.</p>
+          </div>
+        </div>
+
+        <div class="status-card__eta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span class="status-card__eta-text">
+            <span class="status-card__eta-label">التوصيل المتوقع</span>
+            <span class="status-card__eta-date">الاربعاء ١٠ يونيو</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- ---- Progress stepper ---- -->
+      <div class="stepper-card">
+        <div class="stepper" id="stepperRow">
+          <div class="stepper__track" id="stepperTrack">
+            <span class="stepper__track-fill" id="stepperTrackFill"></span>
+          </div>
+
+          <div class="step is-done">
+            <span class="step__circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="step__text">
+              <span class="step__label">تأكيد الطلب</span>
+              <span class="step__sub">٦ يونيو · ١١:٠٥ ص</span>
+            </span>
+          </div>
+
+          <div class="step">
+            <span class="step__circle"><span class="num">٢</span></span>
+            <span class="step__text">
+              <span class="step__label">قيد التجهيز</span>
+              <span class="step__sub">قريباً</span>
+            </span>
+          </div>
+
+          <div class="step">
+            <span class="step__circle"><span class="num">٣</span></span>
+            <span class="step__text">
+              <span class="step__label">تم الشحن</span>
+              <span class="step__sub">قريباً</span>
+            </span>
+          </div>
+
+          <div class="step">
+            <span class="step__circle"><span class="num">٤</span></span>
+            <span class="step__text">
+              <span class="step__label">خرج للتوصيل</span>
+              <span class="step__sub">قريباً</span>
+            </span>
+          </div>
+
+          <div class="step">
+            <span class="step__circle"><span class="num">٥</span></span>
+            <span class="step__text">
+              <span class="step__label">تم التوصيل</span>
+              <span class="step__sub">قريباً</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ---- Delivery address ---- -->
+      <div class="info-section">
+        <div class="info-section__head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="info-section__title">عنوان التوصيل</span>
+        </div>
+        <div class="address-body">
+          <span class="address-body__name">منذر عبد العاطي سعيد عبد الكريم</span>
+          <span class="address-body__detail">حي الياسمين، شارع الأمير محمد بن سلمان، مبنى ٤، شقة ١٢ — الرياض ١٣٣٢٥</span>
+        </div>
+      </div>
+
+      <!-- ---- Order items ---- -->
+      <div class="info-section">
+        <div class="info-section__head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="info-section__title">منتجات الطلب</span>
+        </div>
+
+        <div class="order-item">
+          <div class="order-item__img">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="4"/><line x1="7" y1="11" x2="7" y2="13"/><line x1="6" y1="12" x2="8" y2="12"/></svg>
+          </div>
+          <div class="order-item__info">
+            <span class="order-item__title">دفاية كهربائية زيت يوجين ١٥ ريشة ٢٥٠٠ واط بمنشر غسيل</span>
+            <span class="order-item__meta">الكمية ١ · يُشحن من Hi Life</span>
+          </div>
+          <span class="order-item__price"><span class="cur">ريال</span> <span class="amount">٤٤٥.٨٩</span></span>
+        </div>
+
+        <div class="order-item" style="border-bottom:1px solid var(--color-border)">
+          <div class="order-item__img">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="4"/><line x1="7" y1="11" x2="7" y2="13"/><line x1="6" y1="12" x2="8" y2="12"/></svg>
+          </div>
+          <div class="order-item__info">
+            <span class="order-item__title">دفاية كهربائية زيت يوجين ١٥ ريشة ٢٥٠٠ واط بمنشر غسيل</span>
+            <span class="order-item__meta">الكمية ١ · يُشحن من Hi Life</span>
+          </div>
+          <span class="order-item__price"><span class="cur">ريال</span> <span class="amount">٤٤٥.٨٩</span></span>
+        </div>
+
+        <div class="order-total">
+          <span class="order-total__label">الإجمالي شامل الضريبة</span>
+          <span class="order-total__price"><span class="cur">ريال</span><span class="amount">٤٤٥.٨٩</span></span>
+        </div>
+      </div>
+
+      <!-- ---- Action buttons ---- -->
+      <div class="track-actions">
+        <button class="btn-continue-shopping">
+          متابعة التسوق
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+        <button class="btn-view-invoice">عرض الفاتورة</button>
+      </div>
+
+    </div><!-- /track-main -->
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+</div><!-- /page -->
+
+<script>
+  // Position the stepper connecting line/fill precisely against the actual
+  // rendered circle centers, so it stays aligned regardless of text width
+  // differences between steps or viewport size.
+  function layoutStepperTrack() {
+    var row   = document.getElementById('stepperRow');
+    var track = document.getElementById('stepperTrack');
+    var fill  = document.getElementById('stepperTrackFill');
+    if (!row || !track || !fill) return;
+
+    var circles = row.querySelectorAll('.step__circle');
+    if (circles.length < 2) return;
+
+    var rowRect = row.getBoundingClientRect();
+    var centers = Array.prototype.map.call(circles, function (el) {
+      var r = el.getBoundingClientRect();
+      return { x: r.left + r.width / 2 - rowRect.left, y: r.top + r.height / 2 - rowRect.top };
+    });
+
+    var xs = centers.map(function (c) { return c.x; });
+    var trackStart = Math.min.apply(null, xs);
+    var trackEnd   = Math.max.apply(null, xs);
+    var trackY     = centers[0].y;
+
+    track.style.left  = trackStart + 'px';
+    track.style.width = (trackEnd - trackStart) + 'px';
+    track.style.top   = trackY + 'px';
+
+    // Fill extends from the "start" edge (right, in RTL) up to the last
+    // completed step's circle center.
+    var doneSteps = row.querySelectorAll('.step.is-done .step__circle');
+    if (doneSteps.length) {
+      var lastDoneRect = doneSteps[doneSteps.length - 1].getBoundingClientRect();
+      var lastDoneX = lastDoneRect.left + lastDoneRect.width / 2 - rowRect.left;
+      var fillWidth = Math.max(0, trackEnd - lastDoneX);
+      fill.style.width = fillWidth + 'px';
+    } else {
+      fill.style.width = '0px';
+    }
+  }
+
+  window.addEventListener('load', layoutStepperTrack);
+  window.addEventListener('resize', layoutStepperTrack);
+  document.addEventListener('DOMContentLoaded', layoutStepperTrack);
+</script>
+<script src="../js/load-components.js"></script>
+</body>
+</html>

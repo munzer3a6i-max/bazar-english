@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سلة التسوق — بازار السعودية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ============================ HEADER ============================ -->
+    <div id="header-placeholder"></div>
+
+    <!-- ============================== MAIN ============================= -->
+    <main class="cart-page container">
+
+      <div class="cart-title-row">
+        <h1 class="cart-title">سلة التسوق</h1>
+        <span class="cart-count">3 منتجات</span>
+      </div>
+
+      <div class="cart-layout">
+
+        <!-- ==================  CART ITEMS (right / 1fr)  ================ -->
+        <div class="cart-items-col">
+
+          <!-- Delivery bar -->
+          <div class="delivery-bar">
+
+            <div class="delivery-bar__info">
+              <span class="delivery-bar__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13" rx="1" />
+                  <path d="M16 8h4l3 3v5h-7" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </span>
+              <div class="delivery-bar__text">
+                <div class="delivery-bar__title">التوصيل الى الرياض - الأربعاء ١٠ يونيو</div>
+                <div class="delivery-bar__sub">توصيل سريع لباب المنزل · شحن مجاني للطلبات فوق ٢٠٠ ﷼</div>
+              </div>
+            </div>
+            <button class="btn-outline-sm">تغيير المدينة</button>
+
+          </div>
+
+          <!-- Available section -->
+          <div class="cart-section-head">
+            <span class="count-circle">2</span>
+            <span class="cart-section-head__title">متوفرة للتوصيل<span class="dot"></span></span>
+          </div>
+
+          <div class="cart-card" id="availableCard">
+
+            <!-- Item 1 -->
+            <div class="cart-item" data-price="1899" data-qty="1">
+              <span class="cart-item__select"><span class="item-check checked" onclick="toggleCheck(this)"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></span>
+
+              <div class="cart-item__image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="10" rx="4" />
+                  <line x1="7" y1="11" x2="7" y2="13" />
+                  <line x1="6" y1="12" x2="8" y2="12" />
+                  <circle cx="16" cy="11.5" r="1" />
+                  <circle cx="18.5" cy="13" r="1" />
+                </svg>
+              </div>
+
+              <div class="cart-item__details">
+                <div class="cart-item__meta-row">
+                  <div class="cart-item__chips">
+                    <span class="cart-item__code">رمز المنتج <span>AL٤٥٣٤٥٤٥٤٥٤٥</span></span>
+                    <span class="cart-item__cat-chip">اجهزة الكترونية</span>
+                  </div>
+                  <div class="cart-item__title-block">
+                    <h3 class="cart-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
+                    <p class="cart-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
+                    <p class="cart-item__seller">يباع بواسطة: سوني</p>
+                  </div>
+                </div>
+                <div class="cart-item__actions">
+                  <div class="cart-item__qty-wrap">
+                    <span class="qty-label">الكمية</span>
+                    <div class="qty-stepper">
+                      <button class="qty-stepper__btn qty-stepper__btn--minus" onclick="changeQty(this,-1)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></button>
+                      <span class="qty-stepper__val">1</span>
+                      <button class="qty-stepper__btn qty-stepper__btn--plus" onclick="changeQty(this,1)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19" />
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></button>
+                    </div>
+                  </div>
+                  <span class="cart-item__vdiv"></span>
+                  <button class="cart-item__delete" onclick="removeItem(this)">حذف <svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3 6 5 6 21 6" />
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                    </svg></button>
+                </div>
+              </div>
+
+              <div class="cart-item__price-col">
+                <div class="price-row">
+                  <span class="old">٢٬٤٩٩ ر.س</span>
+                  <span class="new"><span class="amount">١٬٨٩٩</span><span class="cur">ر.س</span></span>
+                </div>
+                <span class="cart-item__vat-note">شامل ضريبة القيمة المضافة</span>
+              </div>
+
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item" data-price="1899" data-qty="1">
+              <span class="cart-item__select"><span class="item-check checked" onclick="toggleCheck(this)"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></span>
+
+              <div class="cart-item__image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="10" rx="4" />
+                  <line x1="7" y1="11" x2="7" y2="13" />
+                  <line x1="6" y1="12" x2="8" y2="12" />
+                  <circle cx="16" cy="11.5" r="1" />
+                  <circle cx="18.5" cy="13" r="1" />
+                </svg>
+              </div>
+
+              <div class="cart-item__details">
+                <div class="cart-item__meta-row">
+                  <div class="cart-item__chips">
+                    <span class="cart-item__code">رمز المنتج <span>AL٤٥٣٤٥٤٥٤٥٤٥</span></span>
+                    <span class="cart-item__cat-chip">اجهزة الكترونية</span>
+                  </div>
+                  <div class="cart-item__title-block">
+                    <h3 class="cart-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
+                    <p class="cart-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
+                    <p class="cart-item__seller">يباع بواسطة: سوني</p>
+                  </div>
+                </div>
+                <div class="cart-item__actions">
+                  <div class="cart-item__qty-wrap">
+                    <span class="qty-label">الكمية</span>
+                    <div class="qty-stepper">
+                      <button class="qty-stepper__btn qty-stepper__btn--minus" onclick="changeQty(this,-1)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></button>
+                      <span class="qty-stepper__val">1</span>
+                      <button class="qty-stepper__btn qty-stepper__btn--plus" onclick="changeQty(this,1)"><svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19" />
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg></button>
+                    </div>
+                  </div>
+                  <span class="cart-item__vdiv"></span>
+                  <button class="cart-item__delete" onclick="removeItem(this)">حذف <svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3 6 5 6 21 6" />
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                    </svg></button>
+                </div>
+              </div>
+
+              <div class="cart-item__price-col">
+                <div class="price-row">
+                  <span class="old">٢٬٤٩٩ ر.س</span>
+                  <span class="new"><span class="amount">١٬٨٩٩</span><span class="cur">ر.س</span></span>
+                </div>
+                <span class="cart-item__vat-note">شامل ضريبة القيمة المضافة</span>
+              </div>
+
+            </div>
+
+          </div><!-- /availableCard -->
+
+          <!-- Unavailable section -->
+          <div class="cart-section-head">
+            <span class="count-circle">1</span>
+            <span class="cart-section-head__title cart-section-head__title--warning">منتجات غير متوفرة للتوصيل<span
+                class="dot"></span></span>
+          </div>
+
+          <div class="cart-card" id="unavailableCard">
+            <div class="cart-item cart-item--unavailable">
+              <span class="cart-item__select"><span class="item-check" onclick="toggleCheck(this)"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg></span></span>
+
+              <div class="cart-item__image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="10" rx="4" />
+                  <line x1="7" y1="11" x2="7" y2="13" />
+                  <line x1="6" y1="12" x2="8" y2="12" />
+                  <circle cx="16" cy="11.5" r="1" />
+                  <circle cx="18.5" cy="13" r="1" />
+                </svg>
+              </div>
+
+              <div class="cart-item__details">
+                <div class="cart-item__meta-row">
+                  <div class="cart-item__chips">
+                    <span class="cart-item__code">رمز المنتج <span>AL٤٥٣٤٥٤٥٤٥٤٥</span></span>
+                    <span class="cart-item__cat-chip">اجهزة الكترونية</span>
+                  </div>
+                  <div class="cart-item__title-block">
+                    <h3 class="cart-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
+                    <p class="cart-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
+                    <p class="cart-item__seller">يباع بواسطة: سوني</p>
+                  </div>
+                </div>
+
+                <div class="alert-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                  <p>لا يمكن شحن هذا المنتج إلى الرياض. غيّر مدينتك أو احذف المنتج.</p>
+                </div>
+
+                <div class="unavail-actions">
+                  <button class="btn-solid-primary-sm">تغيير المدينة <svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg></button>
+                  <button class="btn-outline-danger" onclick="removeItem(this)">حذف المنتج <svg viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3 6 5 6 21 6" />
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                    </svg></button>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- /unavailableCard -->
+
+          <!-- Cross-sell -->
+          <div class="crosssell-heading">أضف إلى طلبك — يُشترى عادةً مع هذا المنتج</div>
+
+          <div class="cart-card">
+            <div class="crosssell-item">
+              <div class="crosssell-item__image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="10" rx="4" />
+                  <line x1="7" y1="11" x2="7" y2="13" />
+                  <line x1="6" y1="12" x2="8" y2="12" />
+                  <circle cx="16" cy="11.5" r="1" />
+                  <circle cx="18.5" cy="13" r="1" />
+                </svg>
+              </div>
+              <div class="crosssell-item__details">
+                <h3 class="crosssell-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
+                <p class="crosssell-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
+                <p class="crosssell-item__seller">يباع بواسطة: سوني</p>
+                <span class="crosssell-item__price"><span class="amount">١٬٨٩٩</span><span class="cur">ر.س</span></span>
+              </div>
+              <button class="btn-add-product">إضافة المنتج <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg></button>
+
+            </div>
+            <div class="crosssell-item">
+              <div class="crosssell-item__image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="10" rx="4" />
+                  <line x1="7" y1="11" x2="7" y2="13" />
+                  <line x1="6" y1="12" x2="8" y2="12" />
+                  <circle cx="16" cy="11.5" r="1" />
+                  <circle cx="18.5" cy="13" r="1" />
+                </svg>
+              </div>
+              <div class="crosssell-item__details">
+                <h3 class="crosssell-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
+                <p class="crosssell-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
+                <p class="crosssell-item__seller">يباع بواسطة: سوني</p>
+                <span class="crosssell-item__price"><span class="amount">١٬٨٩٩</span><span class="cur">ر.س</span></span>
+              </div>
+              <button class="btn-add-product">إضافة المنتج <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg></button>
+
+            </div>
+          </div>
+
+        </div><!-- /cart-items-col -->
+
+        <!-- ==================  ORDER SUMMARY (left / 444px)  ============ -->
+        <aside class="order-summary">
+          <h2 class="order-summary__title">ملخص الطلب</h2>
+
+          <div class="summary-rows">
+            <div class="summary-row"><span>المجموع الفرعي (٢)</span><span class="value">٤٠٥ ريال</span></div>
+            <div class="summary-row"><span>الخصم (وفر ١٢٪)</span><span class="value success">٦٠ ريال</span></div>
+            <div class="summary-row"><span>الشحن</span><span class="value success">مجاني</span></div>
+          </div>
+
+          <div class="promo-row">
+            <button class="promo-row__btn">تطبيق</button>
+            <div class="promo-row__input"><input type="text" placeholder="هل لديك كود خصم ؟" /></div>
+          </div>
+
+          <hr class="summary-divider" />
+
+          <div class="summary-total">
+            <div class="summary-total__block">
+              <div class="summary-total__row">
+                <span class="summary-total__label">الإجمالي</span>
+                <span class="summary-total__price"><span class="cur">ر.س</span><span class="amount">١٬٨٩٩</span></span>
+              </div>
+              <p class="summary-total__vat">شامل ضريبة القيمة المضافة (١٥٪): ٥٨.١٦ ﷼</p>
+            </div>
+            <button class="btn-checkout">المتابعة للشراء</button>
+          </div>
+
+          <div class="installments">
+            <div class="inst-row">
+              <span class="inst-badge inst-badge--tamara">تمارا</span>
+              <p class="inst-row__text">قسمّها على ٤ دفعات بقيمة ٤٧٢.٣٩ بدون فوائد. متوافق مع أحكام الشريعة. لمعرفة
+                المزيد</p>
+            </div>
+            <div class="inst-row">
+              <span class="inst-badge inst-badge--madfu">مدفوع</span>
+              <p class="inst-row__text">قسطها مع مدفوع على ٤ اقساط</p>
+            </div>
+            <div class="inst-row">
+              <span class="inst-badge inst-badge--mis">ميسّر</span>
+              <p class="inst-row__text">قسطها مع ميسّر على ٤ اقساط</p>
+            </div>
+          </div>
+        </aside>
+
+      </div><!-- /cart-layout -->
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+  </div><!-- /page -->
+
+  <script>
+    // ── Quantity stepper ──
+    function changeQty(btn, delta) {
+      var stepper = btn.closest('.qty-stepper');
+      var valEl = stepper.querySelector('.qty-stepper__val');
+      var item = btn.closest('.cart-item');
+      var qty = Math.max(1, (+valEl.textContent) + delta);
+      valEl.textContent = qty;
+      if (item) item.dataset.qty = qty;
+    }
+
+    // ── Remove item (fades then removes the row) ──
+    function removeItem(el) {
+      var item = el.closest('.cart-item');
+      if (!item) return;
+      item.style.transition = 'opacity .2s ease';
+      item.style.opacity = '0';
+      setTimeout(function () { item.remove(); }, 200);
+    }
+
+    // ── Item select checkbox ──
+    function toggleCheck(el) {
+      el.classList.toggle('checked');
+    }
+  </script>
+<script src="../js/load-components.js"></script>
+</body>
+
+</html>
