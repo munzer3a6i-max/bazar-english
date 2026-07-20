@@ -958,29 +958,43 @@
     <!-- ======================= PROMO IMAGES ===================== -->
     <section class="promo-images-section">
       <div class="container">
-        
-        <button class="promo-images-arrow left" aria-label="السابق">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
+        <div class="promo-images-row-wrap">
+          
+          <button class="promo-images-arrow left is-hidden" id="promoArrowLeft" aria-label="السابق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
 
-        <div class="promo-image-card">
-          <img src="./assets/promp image 1.png" alt="Promo 1">
-        </div>
-        <div class="promo-image-card">
-          <img src="./assets/promp image 2.png" alt="Promo 2">
-        </div>
-        <div class="promo-image-card">
-          <img src="./assets/promp image 3.png" alt="Promo 3">
-        </div>
+          <div class="promo-images-row" id="promoRow">
+            <div class="promo-image-card">
+              <img src="./assets/promp image 1.png" alt="Promo 1">
+            </div>
+            <div class="promo-image-card">
+              <img src="./assets/promp image 2.png" alt="Promo 2">
+            </div>
+            <div class="promo-image-card">
+              <img src="./assets/promp image 3.png" alt="Promo 3">
+            </div>
+            <!-- Duplicated images for slider -->
+            <div class="promo-image-card">
+              <img src="./assets/promp image 1.png" alt="Promo 4">
+            </div>
+            <div class="promo-image-card">
+              <img src="./assets/promp image 2.png" alt="Promo 5">
+            </div>
+            <div class="promo-image-card">
+              <img src="./assets/promp image 3.png" alt="Promo 6">
+            </div>
+          </div>
 
-        <button class="promo-images-arrow right" aria-label="التالي">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
+          <button class="promo-images-arrow right" id="promoArrowRight" aria-label="التالي">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
 
+        </div>
       </div>
     </section>
 
