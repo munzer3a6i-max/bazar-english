@@ -92,7 +92,7 @@ input{font-family:inherit}
 /* ============================  PAGE LAYOUT  ========================= */
 .auth-layout{
   display:grid;
-  grid-template-columns: 1fr 632px;
+  grid-template-columns: 1fr 1fr;
   min-height:calc(100vh - 36px);
   align-items:stretch;
 }
