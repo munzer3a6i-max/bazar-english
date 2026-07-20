@@ -16,9 +16,175 @@
 
 <body>
   <div class="page">
-
     <!-- ============================ HEADER ============================ -->
-    <div id="header-placeholder"></div>
+    <header>
+
+      <!-- Tier 1: top bar -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar__group">
+            <button class="topbar__lang">English</button>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              920012345
+            </span>
+            <span class="divider"></span>
+            <a class="topbar__item" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16.5 9.4 7.5 4.21" />
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              تتبع طلبك
+            </a>
+          </div>
+
+          <div class="topbar__group">
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
+                <path d="M8 7h8M8 11h8M8 15h5" />
+              </svg>
+              الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              معروف الذهبي رقم ٢٩٨٤٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              متجر سعودي رسمي موثق
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 2: main navbar -->
+      <div class="navbar">
+        <div class="container">
+          <a class="logo" href="../index.html">
+            <div class="logo__title">بازار السعودية</div>
+            <div class="logo__subtitle">SAUDI BAZAAR</div>
+          </a>
+
+          <button class="delivery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="delivery__text">
+              <div class="delivery__label">التوصيل إلى</div>
+              <div class="delivery__value">الرياض، المملكة</div>
+            </span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <div class="search">
+            <button class="search__categories">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+              كل الأقسام
+            </button>
+            <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
+            <button class="search__btn">
+              بحث
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="account">
+            <a class="login" href="login.html">
+              <span class="login__text">
+                <div class="login__hi">مرحباً</div>
+                <div class="login__cta">تسجيل الدخول</div>
+              </span>
+              <span class="login__avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+            </a>
+
+            <a class="fav" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              <span>المفضلة</span>
+            </a>
+
+            <a class="cart" href="cart.html">
+              <span class="cart__text">
+                <div class="cart__label">سلة التسوق</div>
+                <div class="cart__price">٣٤٩ <img src="../Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></div>
+              </span>
+              <span class="cart__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="cart__badge">3</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 3: bottom bar -->
+      <div class="subnav">
+        <div class="container">
+          <button class="subnav__all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            جميع الأقسام
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </header>
 
     <!-- ============================== MAIN ============================= -->
     <main class="confirm-main container">
