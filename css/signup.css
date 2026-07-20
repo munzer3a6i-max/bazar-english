@@ -37,7 +37,7 @@ svg{display:block}
 h1,h2,p,ul{margin:0;padding:0;list-style:none}
 input{font-family:inherit}
 
-.page{max-width:1440px;margin-inline:auto;background:var(--color-bg-page);min-height:100vh}
+.page{width:100%;background:var(--color-bg-page);min-height:100vh}
 .container{padding-inline:32px}
 
     /* =====================================================================
