@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const basePath = window.location.pathname.endsWith('index.html') && !window.location.pathname.includes('/html/') ? './' : (window.location.pathname.endsWith('/') ? './' : '../');
     // Better logic for GitHub pages: if we are at root, base is ./, else ../
     const path = window.location.pathname;
-    const isRoot = path === '/' || path.endsWith('/bazar/') || path.endsWith('/bazar/index.html');
+    const isRoot = !path.toLowerCase().includes('/html/');
     const prefix = isRoot ? './' : '../';
     
     fetch(prefix + 'components/header.html')
