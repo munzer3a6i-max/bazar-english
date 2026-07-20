@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+(function() {
     const basePath = window.location.pathname.endsWith('index.html') && !window.location.pathname.includes('/html/') ? './' : (window.location.pathname.endsWith('/') ? './' : '../');
     // Better logic for GitHub pages: if we are at root, base is ./, else ../
     const path = window.location.pathname;
@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             const headerPlaceholder = document.getElementById('header-placeholder');
             if (headerPlaceholder) headerPlaceholder.outerHTML = data;
-        });
+        })
+        .catch(err => console.error('Failed to load header:', err));
 
     fetch(prefix + 'components/footer.html')
         .then(response => response.text())
@@ -27,5 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             const footerPlaceholder = document.getElementById('footer-placeholder');
             if (footerPlaceholder) footerPlaceholder.outerHTML = data;
-        });
-});
+        })
+        .catch(err => console.error('Failed to load footer:', err));
+})();
