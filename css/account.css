@@ -52,7 +52,12 @@
   .crumb .ic{color:var(--text-muted)}
 
   /* ===================== LAYOUT ===================== */
-  .page{padding-top:28px;padding-bottom:64px}
+  .page{padding-top:28px;padding-bottom:64px;background:var(--bg-page)}
+  
+  /* Safe resets for dashboard items */
+  .en{font-family:var(--family-en)}
+  img{display:block;max-width:100%}
+  ul{list-style:none}
   .cols{display:flex;gap:24px;align-items:flex-start}
   .side{width:326px;flex:none;display:flex;flex-direction:column;gap:24px}
   .main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:32px}

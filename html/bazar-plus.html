@@ -49,183 +49,181 @@
 <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
 <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 7l4 4 5-7 5 7 4-4-2 12H5z"/></symbol>
 </defs></svg>
-<!-- ============ TOP UTILITY BAR ============ -->
-<div class="topbar">
-  <div class="wrap">
-    <div class="topbar__group">
-      <span class="topbar__lang">English</span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>920012345</span><svg class="ic ic-13"><use href="#i-phone"/></svg></span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>تتبع طلبك</span><svg class="ic ic-13"><use href="#i-truck"/></svg></span>
-    </div>
-    <div class="topbar__group">
-      <span class="topbar__item"><span>الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣</span><svg class="ic ic-13"><use href="#i-receipt"/></svg></span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>معروف الذهبي رقم ٢٩٨٤٣</span><svg class="ic ic-13"><use href="#i-award"/></svg></span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>متجر سعودي رسمي موثق</span><svg class="ic ic-13"><use href="#i-shield"/></svg></span>
-    </div>
-  </div>
-</div>
+<header>
 
-<!-- ============ MAIN NAVBAR ============ -->
-<div class="navbar">
-  <div class="wrap">
-    <a class="brand" href="#">
-      <span class="brand__name">بازار السعودية</span>
-      <span class="brand__sub">SAUDI BAZAAR</span>
-    </a>
+      <!-- Tier 1: top bar -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar__group">
+            <button class="topbar__lang">English</button>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              920012345
+            </span>
+            <span class="divider"></span>
+            <a class="topbar__item" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16.5 9.4 7.5 4.21" />
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              تتبع طلبك
+            </a>
+          </div>
 
-    <div class="loc">
-      <svg class="ic"><use href="#i-pin"/></svg>
-      <span class="loc__txt">
-        <span class="loc__label">التوصيل إلى</span>
-        <span class="loc__value">الرياض، المملكة</span>
-      </span>
-      <svg class="ic ic-16"><use href="#i-chevron-down"/></svg>
-    </div>
-
-    <div class="search">
-      <div class="search__box">
-        <div class="search__cats">
-          <svg class="ic ic-16"><use href="#i-chevron-down"/></svg>
-          <span>كل الأقسام</span>
-        </div>
-        <div class="search__input"><span>ابحث عن المنتجات والماركات...</span></div>
-        <button class="search__btn">
-          <span>بحث</span>
-          <svg class="ic"><use href="#i-search"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="navcluster">
-      <a class="nc-login" href="#">
-        <span class="nc-login__txt">
-          <span class="nc-login__hi">مرحباً</span>
-          <span class="nc-login__act">تسجيل الدخول</span>
-        </span>
-        <span class="nc-login__ava"><svg class="ic"><use href="#i-user"/></svg></span>
-      </a>
-      <a class="nc-fav" href="#">
-        <svg class="ic"><use href="#i-heart"/></svg>
-        <span>المفضلة</span>
-      </a>
-      <a class="nc-cart" href="#">
-        <span class="nc-cart__txt">
-          <span class="nc-cart__label">سلة التسوق</span>
-          <span class="nc-cart__price">٣٤٩ ر.س</span>
-        </span>
-        <svg class="ic"><use href="#i-bag"/></svg>
-        <span class="nc-cart__badge">3</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ============ BOTTOM NAV ============ -->
-<div class="botnav">
-  <div class="wrap">
-    <button class="botnav__all">
-      <svg class="ic ic-16"><use href="#i-menu"/></svg>
-      <span>جميع الأقسام</span>
-      <svg class="ic ic-16"><use href="#i-chevron-down"/></svg>
-    </button>
-  </div>
-</div>
-
-
-<div class="wrap">
-
-  <nav class="crumb">
-    <a class="crumb__home" href="#">الرئيسية</a>
-    <svg class="ic ic-12"><use href="#i-chevron-left"/></svg>
-    <span class="crumb__cur">بازار بلس</span>
-  </nav>
-  <div class="bp">
-    <section class="bp-hero">
-      <span class="bp-blob" style="width:340px;height:340px;top:-120px;right:-80px"></span>
-      <div class="bp-hero__l">
-        <span class="bp-eyebrow"><svg class="ic ic-16"><use href="#i-crown"/></svg> عضوية بازار بلس</span>
-        <h1>وفّر أكثر في كل طلب مع بازار بلس</h1>
-        <p>٣٠ يوماً مجاناً، ثم 12 ريال / شهر · بدون رسوم إلغاء · ألغِ في أي وقت</p>
-        <div class="bp-hero__cta">
-          <button class="bp-btn bp-btn--white">ابدأ تجربتك المجانية</button>
-          <button class="bp-btn bp-btn--ghost">اعرف المزيد</button>
+          <div class="topbar__group">
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
+                <path d="M8 7h8M8 11h8M8 15h5" />
+              </svg>
+              الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              معروف الذهبي رقم ٢٩٨٤٣
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              متجر سعودي رسمي موثق
+            </span>
+          </div>
         </div>
       </div>
-      <div class="bp-price">
-        <span class="bp-eyebrow2">الاشتراك الشهري</span>
-        <b>12 ريال<small style="font-size:14px;color:#7a7e73;font-weight:500"> / شهرياً</small></b>
-        <span>شامل الضريبة · أول ٣٠ يوماً مجاناً · تُدفع العضوية عن نفسها من أول عملية شراء.</span>
-        <button class="bp-btn bp-btn--green" style="width:100%;margin-top:8px">اشترك الآن</button>
-      </div>
-    </section>
 
-    <section class="bp-sec">
-      <span class="bp-eyebrow2">لماذا بازار بلس</span>
-      <h2 class="bp-h2">عضوية واحدة، مزايا طوال العام</h2>
-      <p class="bp-sub">صُممت لتوفّر لك المال والوقت في كل طلب — وتدفع عن نفسها من أول عملية شراء.</p>
-      <div class="bp-benefits">
-        <div class="bp-card"><div class="bp-card__i"><svg class="ic"><use href="#i-truck2"/></svg></div><b>توصيل مجاني وسريع</b><p>شحن مجاني غير محدود وتوصيل في اليوم التالي إلى الرياض والمدن الكبرى.</p></div>
-        <div class="bp-card"><div class="bp-card__i"><svg class="ic"><use href="#i-return2"/></svg></div><b>إرجاع مجاني ممتد</b><p>مهلة إرجاع ٣٠ يوماً بدل ١٤، مع استلام مجاني من باب منزلك.</p></div>
-        <div class="bp-card"><div class="bp-card__i"><svg class="ic"><use href="#i-headset2"/></svg></div><b>دعم أولوية ٢٤/٧</b><p>خط دعم مخصّص للأعضاء يردّ عليك أولاً، في أي وقت من اليوم.</p></div>
-        <div class="bp-card"><div class="bp-card__i"><svg class="ic"><use href="#i-bolt"/></svg></div><b>وصول مبكر للتخفيضات</b><p>ادخل الجمعة البيضاء وأبرز العروض قبل الجميع بـ ٢٤ ساعة.</p></div>
-        <div class="bp-card"><div class="bp-card__i"><svg class="ic"><use href="#i-star2"/></svg></div><b>عروض حصرية للأعضاء</b><p>أسعار وخصومات خاصة لا تظهر لغير المشتركين على آلاف المنتجات.</p></div>
-        <div class="bp-card"><div class="bp-card__i"><svg class="ic"><use href="#i-cash"/></svg></div><b>استرداد نقدي ٢٪</b><p>استرجع ٢٪ من قيمة كل طلب كرصيد بازار يُخصم تلقائياً.</p></div>
-      </div>
-    </section>
+      <!-- Tier 2: main navbar -->
+      <div class="navbar">
+        <div class="container">
+          <a class="logo" href="../index.html">
+            <div class="logo__title">بازار السعودية</div>
+            <div class="logo__subtitle">SAUDI BAZAAR</div>
+          </a>
 
-    <section class="bp-sec">
-      <span class="bp-eyebrow2">الباقات</span>
-      <h2 class="bp-h2">اختر ما يناسبك</h2>
-      <p class="bp-sub">الشهر الأول مجاني في كل الباقات. الأسعار شاملة الضريبة.</p>
-      <div class="bp-toggle"><button class="on">شهري</button><button>سنوي <span class="disc">وفّر ٢٠٪</span></button></div>
-      <div class="bp-plans">
-        <div class="plan is-featured">
-          <span class="plan__tag">الأكثر توفيراً</span>
-          <div class="plan__name"><svg class="ic" style="color:var(--action-primary)"><use href="#i-crown"/></svg> بازار بلس</div>
-          <div class="plan__price">12 ريال <small>/ شهرياً</small></div>
-          <div class="plan__list"><div class="plan__li"><span>شحن مجاني غير محدود</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>توصيل اليوم التالي</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>إرجاع مجاني حتى ٣٠ يوماً</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>استرداد نقدي ٢٪</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>دعم أولوية ٢٤/٧</span><svg class="ic"><use href="#i-check"/></svg></div></div>
-          <button class="bp-btn bp-btn--green">ابدأ ٣٠ يوماً مجاناً</button>
+          <button class="delivery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span class="delivery__text">
+              <div class="delivery__label">التوصيل إلى</div>
+              <div class="delivery__value">الرياض، المملكة</div>
+            </span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <div class="search">
+            <button class="search__categories">
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+              كل الأقسام
+            </button>
+            <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
+            <button class="search__btn">
+              بحث
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="account">
+            <a class="login" href="login.html">
+              <span class="login__text">
+                <div class="login__hi">مرحباً</div>
+                <div class="login__cta">تسجيل الدخول</div>
+              </span>
+              <span class="login__avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+            </a>
+
+            <a class="fav" href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              <span>المفضلة</span>
+            </a>
+
+            <a class="cart" href="cart.html">
+              <span class="cart__text">
+                <div class="cart__label">سلة التسوق</div>
+                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></div>
+              </span>
+              <span class="cart__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="cart__badge">3</span>
+              </span>
+            </a>
+          </div>
         </div>
-        <div class="plan">
-          <div class="plan__name">الحساب المجاني</div>
-          <div class="plan__price">0 ريال <small>/ شهرياً</small></div>
-          <div class="plan__list"><div class="plan__li"><span>تسوّق كل المنتجات</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>رسوم شحن حسب الطلب</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>توصيل خلال ٢–٣ أيام</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>إرجاع حتى ١٤ يوماً</span><svg class="ic"><use href="#i-check"/></svg></div><div class="plan__li"><span>دعم قياسي</span><svg class="ic"><use href="#i-check"/></svg></div></div>
-          <button class="bp-btn bp-btn--ghost" style="color:var(--action-primary);border-color:var(--border-strong)">حسابك الحالي</button>
+      </div>
+
+      <!-- Tier 3: bottom bar -->
+      <div class="subnav">
+        <div class="container">
+          <button class="subnav__all">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            جميع الأقسام
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <nav class="subnav__links">
+            <a href="#" class="subnav__link special">
+              <span class="pulse-dot"></span>
+              عروض اليوم
+            </a>
+            <a href="#" class="subnav__link">الأكثر طلباً</a>
+          </nav>
         </div>
       </div>
-    </section>
 
-    <section class="bp-sec">
-      <span class="bp-eyebrow2">المقارنة</span>
-      <h2 class="bp-h2">المجاني مقابل بلس</h2>
-      <div class="cmp"><table>
-        <thead><tr><th>وجه المقارنة</th><th>مجاني</th><th class="plus">بازار +</th></tr></thead>
-        <tbody>
-          <tr><td>رسوم الشحن</td><td class="free">حسب الطلب</td><td class="plus">مجاني دائماً</td></tr>
-          <tr><td>سرعة التوصيل</td><td class="free">٢–٣ أيام عمل</td><td class="plus">اليوم التالي</td></tr>
-          <tr><td>العروض الحصرية</td><td><span class="no">—</span></td><td><span class="yes"><svg class="ic"><use href="#i-check"/></svg></span></td></tr>
-          <tr><td>الوصول المبكر للتخفيضات</td><td><span class="no">—</span></td><td><span class="yes"><svg class="ic"><use href="#i-check"/></svg></span></td></tr>
-          <tr><td>مهلة الإرجاع</td><td class="free">١٤ يوماً</td><td class="plus">٣٠ يوماً</td></tr>
-          <tr><td>استرداد نقدي</td><td><span class="no">—</span></td><td class="plus">٢٪ رصيد</td></tr>
-          <tr><td>الدعم</td><td class="free">قياسي</td><td class="plus">أولوية ٢٤/٧</td></tr>
-        </tbody>
-      </table></div>
-    </section>
+    </header>
 
-    <section class="bp-sec">
-      <span class="bp-eyebrow2">الأسئلة</span>
-      <h2 class="bp-h2">كل ما تريد معرفته</h2>
-      <div class="bp-faq">
-        <div class="bp-faq__item"><div class="bp-faq__q"><svg class="ic"><use href="#i-chevron-down"/></svg><b>ما الذي تشمله التجربة المجانية؟</b></div><div class="bp-faq__a">تحصل على كامل مزايا بازار بلس لمدة ٣٠ يوماً دون أي رسوم — شحن مجاني، توصيل أسرع، إرجاع ممتد، واسترداد نقدي.</div></div>
-        <div class="bp-faq__item"><div class="bp-faq__q"><svg class="ic"><use href="#i-chevron-down"/></svg><b>متى يبدأ الاشتراك المدفوع؟</b></div><div class="bp-faq__a">بعد انتهاء الـ ٣٠ يوماً المجانية، ما لم تُلغِ قبل ذلك. سنذكّرك قبل بدء أول دفعة.</div></div>
-        <div class="bp-faq__item"><div class="bp-faq__q"><svg class="ic"><use href="#i-chevron-down"/></svg><b>هل يمكنني الإلغاء في اي وقت؟</b></div><div class="bp-faq__a">نعم، يمكنك الإلغاء في أي وقت من إعدادات حسابك دون أي رسوم، وتبقى المزايا فعّالة حتى نهاية الفترة المدفوعة.</div></div>
-        <div class="bp-faq__item"><div class="bp-faq__q"><svg class="ic"><use href="#i-chevron-down"/></svg><b>هل يغطي بازار بلس كل المدن؟</b></div><div class="bp-faq__a">التوصيل في اليوم التالي متاح في الرياض والمدن الكبرى، وباقي المزايا متاحة في جميع مناطق المملكة.</div></div>
-      </div>
-    </section>
+</section>
 
     <section class="bp-cta">
       <span class="bp-blob" style="width:275px;height:275px;top:20px;right:550px"></span>
