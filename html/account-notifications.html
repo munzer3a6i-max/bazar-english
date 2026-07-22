@@ -1,354 +1,699 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>التنبيهات | بازار السعودية</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/global.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التنبيهات | بازار السعودية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/account.css">
 </head>
+
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
-    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
-    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z"/></symbol>
-    <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 2v6h6"/><path d="M21 12A9 9 0 006 5.3L3 8"/><path d="M21 22v-6h-6"/><path d="M3 12a9 9 0 0015 6.7l3-2.7"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.2L7 14.2l-5-4.9 6.9-1z"/></symbol>
-    <symbol id="i-package" viewBox="0 0 24 24"><path d="M16.5 9.4l-9-5.2"/><path d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.3 7l8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
-    <symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1110.3 18"/><path d="M7 6h1v4"/><path d="M16.7 13.9l.7.7-2.8 2.8"/></symbol>
-    <symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
-    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0112 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 003.4 0"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></symbol>
-    <symbol id="i-power" viewBox="0 0 24 24"><path d="M18.4 6.6a9 9 0 11-12.8 0"/><path d="M12 2v10"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 16V5a1 1 0 00-1-1H2a1 1 0 00-1 1v11a1 1 0 001 1h1"/><path d="M14 8h4l3 3v5a1 1 0 01-1 1h-1"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 18h6"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></symbol>
-    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M8 8h8M8 12h8"/></symbol>
-    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9L17 22l-5-3-5 3 1.5-9.1"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
-    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
-    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="ic-fill"/></symbol>
-    <symbol id="i-yt" viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 00-2-2C18.9 4 12 4 12 4s-6.9 0-8.6.4a2.8 2.8 0 00-1.9 2A29 29 0 001 11.8a29 29 0 00.5 5.3 2.8 2.8 0 001.9 2c1.7.4 8.6.4 8.6.4s6.9 0 8.6-.4a2.8 2.8 0 002-2 29 29 0 00.4-5.3 29 29 0 00-.5-5.4z"/><path d="M9.8 15l5.7-3.3-5.7-3.2z" class="ic-fill"/></symbol>
-  </defs>
-</svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24">
+        <path d="M6 9l6 6 6-6" />
+      </symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6" />
+      </symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24">
+        <path d="M9 18l6-6-6-6" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.3-4.3" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </symbol>
+      <symbol id="i-bag" viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+        <path d="M3 6h18" />
+        <path d="M16 10a4 4 0 01-8 0" />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z" />
+      </symbol>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M20 6L9 17l-5-5" />
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24">
+        <path d="M3 2v6h6" />
+        <path d="M21 12A9 9 0 006 5.3L3 8" />
+        <path d="M21 22v-6h-6" />
+        <path d="M3 12a9 9 0 0015 6.7l3-2.7" />
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.2L7 14.2l-5-4.9 6.9-1z" />
+      </symbol>
+      <symbol id="i-package" viewBox="0 0 24 24">
+        <path d="M16.5 9.4l-9-5.2" />
+        <path
+          d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+        <path d="M3.3 7l8.7 5 8.7-5" />
+        <path d="M12 22V12" />
+      </symbol>
+      <symbol id="i-coins" viewBox="0 0 24 24">
+        <circle cx="8" cy="8" r="6" />
+        <path d="M18.1 10.4A6 6 0 1110.3 18" />
+        <path d="M7 6h1v4" />
+        <path d="M16.7 13.9l.7.7-2.8 2.8" />
+      </symbol>
+      <symbol id="i-building" viewBox="0 0 24 24">
+        <path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18" />
+        <path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2" />
+        <path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2" />
+        <path d="M10 6h4M10 10h4M10 14h4M10 18h4" />
+      </symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24">
+        <path d="M6 8a6 6 0 0112 0c0 7 3 9 3 9H3s3-2 3-9" />
+        <path d="M10.3 21a1.9 1.9 0 003.4 0" />
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24">
+        <rect x="3" y="11" width="18" height="11" rx="2" />
+        <path d="M7 11V7a5 5 0 0110 0v4" />
+      </symbol>
+      <symbol id="i-power" viewBox="0 0 24 24">
+        <path d="M18.4 6.6a9 9 0 11-12.8 0" />
+        <path d="M12 2v10" />
+      </symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24">
+        <path d="M14 16V5a1 1 0 00-1-1H2a1 1 0 00-1 1v11a1 1 0 001 1h1" />
+        <path d="M14 8h4l3 3v5a1 1 0 01-1 1h-1" />
+        <circle cx="6" cy="18" r="2" />
+        <circle cx="18" cy="18" r="2" />
+        <path d="M8 18h6" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z" />
+      </symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24">
+        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
+        <path d="M8 8h8M8 12h8" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="6" />
+        <path d="M15.5 12.9L17 22l-5-3-5 3 1.5-9.1" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24">
+        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="M4 4l16 16M20 4L4 20" />
+      </symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" class="ic-fill" />
+      </symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24">
+        <path
+          d="M22.5 6.4a2.8 2.8 0 00-2-2C18.9 4 12 4 12 4s-6.9 0-8.6.4a2.8 2.8 0 00-1.9 2A29 29 0 001 11.8a29 29 0 00.5 5.3 2.8 2.8 0 001.9 2c1.7.4 8.6.4 8.6.4s6.9 0 8.6-.4a2.8 2.8 0 002-2 29 29 0 00.4-5.3 29 29 0 00-.5-5.4z" />
+        <path d="M9.8 15l5.7-3.3-5.7-3.2z" class="ic-fill" />
+      </symbol>
+    </defs>
+  </svg>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-<symbol id="i-gift" viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></symbol>
-<symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-<symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a1.9 1.9 0 01-2.7 0L3 13V3h10l7.6 7.6a1.9 1.9 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.3" class="ic-fill"/></symbol>
-<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
-<symbol id="i-shield-tick" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
-</defs></svg>
-<!-- ============ TOP UTILITY BAR ============ -->
-<div class="topbar">
-  <div class="wrap">
-    <div class="topbar__group">
-      <span class="topbar__lang">English</span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>920012345</span><svg class="ic ic-13"><use href="#i-phone"/></svg></span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>تتبع طلبك</span><svg class="ic ic-13"><use href="#i-truck"/></svg></span>
-    </div>
-    <div class="topbar__group">
-      <span class="topbar__item"><span>الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣</span><svg class="ic ic-13"><use href="#i-receipt"/></svg></span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>معروف الذهبي رقم ٢٩٨٤٣</span><svg class="ic ic-13"><use href="#i-award"/></svg></span>
-      <span class="topbar__sep">|</span>
-      <span class="topbar__item"><span>متجر سعودي رسمي موثق</span><svg class="ic ic-13"><use href="#i-shield"/></svg></span>
-    </div>
-  </div>
-</div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24">
+        <path d="M20 12v10H4V12" />
+        <path d="M2 7h20v5H2z" />
+        <path d="M12 22V7" />
+        <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
+        <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
+      </symbol>
+      <symbol id="i-card" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <path d="M2 10h20" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24">
+        <path d="M20.6 13.4l-7.2 7.2a1.9 1.9 0 01-2.7 0L3 13V3h10l7.6 7.6a1.9 1.9 0 010 2.8z" />
+        <circle cx="7.5" cy="7.5" r="1.3" class="ic-fill" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </symbol>
+      <symbol id="i-shield-tick" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </symbol>
+    </defs>
+  </svg>
+  <!-- ============================ HEADER ============================ -->
+  <header>
 
-<!-- ============ MAIN NAVBAR ============ -->
-<div class="navbar">
-  <div class="wrap">
-    <a class="brand" href="#">
-      <span class="brand__name">بازار السعودية</span>
-      <span class="brand__sub">SAUDI BAZAAR</span>
-    </a>
-
-    <div class="loc">
-      <svg class="ic"><use href="#i-pin"/></svg>
-      <span class="loc__txt">
-        <span class="loc__label">التوصيل إلى</span>
-        <span class="loc__value">الرياض، المملكة</span>
-      </span>
-      <svg class="ic ic-16"><use href="#i-chevron-down"/></svg>
-    </div>
-
-    <div class="search">
-      <div class="search__box">
-        <div class="search__cats">
-          <svg class="ic ic-16"><use href="#i-chevron-down"/></svg>
-          <span>كل الأقسام</span>
+    <!-- Tier 1: top bar -->
+    <div class="topbar">
+      <div class="container">
+        <div class="topbar__group">
+          <button class="topbar__lang">
+            English
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" />
+            </svg>
+          </button>
+          <span class="divider"></span>
+          <span class="topbar__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            920012345
+          </span>
+          <span class="divider"></span>
+          <a class="topbar__item" href="order-tracking.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16.5 9.4 7.5 4.21" />
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+            تتبع طلبك
+          </a>
         </div>
-        <div class="search__input"><span>ابحث عن المنتجات والماركات...</span></div>
-        <button class="search__btn">
-          <span>بحث</span>
-          <svg class="ic"><use href="#i-search"/></svg>
-        </button>
+
+        <div class="topbar__group">
+          <span class="topbar__item">
+            الرقم الضريبي: 310489274700003
+          </span>
+          <span class="divider"></span>
+          <span class="topbar__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            متجر سعودي رسمي موثق
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="navcluster">
-      <a class="nc-login" href="#">
-        <span class="nc-login__txt">
-          <span class="nc-login__hi">مرحباً</span>
-          <span class="nc-login__act">تسجيل الدخول</span>
-        </span>
-        <span class="nc-login__ava"><svg class="ic"><use href="#i-user"/></svg></span>
-      </a>
-      <a class="nc-fav" href="#">
-        <svg class="ic"><use href="#i-heart"/></svg>
-        <span>المفضلة</span>
-      </a>
-      <a class="nc-cart" href="#">
-        <span class="nc-cart__txt">
-          <span class="nc-cart__label">سلة التسوق</span>
-          <span class="nc-cart__price">٣٤٩ ر.س</span>
-        </span>
-        <svg class="ic"><use href="#i-bag"/></svg>
-        <span class="nc-cart__badge">3</span>
-      </a>
+    <!-- Tier 2: main navbar -->
+    <div class="navbar">
+      <div class="container">
+        <a class="logo" href="../index.html">
+          <div class="logo__title">بازار السعودية</div>
+          <div class="logo__subtitle">SAUDI BAZAAR</div>
+        </a>
+
+        <div class="search">
+          <button class="search__categories" type="button">
+            كل الأقسام
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="search__input-wrapper">
+            <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
+            <button class="search__clear" aria-label="مسح البحث" style="display: none;" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m15 9-6 6" />
+                <path d="m9 9 6 6" />
+              </svg>
+            </button>
+          </div>
+          <button class="search__btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <span>بحث</span>
+          </button>
+        </div>
+
+        <div class="account">
+          <a class="login" href="login.html">
+            <span class="login__avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </span>
+            <span class="login__text">
+              <div class="login__hi">مرحباً</div>
+              <div class="login__cta">تسجيل الدخول</div>
+            </span>
+          </a>
+
+          <a class="fav" href="account-favorites.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <span>المفضلة</span>
+          </a>
+
+          <a class="cart" href="cart.html">
+            <span class="cart__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              <span class="cart__badge">3</span>
+            </span>
+            <span class="cart__text">
+              <div class="cart__label">سلة التسوق</div>
+              <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" />
+              </div>
+            </span>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- ============ BOTTOM NAV ============ -->
-<div class="botnav">
-  <div class="wrap">
-    <button class="botnav__all">
-      <svg class="ic ic-16"><use href="#i-menu"/></svg>
-      <span>جميع الأقسام</span>
-      <svg class="ic ic-16"><use href="#i-chevron-down"/></svg>
-    </button>
-  </div>
-</div>
+    <!-- Tier 3: bottom bar -->
+    <div class="subnav">
+      <div class="container">
+        <a href="category.html" class="subnav__all">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          جميع الأقسام
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </a>
+        <nav class="subnav__links">
+          <a href="deals.html" class="subnav__link special">
+            <span class="pulse-dot"></span>
+            عروض اليوم
+          </a>
+          <a href="category.html" class="subnav__link">الأكثر طلباً</a>
+          <a href="seller-store.html" class="subnav__link">الماركات</a>
+          <a href="contact-us.html" class="subnav__link">الدعم</a>
+        </nav>
+      </div>
+    </div>
 
+  </header>
 
-<div class="wrap">
   <nav class="crumb">
-    <a class="crumb__home" href="#">الرئيسية</a>
-    <svg class="ic ic-12"><use href="#i-chevron-left"/></svg>
-    <span class="crumb__cur">التنبيهات</span>
+    <div class="container">
+      <a class="crumb__home" href="../index.html">الرئيسية</a>
+      <span class="crumb__sep">/</span>
+      <a class="crumb__item" href="account-orders.html">حسابي</a>
+      <span class="crumb__sep">/</span>
+      <span class="crumb__cur">التنبيهات</span>
+    </div>
   </nav>
+
   <div class="page">
-    <div class="cols">
-      <aside class="side">
-        <div class="scard">
-          <div class="prof__top">
-            <div class="prof__ava">م</div>
-            <div class="prof__idn">
-              <div class="prof__name">منذر عبد العاطي</div>
-              <div class="prof__mail">munzer3a6i@gmail.com</div>
+    <div class="wrap">
+      <div class="cols">
+        <aside class="side">
+          <div class="scard">
+            <div class="prof__top">
+              <div class="prof__ava">م</div>
+              <div class="prof__idn">
+                <div class="prof__name">منذر عبد العاطي</div>
+                <div class="prof__mail">munzer3a6i@gmail.com</div>
+              </div>
+            </div>
+            <div class="prof__comp">
+              <div class="prof__lblrow">
+                <span class="prof__pct">٤٥٪</span>
+                <span class="prof__lbl">إكتمال الملف</span>
+              </div>
+              <div class="prof__bar"><i></i></div>
+              <div class="prof__hint">أضف رقم جوالك وتاريخ ميلادك لإكمال ملفك. <b>أكمل الآن</b></div>
             </div>
           </div>
-          <div class="prof__comp">
-            <div class="prof__lblrow"><span class="prof__lbl">إكتمال الملف</span><span class="prof__pct">٤٥%</span></div>
-            <div class="prof__bar"><i></i></div>
-            <p class="prof__hint">أضف رقم جوالك وتاريخ ميلادك لإكمال ملفك. <b>أكمل الآن</b></p>
+          <div class="scard">
+            <div class="menu__title">التسوق</div>
+            <div class="menu__list">
+              <a class="mitem" href="account-orders.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-package" />
+                  </svg>
+                  <span class="mitem__label">الطلبات</span>
+                </span>
+                <span class="mitem__side">
+                  <span class="mitem__num is-green">٢</span>
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-returns.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-refresh" />
+                  </svg>
+                  <span class="mitem__label">المرتجعات</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-bazar-credit.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-coins" />
+                  </svg>
+                  <span class="mitem__label">رصيد بازار</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-favorites.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-heart" />
+                  </svg>
+                  <span class="mitem__label">المفضلة</span>
+                </span>
+                <span class="mitem__side">
+                  <span class="mitem__num">٢</span>
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="scard">
-          <div class="menu__title">التسوق</div>
-          <div class="menu__list">
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-package"/></svg><span class="mitem__label">الطلبات</span></div>
-              <div class="mitem__side"><span class="mitem__num">٢</span><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-refresh"/></svg><span class="mitem__label">المرتجعات</span></div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-coins"/></svg><span class="mitem__label">رصيد بازار</span></div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-heart"/></svg><span class="mitem__label">المفضلة</span></div>
-              <div class="mitem__side"><span class="mitem__num">٢</span><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
+          <div class="scard">
+            <div class="menu__title">حسابي</div>
+            <div class="menu__list">
+              <a class="mitem" href="account-personal-details.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-user" />
+                  </svg>
+                  <span class="mitem__label">الملف الشخصي</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-addresses.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-pin" />
+                  </svg>
+                  <span class="mitem__label">العناوين</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-payment-methods.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-card" />
+                  </svg>
+                  <span class="mitem__label">وسائل الدفع</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-followed-stores.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-building" />
+                  </svg>
+                  <span class="mitem__label">المتاجر المتابعة</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="scard">
-          <div class="menu__title">حسابي</div>
-          <div class="menu__list">
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-user"/></svg><span class="mitem__label">الملف الشخصي</span></div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-pin"/></svg><span class="mitem__label">العناوين</span></div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-building"/></svg><span class="mitem__label">المتاجر المتابعة</span></div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
+          <div class="scard">
+            <div class="menu__title">اخرى</div>
+            <div class="menu__list">
+              <a class="mitem is-active" href="account-notifications.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-bell" />
+                  </svg>
+                  <span class="mitem__label">التنبيهات</span>
+                </span>
+                <span class="mitem__side">
+                  <span class="mitem__num is-green">٢</span>
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+              <a class="mitem" href="account-security.html">
+                <span class="mitem__main">
+                  <svg class="ic">
+                    <use href="#i-shield" />
+                  </svg>
+                  <span class="mitem__label">الأمان</span>
+                </span>
+                <span class="mitem__side">
+
+                  <svg class="ic mitem__chev" style="width:16px;height:16px;">
+                    <use href="#i-chevron-left" />
+                  </svg>
+                </span>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="scard">
-          <div class="menu__title">اخرى</div>
-          <div class="menu__list">
-            <a class="mitem is-active" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-bell"/></svg><span class="mitem__label">التنبيهات</span></div>
-              <div class="mitem__side"><span class="mitem__num is-green">٢</span><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main"><svg class="ic"><use href="#i-lock"/></svg><span class="mitem__label">الأمان</span></div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
-            </a>
+          <a href="login.html" class="logout">
+            <svg class="ic">
+              <use href="#i-power" />
+            </svg>
+            <span>تسجيل الخروج</span>
+          </a>
+        </aside>
+        <main class="main">
+
+          <div class="sechead">
+            <h1 class="ptitle">التنبيهات</h1><button class="sec-action"><span>تحديد الكل كمقروء</span><svg
+                class="ic ic-16">
+                <use href="#i-check" />
+              </svg></button>
           </div>
-        </div>
-        <div class="scard"><a class="logout" href="#"><span>تسجيل الخروج</span><svg class="ic"><use href="#i-power"/></svg></a></div>
-      </aside>
-      <main class="main">
-        
-        <div class="sechead"><h1 class="ptitle">التنبيهات</h1><button class="sec-action"><span>تحديد الكل كمقروء</span><svg class="ic ic-16"><use href="#i-check"/></svg></button></div>
-        <div class="lcard">
-          <div class="lrow">
-          <div class="lrow__time"><span>قبل ساعتين</span><i class="notif__dot"></i></div>
-          <div class="lrow__lead"><div class="lrow__txt"><div class="lrow__title">طلبك BZ-1042-88 في الطريق إليك</div><div class="lrow__desc">الشحنة خرجت من المستودع وستصل خلال ٢–٣ أيام عمل.</div></div><div class="icon-circle"><svg class="ic"><use href="#i-truck"/></svg></div></div>
-        </div>
-          <div class="lrow">
-          <div class="lrow__time"><span>قبل ساعتين</span><i class="notif__dot"></i></div>
-          <div class="lrow__lead"><div class="lrow__txt"><div class="lrow__title">توفّر الشحن إلى مدينتك</div><div class="lrow__desc">منتج كنت تنتظره أصبح متاحاً للتوصيل إلى مدينتك المحددة.</div></div><div class="icon-circle"><svg class="ic"><use href="#i-bell"/></svg></div></div>
-        </div>
-          <div class="lrow">
-          <div class="lrow__time"><span>قبل ساعتين</span><i class="notif__dot"></i></div>
-          <div class="lrow__lead"><div class="lrow__txt"><div class="lrow__title">انخفض سعر منتج في مفضلتك</div><div class="lrow__desc">سماعات أورورا برو لاسلكية الآن بـ ١٩٩ ريال بدلاً من ٢٤٩.</div></div><div class="icon-circle"><svg class="ic"><use href="#i-tag"/></svg></div></div>
-        </div>
-        </div>
-      </main>
+          <div class="lcard">
+            <div class="lrow">
+              <div class="lrow__lead">
+                <div class="lrow__txt">
+                  <div class="lrow__title">طلبك BZ-1042-88 في الطريق إليك</div>
+                  <div class="lrow__desc">الشحنة خرجت من المستودع وستصل خلال ٢–٣ أيام عمل.</div>
+                </div>
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-truck" />
+                  </svg></div>
+              </div>
+
+              <div class="lrow__time"><span>قبل ساعتين</span><i class="notif__dot"></i></div>
+            </div>
+            <div class="lrow">
+              <div class="lrow__time"><span>قبل ساعتين</span><i class="notif__dot"></i></div>
+              <div class="lrow__lead">
+                <div class="lrow__txt">
+                  <div class="lrow__title">توفّر الشحن إلى مدينتك</div>
+                  <div class="lrow__desc">منتج كنت تنتظره أصبح متاحاً للتوصيل إلى مدينتك المحددة.</div>
+                </div>
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-bell" />
+                  </svg></div>
+              </div>
+            </div>
+            <div class="lrow">
+              <div class="lrow__time"><span>قبل ساعتين</span><i class="notif__dot"></i></div>
+              <div class="lrow__lead">
+                <div class="lrow__txt">
+                  <div class="lrow__title">انخفض سعر منتج في مفضلتك</div>
+                  <div class="lrow__desc">سماعات أورورا برو لاسلكية الآن بـ ١٩٩ ريال بدلاً من ٢٤٩.</div>
+                </div>
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-tag" />
+                  </svg></div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   </div>
-</div>
-<!-- ============================= FOOTER =========================== -->
-    <footer class="site-footer">
-      <div class="site-footer__inner">
+  <!-- ============================= FOOTER =========================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
 
-        <div class="footer-grid">
+      <div class="footer-grid">
 
-          <!-- Brand -->
-          <div class="footer-brand">
-            <div class="footer-brand__logo">بازار السعودية</div>
-            <div class="footer-brand__sub">SAUDI BAZAAR</div>
-            <p class="footer-brand__desc">المنصة السعودية الرائدة للتسوق الإلكتروني، نوفر لك أفضل المنتجات العالمية
-              والمحلية بجودة عالية وأسعار منافسة.</p>
-          </div>
-
-          <!-- Quick links -->
-          <div>
-            <h3 class="footer-col__title">روابط سريعة</h3>
-            <ul class="footer-links">
-              <li><a href="#">عن الشركة</a></li>
-              <li><a href="#">اتصل بنا</a></li>
-              <li><a href="#">الأسئلة الشائعة</a></li>
-              <li><a href="#">المدونة</a></li>
-            </ul>
-          </div>
-
-          <!-- Policies -->
-          <div>
-            <h3 class="footer-col__title">السياسات</h3>
-            <ul class="footer-links">
-              <li><a href="#">الشروط والأحكام</a></li>
-              <li><a href="#">سياسة الخصوصية</a></li>
-              <li><a href="#">سياسة الاسترجاع</a></li>
-              <li><a href="#">سياسة الشحن</a></li>
-            </ul>
-          </div>
-
-          <!-- Certificates & Payment -->
-          <div class="footer-pay">
-            <h3 class="footer-col__title">التوثيق والدفع</h3>
-            <div class="footer-pay__methods">
-              <span class="pay-badge">mada</span>
-              <span class="pay-badge">VISA</span>
-              <span class="pay-badge">Mastercard</span>
-              <span class="pay-badge">Apple Pay</span>
-              <span class="pay-badge">تمارا</span>
-              <span class="pay-badge">تابي</span>
-            </div>
-            <p class="footer-pay__reg">الرقم الضريبي: 300123456700003</p>
-            <p class="footer-pay__reg">السجل التجاري: 1010123456</p>
-            <div class="footer-pay__certs">
-              <span class="cert-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-                <span>متجر موثّق</span>
-              </span>
-              <span class="cert-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="6" />
-                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-                </svg>
-                <span>معروف</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Newsletter -->
-          <div class="footer-news">
-            <div class="footer-news__title">كن أول من يعرف بالعروض</div>
-            <p class="footer-news__desc">اشترك في نشرتنا البريدية لتصلك أقوى كوبونات التوفير الحصرية فور صدورها.</p>
-            <div class="footer-news__form">
-              <input class="footer-news__input" type="email" placeholder="أدخل بريدك الإلكتروني" />
-              <button class="footer-news__btn">اشتراك</button>
-            </div>
-            <div class="footer-social">
-              <span class="footer-social__label">تابعنا على شبكاتنا:</span>
-              <span class="footer-social__icons">
-                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                  </svg></a>
-                <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                  </svg></a>
-                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg></a>
-                <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M22 8.5a3 3 0 0 0-2-2.1C18.2 6 12 6 12 6s-6.2 0-8 .4A3 3 0 0 0 2 8.5 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.5a3 3 0 0 0 2 2.1C5.8 18 12 18 12 18s6.2 0 8-.4a3 3 0 0 0 2-2.1 31 31 0 0 0 .4-3.5A31 31 0 0 0 22 8.5z" />
-                    <polygon points="10 9.5 15 12 10 14.5" fill="currentColor" stroke="none" />
-                  </svg></a>
-              </span>
-            </div>
-          </div>
-
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-brand__logo">بازار السعودية</div>
+          <div class="footer-brand__sub">SAUDI BAZAAR</div>
+          <p class="footer-brand__desc">المنصة السعودية الرائدة للتسوق الإلكتروني، نوفر لك أفضل المنتجات العالمية
+            والمحلية بجودة عالية وأسعار منافسة.</p>
         </div>
 
-        <div class="footer-bottom">
-          <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
-          <p>© 2024 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+        <!-- Quick links -->
+        <div>
+          <h3 class="footer-col__title">روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="#">عن الشركة</a></li>
+            <li><a href="#">اتصل بنا</a></li>
+            <li><a href="#">الأسئلة الشائعة</a></li>
+            <li><a href="#">المدونة</a></li>
+          </ul>
+        </div>
+
+        <!-- Policies -->
+        <div>
+          <h3 class="footer-col__title">السياسات</h3>
+          <ul class="footer-links">
+            <li><a href="#">الشروط والأحكام</a></li>
+            <li><a href="#">سياسة الخصوصية</a></li>
+            <li><a href="#">سياسة الاسترجاع</a></li>
+            <li><a href="#">سياسة الشحن</a></li>
+          </ul>
+        </div>
+
+        <!-- Certificates & Payment -->
+        <div class="footer-pay">
+          <h3 class="footer-col__title">التوثيق والدفع</h3>
+          <div class="footer-pay__methods">
+            <span class="pay-badge">mada</span>
+            <span class="pay-badge">VISA</span>
+            <span class="pay-badge">Mastercard</span>
+            <span class="pay-badge">Apple Pay</span>
+            <span class="pay-badge">تمارا</span>
+            <span class="pay-badge">تابي</span>
+          </div>
+          <p class="footer-pay__reg">الرقم الضريبي: 300123456700003</p>
+          <p class="footer-pay__reg">السجل التجاري: 1010123456</p>
+          <div class="footer-pay__certs">
+            <span class="cert-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <span>متجر موثّق</span>
+            </span>
+            <span class="cert-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+              <span>معروف</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-news">
+          <div class="footer-news__title">كن أول من يعرف بالعروض</div>
+          <p class="footer-news__desc">اشترك في نشرتنا البريدية لتصلك أقوى كوبونات التوفير الحصرية فور صدورها.</p>
+          <div class="footer-news__form">
+            <input class="footer-news__input" type="email" placeholder="أدخل بريدك الإلكتروني" />
+            <button class="footer-news__btn">اشتراك</button>
+          </div>
+          <div class="footer-social">
+            <span class="footer-social__label">تابعنا على شبكاتنا:</span>
+            <span class="footer-social__icons">
+              <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg></a>
+              <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                </svg></a>
+              <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></a>
+              <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 8.5a3 3 0 0 0-2-2.1C18.2 6 12 6 12 6s-6.2 0-8 .4A3 3 0 0 0 2 8.5 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.5a3 3 0 0 0 2 2.1C5.8 18 12 18 12 18s6.2 0 8-.4a3 3 0 0 0 2-2.1 31 31 0 0 0 .4-3.5A31 31 0 0 0 22 8.5z" />
+                  <polygon points="10 9.5 15 12 10 14.5" fill="currentColor" stroke="none" />
+                </svg></a>
+            </span>
+          </div>
         </div>
 
       </div>
-    </footer>
+
+      <div class="footer-bottom">
+        <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
+        <p>© 2024 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+      </div>
+
+    </div>
+  </footer>
 </body>
+
 </html>

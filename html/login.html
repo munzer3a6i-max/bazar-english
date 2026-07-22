@@ -8,14 +8,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+<body data-default-auth="login">
 <div class="page">
     <!-- ============================ HEADER ============================ -->
     <header class="auth-header">
       <div class="container">
         <div class="auth-header__group">
+          <a class="auth-header__item auth-header__home" href="../index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            الرئيسية
+          </a>
+          <span class="divider"></span>
           <span class="auth-header__item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -41,7 +49,7 @@
           </span>
         </div>
         <div class="auth-header__group">
-          <a class="auth-header__item" href="#">
+          <a class="auth-header__item" href="order-tracking.html">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16.5 9.4 7.5 4.21" />
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
@@ -70,167 +78,351 @@
     <div class="auth-form-panel">
       <div class="auth-form-wrap">
 
-        <!-- help + tabs -->
+        <!-- help + animated tabs -->
         <div class="auth-help">
           <p class="auth-help__text">تحتاج مساعدة؟ <strong>920000000</strong></p>
-          <div class="auth-tabs">
-            <a class="auth-tab active" href="login.html">تسجيل الدخول</a>
-            <a class="auth-tab" href="signup.html">حساب جديد</a>
+          <div class="auth-tabs" id="authTabs" data-active="login">
+            <div class="auth-tab-pill"></div>
+            <button type="button" class="auth-tab active" id="tabBtnLogin" onclick="switchAuthTab('login')">تسجيل الدخول</button>
+            <button type="button" class="auth-tab " id="tabBtnSignup" onclick="switchAuthTab('signup')">حساب جديد</button>
           </div>
         </div>
 
-        <div class="auth-body">
+        <!-- Animated viewport -->
+        <div class="auth-slider-viewport" id="authViewport">
+          <div class="auth-slider-track" id="authTrack" data-active="login">
+            
+            <!-- ================= LOGIN PANE ================= -->
+            <div class="auth-slider-pane active" id="paneLogin">
+              <div class="auth-body">
 
-          <!-- ============= OTP MODE (default) ============= -->
-          <div class="auth-mode" id="mode-otp">
-            <div class="auth-head">
-              <h1 class="auth-head__title">تسجيل الدخول</h1>
-              <p class="auth-head__sub">أدخل رقم جوالك وسنرسل لك رمز تحقق للدخول الفوري.</p>
-            </div>
+                <!-- OTP MODE (default) -->
+                <div class="auth-mode" id="mode-otp">
+                  <div class="auth-head">
+                    <h1 class="auth-head__title">تسجيل الدخول</h1>
+                    <p class="auth-head__sub">أدخل رقم جوالك وسنرسل لك رمز تحقق للدخول الفوري.</p>
+                  </div>
 
-            <div class="auth-social">
-              <button class="auth-social__btn" aria-label="المتابعة عبر Apple">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.416 2.06-1.246 2.87-.86.87-1.89 1.37-3.02 1.28-.11-1.09.42-2.18 1.22-2.98.85-.87 2.11-1.44 3.05-1.17ZM20.6 17.02c-.44 1.01-.97 1.98-1.7 2.86-1 1.22-2.05 2.44-3.6 2.47-1.51.03-2-.9-3.72-.9-1.72 0-2.26.87-3.7.93-1.5.06-2.65-1.3-3.66-2.52C2.28 17.5.7 13.6 2.34 10.28 3.16 8.63 4.7 7.6 6.38 7.57c1.46-.03 2.83.98 3.72.98.88 0 2.55-1.21 4.3-1.03.73.03 2.79.3 4.11 2.22-.11.07-2.45 1.43-2.42 4.27.03 3.4 2.98 4.54 3.01 4.55-.03.08-.47 1.62-1.5 3.46Z"/></svg>
-              </button>
-              <button class="auth-social__btn" aria-label="المتابعة عبر Google">
-                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38Z"/></svg>
-              </button>
-            </div>
+                  <div class="auth-social">
+                    <button type="button" class="auth-social__btn" aria-label="المتابعة عبر Apple">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.416 2.06-1.246 2.87-.86.87-1.89 1.37-3.02 1.28-.11-1.09.42-2.18 1.22-2.98.85-.87 2.11-1.44 3.05-1.17ZM20.6 17.02c-.44 1.01-.97 1.98-1.7 2.86-1 1.22-2.05 2.44-3.6 2.47-1.51.03-2-.9-3.72-.9-1.72 0-2.26.87-3.7.93-1.5.06-2.65-1.3-3.66-2.52C2.28 17.5.7 13.6 2.34 10.28 3.16 8.63 4.7 7.6 6.38 7.57c1.46-.03 2.83.98 3.72.98.88 0 2.55-1.21 4.3-1.03.73.03 2.79.3 4.11 2.22-.11.07-2.45 1.43-2.42 4.27.03 3.4 2.98 4.54 3.01 4.55-.03.08-.47 1.62-1.5 3.46Z"/></svg>
+                    </button>
+                    <button type="button" class="auth-social__btn" aria-label="المتابعة عبر Google">
+                      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38Z"/></svg>
+                    </button>
+                  </div>
 
-            <div class="auth-field">
-              <label class="auth-field__label">رقم الجوال</label>
-              <div class="auth-input">
-                <div class="phone-code">
-                  <span class="phone-code__flag">
-                    <svg viewBox="0 0 30 21"><rect width="30" height="21" fill="#006c35"/><text x="15" y="13" font-size="7" fill="#fff" text-anchor="middle" font-family="sans-serif">KSA</text></svg>
-                  </span>
-                  <span class="phone-code__text">+966</span>
+                  <div class="auth-field">
+                    <label class="auth-field__label" for="login-phone">رقم الجوال</label>
+                    <div class="auth-input">
+                      <div class="phone-code">
+                        <div class="phone-code__flag">
+                          <svg viewBox="0 0 30 21"><rect width="30" height="21" fill="#006C35"/><path d="M5 4h20v13H5z" fill="#006C35"/><text x="15" y="14" font-size="8" fill="#fff" text-anchor="middle" font-family="sans-serif">🇸🇦</text></svg>
+                        </div>
+                        <span class="phone-code__text">+966</span>
+                      </div>
+                      <div class="phone-vdiv"></div>
+                      <input type="tel" id="login-phone" placeholder="5X XXX XXXX" dir="ltr"/>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn-auth-submit" onclick="submitLoginOTP()">إرسال رمز التحقق</button>
+
+                  <p class="auth-switch-note">
+                    تفضل الدخول بالطريقة التقليدية؟ <span class="link" onclick="switchMode('password')">الدخول بكلمة المرور</span>
+                  </p>
                 </div>
-                <span class="phone-vdiv"></span>
-                <input type="tel" placeholder="052345678" dir="ltr" style="text-align:right"/>
+
+                <!-- PASSWORD MODE -->
+                <div class="auth-mode" id="mode-password" hidden>
+                  <div class="auth-head">
+                    <h1 class="auth-head__title">تسجيل الدخول بكلمة المرور</h1>
+                    <p class="auth-head__sub">أدخل بريدك الإلكتروني أو رقم جوالك مع كلمة المرور.</p>
+                  </div>
+
+                  <div class="auth-field">
+                    <label class="auth-field__label" for="login-identifier">البريد الإلكتروني أو رقم الجوال</label>
+                    <div class="auth-input">
+                      <input type="text" id="login-identifier" placeholder="example@mail.com أو 05xxxxxxxx"/>
+                    </div>
+                  </div>
+
+                  <div class="auth-field">
+                    <label class="auth-field__label" for="login-pass">كلمة المرور</label>
+                    <div class="auth-input">
+                      <span class="auth-input__icon auth-input__icon--btn" onclick="togglePassVisibility('login-pass', this)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      </span>
+                      <input type="password" id="login-pass" placeholder="••••••••"/>
+                    </div>
+                  </div>
+
+                  <div class="auth-row-between">
+                    <a class="auth-link" href="#">نسيت كلمة المرور؟</a>
+                    <label class="remember-me">
+                      <span class="remember-me__label">تذكرني</span>
+                      <span class="remember-check">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      </span>
+                    </label>
+                  </div>
+
+                  <button type="button" class="btn-auth-submit" onclick="submitLoginPassword()">تسجيل الدخول</button>
+
+                  <p class="auth-switch-note">
+                    تفضل الدخول السريع؟ <span class="link" onclick="switchMode('otp')">الدخول برمز التحقق (OTP)</span>
+                  </p>
+                </div>
+
               </div>
-              <button class="btn-auth-submit" style="margin-top:8px">إرسال رمز الدخول</button>
             </div>
 
-            <p class="auth-switch-note">تفضّل الدخول بكلمة المرور؟ <span class="link" onclick="switchMode('password')">الدخول بكلمة المرور</span></p>
+            <!-- ================= SIGNUP PANE ================= -->
+            <div class="auth-slider-pane " id="paneSignup">
+              <div class="auth-body">
+                <div class="auth-head">
+                  <h1 class="auth-head__title">أنشئ حسابك في ثوانٍ</h1>
+                  <p class="auth-head__sub">أدخل رقم جوالك وسنرسل لك رمز تحقق لتفعيل حسابك فوراً.</p>
+                </div>
+
+                <div class="auth-field">
+                  <label class="auth-field__label" for="signup-name">الاسم الكامل</label>
+                  <div class="auth-input">
+                    <input type="text" id="signup-name" placeholder="أدخل اسمك الثلاثي"/>
+                  </div>
+                </div>
+
+                <div class="auth-field">
+                  <label class="auth-field__label" for="signup-phone">رقم الجوال</label>
+                  <div class="auth-input">
+                    <div class="phone-code">
+                      <div class="phone-code__flag">
+                        <svg viewBox="0 0 30 21"><rect width="30" height="21" fill="#006C35"/><path d="M5 4h20v13H5z" fill="#006C35"/><text x="15" y="14" font-size="8" fill="#fff" text-anchor="middle" font-family="sans-serif">🇸🇦</text></svg>
+                      </div>
+                      <span class="phone-code__text">+966</span>
+                    </div>
+                    <div class="phone-vdiv"></div>
+                    <input type="tel" id="signup-phone" placeholder="5X XXX XXXX" dir="ltr"/>
+                  </div>
+                </div>
+
+                <!-- Optional Email Accordion -->
+                <div>
+                  <button type="button" class="email-toggle" id="emailToggleBtn" onclick="toggleEmail()">
+                    <span class="email-toggle__icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </span>
+                    <span>إضافة البريد الإلكتروني (اختياري)</span>
+                  </button>
+                  <div class="email-field-wrap" id="emailFieldWrap">
+                    <div class="email-field-inner">
+                      <div class="email-field-pad">
+                        <div class="auth-field">
+                          <div class="auth-input">
+                            <input type="email" id="signup-email" placeholder="example@domain.com"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn-auth-submit" onclick="submitSignup()">إنشاء حساب جديد</button>
+
+                <div class="info-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <p>إنشاء الحساب مجاني بالكامل ولا يتطلب أي رسوم أو بطاقات ائتمانية.</p>
+                </div>
+
+                <p class="auth-terms">
+                  بإنشائك للحساب أنت توافق على <a class="link" href="#">شروط الاستخدام</a> و <a class="link" href="#">سياسة الخصوصية</a> الخاصة ببازار السعودية.
+                </p>
+              </div>
+            </div>
+
           </div>
+        </div>
 
-          <!-- ============= PASSWORD MODE ============= -->
-          <div class="auth-mode" id="mode-password" hidden>
-            <div class="auth-head">
-              <h1 class="auth-head__title">تسجيل الدخول</h1>
-              <p class="auth-head__sub">أدخل رقم جوالك وسنرسل لك رمز تحقق للدخول الفوري.</p>
-            </div>
+      </div>
+    </div>
 
-            <div class="auth-social">
-              <button class="auth-social__btn" aria-label="المتابعة عبر Apple">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.416 2.06-1.246 2.87-.86.87-1.89 1.37-3.02 1.28-.11-1.09.42-2.18 1.22-2.98.85-.87 2.11-1.44 3.05-1.17ZM20.6 17.02c-.44 1.01-.97 1.98-1.7 2.86-1 1.22-2.05 2.44-3.6 2.47-1.51.03-2-.9-3.72-.9-1.72 0-2.26.87-3.7.93-1.5.06-2.65-1.3-3.66-2.52C2.28 17.5.7 13.6 2.34 10.28 3.16 8.63 4.7 7.6 6.38 7.57c1.46-.03 2.83.98 3.72.98.88 0 2.55-1.21 4.3-1.03.73.03 2.79.3 4.11 2.22-.11.07-2.45 1.43-2.42 4.27.03 3.4 2.98 4.54 3.01 4.55-.03.08-.47 1.62-1.5 3.46Z"/></svg>
-              </button>
-              <button class="auth-social__btn" aria-label="المتابعة عبر Google">
-                <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85Z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38Z"/></svg>
-              </button>
-            </div>
-
-            <div class="auth-field">
-              <label class="auth-field__label">رقم الجوال</label>
-              <div class="auth-input" dir="ltr">
-                <div class="phone-code">
-                  <span class="phone-code__flag">
-                    <svg viewBox="0 0 30 21"><rect width="30" height="21" fill="#006c35"/><text x="15" y="13" font-size="7" fill="#fff" text-anchor="middle" font-family="sans-serif">KSA</text></svg>
-                  </span>
-                  <span class="phone-code__text">+966</span>
-                </div>
-                <span class="phone-vdiv"></span>
-                <input type="tel" placeholder="052345678" dir="ltr" style="text-align:right"/>
-              </div>
-            </div>
-
-            <div class="auth-field">
-              <label class="auth-field__label">كلمة المرور</label>
-              <div class="auth-input">
-                <span class="auth-input__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                </span>
-                <input type="password" placeholder="********" dir="ltr" style="text-align:left"/>
-                <span class="auth-input__icon auth-input__icon--btn" onclick="togglePwd(this)" aria-label="إظهار كلمة المرور">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </span>
-              </div>
-              <div class="auth-row-between">
-                <a class="auth-link" href="#">نسيت كلمة المرور؟</a>
-                <div class="remember-me">
-                  <span class="remember-me__label">تذكرني</span>
-                  <span class="remember-check" onclick="this.classList.toggle('off')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <button class="btn-auth-submit">تسجيل الدخول</button>
-
-            <p class="auth-switch-note">تفضّل الدخول السريع؟ <span class="link" onclick="switchMode('otp')">الدخول بالكود</span></p>
-          </div>
-
-        </div><!-- /auth-body -->
-      </div><!-- /auth-form-wrap -->
-    </div><!-- /auth-form-panel -->
-
-    <!-- =====================  BRANDING PANEL (right)  ================ -->
+    <!-- =====================  BRANDING PANEL (right)  ===================== -->
     <div class="auth-brand-panel">
       <div class="auth-brand-inner">
-        <div class="auth-brand-logo">
+        <a href="../index.html" class="auth-brand-logo">
           <div class="auth-brand-logo__title">بازار السعودية</div>
           <div class="auth-brand-logo__sub">SAUDI BAZAAR</div>
-        </div>
+        </a>
 
         <div class="auth-brand-content">
           <div class="auth-brand-head">
-            <h2 class="auth-brand-head__title">اهلا بك في بازار السعودية</h2>
-            <p class="auth-brand-head__sub">سجّل دخولك أو أنشئ حسابك في أقل من دقيقة، وتابع طلباتك وعروضك المفضّلة في مكان واحد.</p>
+            <h2 class="auth-brand-head__title">تجربة تسوق فريدة وموثوقة</h2>
+            <p class="auth-brand-head__sub">انضم إلى أكثر من مليون مستخدم يستمتعون بمنتجات أصيلة، توصيل سريع، وخيارات دفع مرنة.</p>
           </div>
 
           <div class="auth-features">
             <div class="auth-feature">
-              <span class="auth-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-              <span class="auth-feature__text">
-                <span class="auth-feature__title">توصيل أسرع وتتبّع لحظي</span>
-                <span class="auth-feature__sub">عناوينك محفوظة — اطلب بنقرة واحدة</span>
-              </span>
+              <div class="auth-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="auth-feature__text">
+                <div class="auth-feature__title">منتجات موثوقة ١٠٠٪</div>
+                <div class="auth-feature__sub">ضمان ذهبي على كافة المنتجات والماركات العالمية</div>
+              </div>
             </div>
+
             <div class="auth-feature">
-              <span class="auth-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
-              <span class="auth-feature__text">
-                <span class="auth-feature__title">قوائم مفضّلة وتنبيهات الأسعار</span>
-                <span class="auth-feature__sub">لا تفوّت أي تخفيض على منتجاتك</span>
-              </span>
+              <div class="auth-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <div class="auth-feature__text">
+                <div class="auth-feature__title">شحن سريع لكافة المناطق</div>
+                <div class="auth-feature__sub">تغليف آمن وتوصيل حتى باب المنزل</div>
+              </div>
             </div>
+
             <div class="auth-feature">
-              <span class="auth-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-              <span class="auth-feature__text">
-                <span class="auth-feature__title">دفع آمن وخيارات تقسيط</span>
-                <span class="auth-feature__sub">تمارا، تابي، مدفوع وإمكان — بأمان تام</span>
-              </span>
+              <div class="auth-feature__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <div class="auth-feature__text">
+                <div class="auth-feature__title">تقسيط مريح عبر تمارا ومدفوع</div>
+                <div class="auth-feature__sub">قسم مشترياتك على ٤ دفعات بدون فوائد</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div><!-- /auth-layout -->
-</div><!-- /page -->
+  </div>
+</div>
 
 <script>
-  function switchMode(mode) {
-    document.getElementById('mode-otp').hidden = mode !== 'otp';
-    document.getElementById('mode-password').hidden = mode !== 'password';
-  }
-  function togglePwd(iconEl) {
-    var input = iconEl.closest('.auth-input').querySelector('input[type="password"], input[type="text"]');
-    if (!input) return;
-    input.type = input.type === 'password' ? 'text' : 'password';
-  }
-</script>
+  function switchAuthTab(targetTab) {
+    const tabs = document.getElementById('authTabs');
+    const track = document.getElementById('authTrack');
+    const paneLogin = document.getElementById('paneLogin');
+    const paneSignup = document.getElementById('paneSignup');
+    const tabLogin = document.getElementById('tabBtnLogin');
+    const tabSignup = document.getElementById('tabBtnSignup');
 
+    if (!tabs || !track) return;
+
+    tabs.setAttribute('data-active', targetTab);
+    track.setAttribute('data-active', targetTab);
+
+    if (targetTab === 'login') {
+      tabLogin.classList.add('active');
+      tabSignup.classList.remove('active');
+      paneLogin.classList.add('active');
+      paneSignup.classList.remove('active');
+      if (window.history.replaceState) {
+        window.history.replaceState(null, '', 'login.html');
+      }
+    } else {
+      tabSignup.classList.add('active');
+      tabLogin.classList.remove('active');
+      paneSignup.classList.add('active');
+      paneLogin.classList.remove('active');
+      if (window.history.replaceState) {
+        window.history.replaceState(null, '', 'signup.html');
+      }
+    }
+
+    updateViewportHeight(true);
+  }
+
+  function updateViewportHeight(animate) {
+    const viewport = document.getElementById('authViewport');
+    const track = document.getElementById('authTrack');
+    if (!viewport || !track) return;
+
+    const activeTab = track.getAttribute('data-active') || 'login';
+    const activePane = activeTab === 'login' ? document.getElementById('paneLogin') : document.getElementById('paneSignup');
+    if (activePane) {
+      if (!animate) {
+        viewport.style.transition = 'none';
+      }
+      const targetHeight = activePane.offsetHeight;
+      if (targetHeight > 0) {
+        viewport.style.height = targetHeight + 'px';
+      }
+      if (!animate) {
+        setTimeout(function() {
+          viewport.style.transition = '';
+        }, 50);
+      }
+    }
+  }
+
+  function switchMode(mode) {
+    const modeOtp = document.getElementById('mode-otp');
+    const modePassword = document.getElementById('mode-password');
+    if (modeOtp && modePassword) {
+      modeOtp.hidden = (mode !== 'otp');
+      modePassword.hidden = (mode !== 'password');
+      updateViewportHeight(true);
+    }
+  }
+
+  function toggleEmail() {
+    const btn = document.getElementById('emailToggleBtn');
+    const wrap = document.getElementById('emailFieldWrap');
+    if (btn && wrap) {
+      btn.classList.toggle('expanded');
+      wrap.classList.toggle('expanded');
+      setTimeout(function() {
+        updateViewportHeight(true);
+      }, 260);
+    }
+  }
+
+  function togglePassVisibility(inputId, iconElem) {
+    const input = document.getElementById(inputId);
+    if (input) {
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+    }
+  }
+
+  function submitLoginOTP() {
+    const phone = document.getElementById('login-phone').value;
+    if (!phone) { alert('الرجاء أدخل رقم الجوال'); return; }
+    alert('تم إرسال رمز التحقق إلى الرقم: ' + phone);
+  }
+
+  function submitLoginPassword() {
+    const id = document.getElementById('login-identifier').value;
+    const pass = document.getElementById('login-pass').value;
+    if (!id || !pass) { alert('الرجاء إدخال اسم المستخدم وكلمة المرور'); return; }
+    window.location.href = 'account-orders.html';
+  }
+
+  function submitSignup() {
+    const name = document.getElementById('signup-name').value;
+    const phone = document.getElementById('signup-phone').value;
+    if (!name || !phone) { alert('الرجاء إكمال البيانات المطلوبة'); return; }
+    alert('تم إنشاء حسابك بنجاح!');
+    window.location.href = 'account-orders.html';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const defaultAuth = document.body.getAttribute('data-default-auth') || 'login';
+    switchAuthTab(defaultAuth);
+    updateViewportHeight(false);
+  });
+
+  window.addEventListener('load', function() {
+    updateViewportHeight(false);
+  });
+
+  window.addEventListener('resize', function() {
+    updateViewportHeight(false);
+  });
+</script>
 </body>
 </html>

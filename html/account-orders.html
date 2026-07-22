@@ -42,32 +42,36 @@
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
     <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="ic-fill"/></symbol>
     <symbol id="i-yt" viewBox="0 0 24 24"><path d="M22.5 6.4a2.8 2.8 0 00-2-2C18.9 4 12 4 12 4s-6.9 0-8.6.4a2.8 2.8 0 00-1.9 2A29 29 0 001 11.8a29 29 0 00.5 5.3 2.8 2.8 0 001.9 2c1.7.4 8.6.4 8.6.4s6.9 0 8.6-.4a2.8 2.8 0 002-2 29 29 0 00.4-5.3 29 29 0 00-.5-5.4z"/><path d="M9.8 15l5.7-3.3-5.7-3.2z" class="ic-fill"/></symbol>
-  </defs>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>\n  </defs>
 </svg>
 
-<header>
+    <!-- ============================ HEADER ============================ -->
+    <header>
 
       <!-- Tier 1: top bar -->
       <div class="topbar">
         <div class="container">
           <div class="topbar__group">
-            <button class="topbar__lang">English</button>
+            <button class="topbar__lang">
+              English
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" />
+              </svg>
+            </button>
             <span class="divider"></span>
             <span class="topbar__item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               920012345
             </span>
             <span class="divider"></span>
-            <a class="topbar__item" href="#">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+            <a class="topbar__item" href="order-tracking.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16.5 9.4 7.5 4.21" />
-                <path
-                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
                 <line x1="12" y1="22.08" x2="12" y2="12" />
               </svg>
@@ -77,26 +81,11 @@
 
           <div class="topbar__group">
             <span class="topbar__item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
-                <path d="M8 7h8M8 11h8M8 15h5" />
-              </svg>
-              الرقم الضريبي: ٣١٠٤٨٩٢٧٤٧٠٠٠٠٣
+              الرقم الضريبي: 310489274700003
             </span>
             <span class="divider"></span>
             <span class="topbar__item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="8" r="6" />
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-              </svg>
-              معروف الذهبي رقم ٢٩٨٤٣
-            </span>
-            <span class="divider"></span>
-            <span class="topbar__item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
@@ -114,78 +103,65 @@
             <div class="logo__subtitle">SAUDI BAZAAR</div>
           </a>
 
-          <button class="delivery">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span class="delivery__text">
-              <div class="delivery__label">التوصيل إلى</div>
-              <div class="delivery__value">الرياض، المملكة</div>
-            </span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-
           <div class="search">
-            <button class="search__categories">
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
+            <button class="search__categories" type="button">
+              كل الأقسام
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9" />
               </svg>
-              كل الأقسام
             </button>
-            <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
-            <button class="search__btn">
-              بحث
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+            <div class="search__input-wrapper">
+              <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
+              <button class="search__clear" aria-label="مسح البحث" style="display: none;" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="m15 9-6 6"/>
+                  <path d="m9 9 6 6"/>
+                </svg>
+              </button>
+            </div>
+            <button class="search__btn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
+              <span>بحث</span>
             </button>
           </div>
 
           <div class="account">
             <a class="login" href="login.html">
-              <span class="login__text">
-                <div class="login__hi">مرحباً</div>
-                <div class="login__cta">تسجيل الدخول</div>
-              </span>
               <span class="login__avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
               </span>
+              <span class="login__text">
+                <div class="login__hi">مرحباً</div>
+                <div class="login__cta">تسجيل الدخول</div>
+              </span>
             </a>
 
-            <a class="fav" href="#">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+            <a class="fav" href="account-favorites.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
               <span>المفضلة</span>
             </a>
 
             <a class="cart" href="cart.html">
-              <span class="cart__text">
-                <div class="cart__label">سلة التسوق</div>
-                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></div>
-              </span>
               <span class="cart__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                   <line x1="3" y1="6" x2="21" y2="6" />
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
                 <span class="cart__badge">3</span>
+              </span>
+              <span class="cart__text">
+                <div class="cart__label">سلة التسوق</div>
+                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></div>
               </span>
             </a>
           </div>
@@ -195,7 +171,7 @@
       <!-- Tier 3: bottom bar -->
       <div class="subnav">
         <div class="container">
-          <button class="subnav__all">
+          <a href="category.html" class="subnav__all">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="7" height="7" rx="1" />
               <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -206,35 +182,40 @@
             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9" />
             </svg>
-          </button>
+          </a>
           <nav class="subnav__links">
-            <a href="#" class="subnav__link special">
+            <a href="deals.html" class="subnav__link special">
               <span class="pulse-dot"></span>
               عروض اليوم
             </a>
-            <a href="#" class="subnav__link">الأكثر طلباً</a>
+            <a href="category.html" class="subnav__link">الأكثر طلباً</a>
+            <a href="seller-store.html" class="subnav__link">الماركات</a>
+            <a href="contact-us.html" class="subnav__link">الدعم</a>
           </nav>
         </div>
       </div>
 
     </header>
 
-<!-- ============ PAGE ============ -->
-<div class="wrap">
-  <!-- breadcrumb -->
   <nav class="crumb">
-    <a class="crumb__home" href="#">الرئيسية</a>
-    <svg class="ic ic-12"><use href="#i-chevron-left"/></svg>
-    <span class="crumb__cur">حسابي</span>
+    <div class="container">
+      <a class="crumb__home" href="../index.html">الرئيسية</a>
+      <span class="crumb__sep">/</span>
+      <a class="crumb__item" href="account-orders.html">حسابي</a>
+      <span class="crumb__sep">/</span>
+      <span class="crumb__cur">الطلبات</span>
+    </div>
   </nav>
+
+  <div class="wrap">
+  <!-- breadcrumb -->
+  
 
   <div class="page">
     <div class="cols">
 
       <!-- ===== SIDEBAR (right in RTL) ===== -->
-      <aside class="side">
-
-        <!-- profile -->
+              <aside class="side">
         <div class="scard">
           <div class="prof__top">
             <div class="prof__ava">م</div>
@@ -245,129 +226,140 @@
           </div>
           <div class="prof__comp">
             <div class="prof__lblrow">
+              <span class="prof__pct">٤٥٪</span>
               <span class="prof__lbl">إكتمال الملف</span>
-              <span class="prof__pct">٤٥%</span>
             </div>
             <div class="prof__bar"><i></i></div>
-            <p class="prof__hint">أضف رقم جوالك وتاريخ ميلادك لإكمال ملفك. <b>أكمل الآن</b></p>
+            <div class="prof__hint">أضف رقم جوالك وتاريخ ميلادك لإكمال ملفك. <b>أكمل الآن</b></div>
           </div>
         </div>
-
-        <!-- shopping -->
         <div class="scard">
           <div class="menu__title">التسوق</div>
           <div class="menu__list">
-            <a class="mitem is-active" href="#">
-              <div class="mitem__main">
+            <a class="mitem is-active" href="account-orders.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-package"/></svg>
                 <span class="mitem__label">الطلبات</span>
-              </div>
-              <div class="mitem__side">
+              </span>
+              <span class="mitem__side">
                 <span class="mitem__num is-green">٢</span>
-                <svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg>
-              </div>
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-returns.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-refresh"/></svg>
                 <span class="mitem__label">المرتجعات</span>
-              </div>
-              <div class="mitem__side">
-                <svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg>
-              </div>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-bazar-credit.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-coins"/></svg>
                 <span class="mitem__label">رصيد بازار</span>
-              </div>
-              <div class="mitem__side">
-                <svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg>
-              </div>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-favorites.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-heart"/></svg>
                 <span class="mitem__label">المفضلة</span>
-              </div>
-              <div class="mitem__side">
+              </span>
+              <span class="mitem__side">
                 <span class="mitem__num">٢</span>
-                <svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg>
-              </div>
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
           </div>
         </div>
-
-        <!-- account -->
         <div class="scard">
           <div class="menu__title">حسابي</div>
           <div class="menu__list">
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-personal-details.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-user"/></svg>
                 <span class="mitem__label">الملف الشخصي</span>
-              </div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-addresses.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-pin"/></svg>
                 <span class="mitem__label">العناوين</span>
-              </div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-payment-methods.html">
+              <span class="mitem__main">
+                <svg class="ic"><use href="#i-card"/></svg>
+                <span class="mitem__label">وسائل الدفع</span>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
+            </a>
+            <a class="mitem" href="account-followed-stores.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-building"/></svg>
                 <span class="mitem__label">المتاجر المتابعة</span>
-              </div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
           </div>
         </div>
-
-        <!-- other -->
         <div class="scard">
           <div class="menu__title">اخرى</div>
           <div class="menu__list">
-            <a class="mitem" href="#">
-              <div class="mitem__main">
+            <a class="mitem" href="account-notifications.html">
+              <span class="mitem__main">
                 <svg class="ic"><use href="#i-bell"/></svg>
                 <span class="mitem__label">التنبيهات</span>
-              </div>
-              <div class="mitem__side">
+              </span>
+              <span class="mitem__side">
                 <span class="mitem__num is-green">٢</span>
-                <svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg>
-              </div>
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
-            <a class="mitem" href="#">
-              <div class="mitem__main">
-                <svg class="ic"><use href="#i-lock"/></svg>
+            <a class="mitem" href="account-security.html">
+              <span class="mitem__main">
+                <svg class="ic"><use href="#i-shield"/></svg>
                 <span class="mitem__label">الأمان</span>
-              </div>
-              <div class="mitem__side"><svg class="ic mitem__chev"><use href="#i-chevron-left"/></svg></div>
+              </span>
+              <span class="mitem__side">
+                
+                <svg class="ic mitem__chev" style="width:16px;height:16px;"><use href="#i-chevron-left"/></svg>
+              </span>
             </a>
           </div>
         </div>
-
-        <!-- logout -->
-        <div class="scard">
-          <a class="logout" href="#">
-            <span>تسجيل الخروج</span>
+        <a href="login.html" class="logout">
             <svg class="ic"><use href="#i-power"/></svg>
+            <span>تسجيل الخروج</span>
           </a>
-        </div>
-
       </aside>
 
       <!-- ===== MAIN ORDERS (left in RTL) ===== -->
       <main class="main">
-
-        <!-- header -->
         <div class="ordhead">
           <div class="ordhead__title">
             <h1>الطلبات</h1>
-            <span class="ordhead__count">٢</span>
+            <span class="ordhead__count">٥</span>
           </div>
           <div class="ordhead__tools">
             <div class="searchmini">
@@ -381,16 +373,132 @@
           </div>
         </div>
 
-        <!-- filters -->
         <div class="filters">
-          <div class="fchip"><span class="fchip__label">الكل</span><span class="fchip__num">٢</span></div>
-          <div class="fchip"><span class="fchip__label">نشطة</span><span class="fchip__num">٢</span></div>
-          <div class="fchip is-active"><span class="fchip__label">مكتملة</span><span class="fchip__num">٢</span></div>
-          <div class="fchip"><span class="fchip__label">ملغية</span><span class="fchip__num">١</span></div>
+          <div class="fchip is-active" onclick="filterOrders('all', this)"><span class="fchip__label">الكل</span><span class="fchip__num">٥</span></div>
+          <div class="fchip" onclick="filterOrders('active', this)"><span class="fchip__label">نشطة</span><span class="fchip__num">٢</span></div>
+          <div class="fchip" onclick="filterOrders('completed', this)"><span class="fchip__label">مكتملة</span><span class="fchip__num">٢</span></div>
+          <div class="fchip" onclick="filterOrders('cancelled', this)" style="background:var(--bg-surface);border-color:var(--border-strong)"><span class="fchip__label">ملغية</span><span class="fchip__num">١</span></div>
         </div>
 
-        <!-- order card 1 -->
-        <article class="ocard">
+        <!-- ACTIVE ORDER 1 (In Transit) -->
+        <article class="ocard has-banner" data-status="active">
+          <div class="ocard__banner">
+            <svg class="ic"><use href="#i-truck"/></svg>
+            <span>شحنتك في الطريق إلى الرياض — الوصول المتوقع الإثنين ٢٩ يونيو.</span>
+          </div>
+          <div class="ocard__head">
+            <div class="ocard__info">
+              <div class="ocard__id"><span class="lbl">طلب</span><span class="code">BZ-1009-55</span></div>
+              <div class="ocard__date">١٠ يونيو ٢٠٢٦ - ١ منتج</div>
+            </div>
+            <div class="statuschip is-warning">
+              <span>في الطريق</span>
+              <svg class="ic ic-16"><use href="#i-truck"/></svg>
+            </div>
+          </div>
+          <div class="ocard__track">
+            <div class="track-step is-done">
+              <div class="track-icon"><svg class="ic ic-16"><use href="#i-check"/></svg></div>
+              <div class="track-lbl">تم الطلب</div>
+            </div>
+            <div class="track-line is-done"></div>
+            <div class="track-step is-done">
+              <div class="track-icon"><svg class="ic ic-16"><use href="#i-check"/></svg></div>
+              <div class="track-lbl">تم التجهيز</div>
+            </div>
+            <div class="track-line is-done"></div>
+            <div class="track-step is-active">
+              <div class="track-icon"></div>
+              <div class="track-lbl">في الطريق</div>
+            </div>
+            <div class="track-line"></div>
+            <div class="track-step">
+              <div class="track-icon"><svg class="ic ic-16"><use href="#i-check"/></svg></div>
+              <div class="track-lbl">تم التوصيل</div>
+            </div>
+          </div>
+          <div class="ocard__body">
+            <div class="ocard__product">
+              <div class="ocard__img">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم"><path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/><circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/><circle cx="35" cy="30" r="3" fill="#e3e4de"/></svg>
+              </div>
+              <div class="ocard__ptext">
+                <div class="ocard__pname">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن 5 - أبيض</div>
+                <div class="ocard__qty">الكمية : ١</div>
+              </div>
+            </div>
+            <div class="ocard__price">899 ر.س</div>
+          </div>
+          <div class="ocard__foot">
+            <div class="ocard__total">اجمالي الطلب : <b>899</b> <span class="u">ريال</span></div>
+            <div class="ocard__actions">
+              <button class="obtn is-primary" style="background:#166534; color:#fff; border:none;"><svg class="ic"><use href="#i-truck"/></svg><span style="color:#fff;">تتبع الشحنة</span></button>
+              <button class="obtn"><span>إعادة طلب</span><svg class="ic"><use href="#i-bag"/></svg></button>
+              <button class="obtn"><span>تفاصيل الطلب</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACTIVE ORDER 2 (Processing) -->
+        <article class="ocard" data-status="active">
+          <div class="ocard__head">
+            <div class="ocard__info">
+              <div class="ocard__id"><span class="lbl">طلب</span><span class="code">BZ-1009-55</span></div>
+              <div class="ocard__date">١٠ يونيو ٢٠٢٦ - ١ منتج</div>
+            </div>
+            <div class="statuschip" style="background:#fff; border:1px solid var(--border-default);">
+              <span style="color:var(--text-secondary);">قيد التجهيز</span>
+              <svg class="ic ic-16" style="color:var(--text-secondary);"><use href="#i-clock"/></svg>
+            </div>
+          </div>
+          <div class="ocard__banner" style="background:#fff; border:none; border-bottom:1px solid var(--border-default); color:#ca8a04;">
+            <svg class="ic" style="color:#ca8a04;"><use href="#i-clock"/></svg>
+            <span style="color:#ca8a04;">نجهّز طلبك للشحن إلى الرياض. سنخبرك فور خروجه.</span>
+          </div>
+          <div class="ocard__track">
+            <div class="track-step is-done">
+              <div class="track-icon"><svg class="ic ic-16"><use href="#i-check"/></svg></div>
+              <div class="track-lbl">تم الطلب</div>
+            </div>
+            <div class="track-line is-done"></div>
+            <div class="track-step is-active">
+              <div class="track-icon"></div>
+              <div class="track-lbl">تم التجهيز</div>
+            </div>
+            <div class="track-line"></div>
+            <div class="track-step">
+              <div class="track-icon"><svg class="ic ic-16"><use href="#i-check"/></svg></div>
+              <div class="track-lbl">في الطريق</div>
+            </div>
+            <div class="track-line"></div>
+            <div class="track-step">
+              <div class="track-icon"><svg class="ic ic-16"><use href="#i-check"/></svg></div>
+              <div class="track-lbl">تم التوصيل</div>
+            </div>
+          </div>
+          <div class="ocard__body">
+            <div class="ocard__product">
+              <div class="ocard__img">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم"><path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/><circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/><circle cx="35" cy="30" r="3" fill="#e3e4de"/></svg>
+              </div>
+              <div class="ocard__ptext">
+                <div class="ocard__pname">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن 5 - أبيض</div>
+                <div class="ocard__qty">الكمية : ١</div>
+              </div>
+            </div>
+            <div class="ocard__price">899 ر.س</div>
+          </div>
+          <div class="ocard__foot">
+            <div class="ocard__total">اجمالي الطلب : <b>899</b> <span class="u">ريال</span></div>
+            <div class="ocard__actions">
+              <button class="obtn"><span>إعادة طلب</span><svg class="ic"><use href="#i-bag"/></svg></button>
+              <button class="obtn"><span>تفاصيل الطلب</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- COMPLETED ORDER 1 -->
+        <article class="ocard" data-status="completed">
           <div class="ocard__head">
             <div class="ocard__info">
               <div class="ocard__id"><span class="lbl">طلب</span><span class="code">BZ-1009-55</span></div>
@@ -404,12 +512,7 @@
           <div class="ocard__body">
             <div class="ocard__product">
               <div class="ocard__img">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم">
-                  <path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/>
-                  <circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/>
-                  <circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/>
-                  <circle cx="35" cy="30" r="3" fill="#e3e4de"/>
-                </svg>
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم"><path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/><circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/><circle cx="35" cy="30" r="3" fill="#e3e4de"/></svg>
               </div>
               <div class="ocard__ptext">
                 <div class="ocard__pname">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن 5 - أبيض</div>
@@ -429,8 +532,8 @@
           </div>
         </article>
 
-        <!-- order card 2 -->
-        <article class="ocard">
+        <!-- COMPLETED ORDER 2 -->
+        <article class="ocard" data-status="completed">
           <div class="ocard__head">
             <div class="ocard__info">
               <div class="ocard__id"><span class="lbl">طلب</span><span class="code">BZ-1009-55</span></div>
@@ -444,12 +547,7 @@
           <div class="ocard__body">
             <div class="ocard__product">
               <div class="ocard__img">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم">
-                  <path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/>
-                  <circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/>
-                  <circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/>
-                  <circle cx="35" cy="30" r="3" fill="#e3e4de"/>
-                </svg>
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم"><path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/><circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/><circle cx="35" cy="30" r="3" fill="#e3e4de"/></svg>
               </div>
               <div class="ocard__ptext">
                 <div class="ocard__pname">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن 5 - أبيض</div>
@@ -469,11 +567,42 @@
           </div>
         </article>
 
+        <!-- CANCELLED ORDER 1 -->
+        <article class="ocard" data-status="cancelled">
+          <div class="ocard__head">
+            <div class="ocard__info">
+              <div class="ocard__id"><span class="lbl">طلب</span><span class="code">BZ-1009-55</span></div>
+              <div class="ocard__date">١٠ يونيو ٢٠٢٦ - ١ منتج</div>
+            </div>
+            <div class="statuschip is-cancelled">
+              <span>ملغي</span>
+              <svg class="ic ic-16"><use href="#i-x"/></svg>
+            </div>
+          </div>
+          <div class="ocard__body">
+            <div class="ocard__product">
+              <div class="ocard__img">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="وحدة تحكم"><path d="M20 26c-6 0-11 6-12 14-1 7 1 12 5 12 3 0 5-3 8-5 2-1 4-2 6-2h16c2 0 4 1 6 2 3 2 5 5 8 5 4 0 6-5 5-12-1-8-6-14-12-14H20z" fill="#fff" stroke="#c9cbc2" stroke-width="1.6"/><circle cx="22" cy="35" r="2.4" fill="#7a7e73"/><circle cx="22" cy="41" r="2.4" fill="#7a7e73"/><circle cx="18.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="25.5" cy="38" r="2.4" fill="#7a7e73"/><circle cx="47" cy="35" r="2.4" fill="#7a7e73"/><circle cx="53" cy="35" r="2.4" fill="#7a7e73"/><circle cx="47" cy="41" r="2.4" fill="#7a7e73"/><circle cx="53" cy="41" r="2.4" fill="#7a7e73"/><circle cx="35" cy="30" r="3" fill="#e3e4de"/></svg>
+              </div>
+              <div class="ocard__ptext">
+                <div class="ocard__pname">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن 5 - أبيض</div>
+                <div class="ocard__qty">الكمية : ١</div>
+              </div>
+            </div>
+            <div class="ocard__price">899 ر.س</div>
+          </div>
+          <div class="ocard__foot">
+            <div class="ocard__total">اجمالي الطلب : <b>899</b> <span class="u">ريال</span></div>
+            <div class="ocard__actions">
+              <button class="obtn"><span>إعادة طلب</span><svg class="ic"><use href="#i-bag"/></svg></button>
+              <button class="obtn"><span>تفاصيل الطلب</span></button>
+            </div>
+          </div>
+        </article>
       </main>
     </div>
   </div>
 </div>
-
 <!-- ============================= FOOTER =========================== -->
     <footer class="site-footer">
       <div class="site-footer__inner">
@@ -589,5 +718,58 @@
       </div>
     </footer>
 
+
+<script>
+  function filterOrders(status, btn) {
+    // Update active filter chip styles
+    document.querySelectorAll('.fchip').forEach(c => {
+      c.classList.remove('is-active');
+      c.style.background = 'var(--bg-surface)';
+      c.style.borderColor = 'var(--border-strong)';
+      c.style.color = 'var(--text-secondary)';
+      const num = c.querySelector('.fchip__num');
+      if (num) {
+        num.style.background = 'var(--chip-bg-neutral)';
+        num.style.color = 'var(--text-secondary)';
+      }
+    });
+
+    if (btn) {
+      btn.classList.add('is-active');
+      if (status === 'all') {
+         btn.style.background = '#f3f4f6';
+         btn.style.color = '#111827';
+      } else if (status === 'active' || status === 'completed') {
+         btn.style.background = 'var(--chip-bg-success)';
+         btn.style.borderColor = 'var(--chip-text-success)';
+         btn.style.color = 'var(--chip-text-success)';
+         const num = btn.querySelector('.fchip__num');
+         if(num) {
+            num.style.background = 'var(--chip-text-success)';
+            num.style.color = '#fff';
+         }
+      } else if (status === 'cancelled') {
+         btn.style.background = 'var(--chip-text-success)';
+         btn.style.borderColor = 'var(--chip-text-success)';
+         btn.style.color = '#fff';
+         const num = btn.querySelector('.fchip__num');
+         if(num) {
+            num.style.background = '#fff';
+            num.style.color = 'var(--chip-text-success)';
+         }
+      }
+    }
+
+    // Toggle cards
+    const cards = document.querySelectorAll('.ocard');
+    cards.forEach(card => {
+      if (status === 'all' || card.getAttribute('data-status') === status) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
 </body>
 </html>
