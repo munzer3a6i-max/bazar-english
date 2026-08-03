@@ -202,8 +202,8 @@
     <div class="navbar">
       <div class="container">
         <a class="logo" href="../index.html">
-          <div class="logo__title">بازار السعودية</div>
-          <div class="logo__subtitle">SAUDI BAZAAR</div>
+          <img src="../assets/bazar logo.png" alt="بازار السعودية"
+            style="height: 62px; width: auto; object-fit: contain;">
         </a>
 
         <div class="search">
@@ -282,20 +282,67 @@
     <!-- Tier 3: bottom bar -->
     <div class="subnav">
       <div class="container">
-        <a href="category.html" class="subnav__all">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="3" width="7" height="7" rx="1" />
-            <rect x="3" y="14" width="7" height="7" rx="1" />
-            <rect x="14" y="14" width="7" height="7" rx="1" />
-          </svg>
-          جميع الأقسام
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </a>
+        <div class="subnav__dropdown-wrapper" style="position: relative;">
+          <button class="subnav__all" type="button" onclick="this.parentElement.classList.toggle('active')"
+            style="border: none; cursor: pointer; font-family: inherit;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            جميع الأقسام
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="subnav__dropdown-menu">
+            <ul class="subnav__dropdown-list">
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📱</span><span
+                    class="link-text">الجوالات وملحقاتها</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📺</span><span
+                    class="link-text">التلفزيونات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🧺</span><span
+                    class="link-text">الأجهزة المنزلية</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💻</span><span
+                    class="link-text">الكمبيوتر واللابتوب</span><svg class="chevron-left" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎧</span><span
+                    class="link-text">الصوتيات والسماعات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📷</span><span
+                    class="link-text">الكاميرات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎮</span><span
+                    class="link-text">الألعاب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+              <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💄</span><span
+                    class="link-text">العناية والجمال</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
         <nav class="subnav__links">
           <a href="deals.html" class="subnav__link special">
             <span class="pulse-dot"></span>
@@ -304,7 +351,20 @@
           <a href="category.html" class="subnav__link">الأكثر طلباً</a>
           <a href="seller-store.html" class="subnav__link">الماركات</a>
           <a href="contact-us.html" class="subnav__link">الدعم</a>
-        </nav>
+          </nav>
+          <button class="delivery" type="button" style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: var(--radius-pill);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: none;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div class="delivery__text" style="text-align: right; display: flex; flex-direction: column; justify-content: center;">
+              <div class="delivery__label" style="font-size: 12px; color: var(--color-text-secondary); line-height: 1;">التوصيل إلى</div>
+              <div class="delivery__value" style="font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-top: 2px; line-height: 1;">الرياض، المملكة</div>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
       </div>
     </div>
 
@@ -511,51 +571,61 @@
 
         <!-- ===== MAIN ORDERS (left in RTL) ===== -->
         <main class="main">
-        
-        <div class="sechead"><h1 class="ptitle">إعدادات الأمان</h1></div>
-        <div class="lcard">
-          <div class="lrow">
-            <div class="lrow__lead">
-              <div class="icon-circle"><svg class="ic"><use href="#i-lock"/></svg></div>
-              <div class="lrow__txt">
-                <div class="lrow__title">كلمة المرور</div>
-                <div class="lrow__desc">آخر تغيير قبل ٣ أشهر</div>
-              </div>
-            </div>
-            <button class="chgbtn">تغيير</button>
+
+          <div class="sechead">
+            <h1 class="ptitle">إعدادات الأمان</h1>
           </div>
-          <div class="lrow">
-            <div class="lrow__lead">
-              <div class="icon-circle"><svg class="ic"><use href="#i-shield-tick"/></svg></div>
-              <div class="lrow__txt">
-                <div class="lrow__title">التحقق بخطوتين</div>
-                <div class="lrow__desc">رمز عبر الرسائل عند تسجيل الدخول من جهاز جديد</div>
+          <div class="lcard">
+            <div class="lrow">
+              <div class="lrow__lead">
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-lock" />
+                  </svg></div>
+                <div class="lrow__txt">
+                  <div class="lrow__title">كلمة المرور</div>
+                  <div class="lrow__desc">آخر تغيير قبل ٣ أشهر</div>
+                </div>
               </div>
+              <button class="chgbtn">تغيير</button>
             </div>
-            <div class="toggle"></div>
-          </div>
-          <div class="lrow">
-            <div class="lrow__lead">
-              <div class="icon-circle"><svg class="ic"><use href="#i-bell"/></svg></div>
-              <div class="lrow__txt">
-                <div class="lrow__title">تنبيهات تسجيل الدخول</div>
-                <div class="lrow__desc">إشعار فوري عند أي دخول جديد لحسابك</div>
+            <div class="lrow">
+              <div class="lrow__lead">
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-shield-tick" />
+                  </svg></div>
+                <div class="lrow__txt">
+                  <div class="lrow__title">التحقق بخطوتين</div>
+                  <div class="lrow__desc">رمز عبر الرسائل عند تسجيل الدخول من جهاز جديد</div>
+                </div>
               </div>
+              <div class="toggle"></div>
             </div>
-            <div class="toggle is-on"></div>
-          </div>
-          <div class="lrow">
-            <div class="lrow__lead">
-              <div class="icon-circle"><svg class="ic"><use href="#i-user"/></svg></div>
-              <div class="lrow__txt">
-                <div class="lrow__title">تسجيل الدخول بالبصمة</div>
-                <div class="lrow__desc">استخدم بصمتك أو وجهك على هذا الجهاز</div>
+            <div class="lrow">
+              <div class="lrow__lead">
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-bell" />
+                  </svg></div>
+                <div class="lrow__txt">
+                  <div class="lrow__title">تنبيهات تسجيل الدخول</div>
+                  <div class="lrow__desc">إشعار فوري عند أي دخول جديد لحسابك</div>
+                </div>
               </div>
+              <div class="toggle is-on"></div>
             </div>
-            <div class="toggle"></div>
+            <div class="lrow">
+              <div class="lrow__lead">
+                <div class="icon-circle"><svg class="ic">
+                    <use href="#i-user" />
+                  </svg></div>
+                <div class="lrow__txt">
+                  <div class="lrow__title">تسجيل الدخول بالبصمة</div>
+                  <div class="lrow__desc">استخدم بصمتك أو وجهك على هذا الجهاز</div>
+                </div>
+              </div>
+              <div class="toggle"></div>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
       </div>
     </div>
   </div>
@@ -567,8 +637,8 @@
 
         <!-- Brand -->
         <div class="footer-brand">
-          <div class="footer-brand__logo">بازار السعودية</div>
-          <div class="footer-brand__sub">SAUDI BAZAAR</div>
+          <img src="../assets/bazar logo.png" alt="بازار السعودية"
+            style="height: 62px; width: auto; object-fit: contain;">
           <p class="footer-brand__desc">المنصة السعودية الرائدة للتسوق الإلكتروني، نوفر لك أفضل المنتجات العالمية
             والمحلية بجودة عالية وأسعار منافسة.</p>
         </div>
@@ -599,32 +669,12 @@
         <div class="footer-pay">
           <h3 class="footer-col__title">التوثيق والدفع</h3>
           <div class="footer-pay__methods">
-            <span class="pay-badge">mada</span>
-            <span class="pay-badge">VISA</span>
-            <span class="pay-badge">Mastercard</span>
-            <span class="pay-badge">Apple Pay</span>
-            <span class="pay-badge">تمارا</span>
-            <span class="pay-badge">تابي</span>
+            <img src="../assets/pay_ar_footer.png.png" alt="Payment Methods" style="max-width: 100%; height: auto;">
           </div>
           <p class="footer-pay__reg">الرقم الضريبي: 300123456700003</p>
           <p class="footer-pay__reg">السجل التجاري: 1010123456</p>
           <div class="footer-pay__certs">
-            <span class="cert-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-              <span>متجر موثّق</span>
-            </span>
-            <span class="cert-badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="8" r="6" />
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-              </svg>
-              <span>معروف</span>
-            </span>
+            <img src="../assets/Frame%2010.png" alt="Certificates" style="max-width: 100%; height: auto;">
           </div>
         </div>
 
@@ -728,16 +778,113 @@
     }
   </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggles = document.querySelectorAll('.toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('is-on');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggles = document.querySelectorAll('.toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('is-on');
+        });
       });
     });
+  </script>
+
+<!-- Location Modal Overlay -->
+<div class="location-modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+  <div class="location-modal" style="background: white; border-radius: 12px; width: 90%; max-width: 400px; overflow: hidden; font-family: inherit; direction: rtl; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <!-- Header -->
+    <div style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0;">
+      <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">إختر عنوان التوصيل</h3>
+      <button class="location-modal-close" style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <!-- Body -->
+    <div style="padding: 24px 20px;">
+      <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6; text-align: right;">
+        قد تختلف خيارات التوصيل وسرعات التوصيل باختلاف المواقع
+      </p>
+      <a href="login.html" style="display: block; width: 100%; background: var(--color-primary, #046c4e); color: white; text-align: center; padding: 12px; border-radius: 24px; text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 20px;">
+        سجل دخولك لمشاهدة عناوينك
+      </a>
+      
+      <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+        <div style="padding: 0 12px; font-size: 14px; color: #64748b;">او</div>
+        <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+      </div>
+      
+      <div style="position: relative;">
+        <select style="width: 100%; appearance: none; background: white; border: 1px solid #64748b; border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #1e293b; font-family: inherit; cursor: pointer;">
+          <option value="" disabled selected>إختر المدينة</option>
+          <option value="riyadh">الرياض</option>
+          <option value="jeddah">جدة</option>
+          <option value="dammam">الدمام</option>
+        </select>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; position: absolute; left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
+
+      <div style="margin-top: 20px; background-color: #fef3c7; border: 1px solid #b45309; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          <line x1="12" y1="9" x2="12" y2="13" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+        <span style="font-size: 14px; color: #b45309; line-height: 1.5; text-align: right; flex: 1;">
+          في حالة تغيير المدينة قد تفقد بعض او كل المنتجات التي تم اضافتها للسلة مؤخرا
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const deliveryBtns = document.querySelectorAll('.delivery');
+    const locationModal = document.querySelector('.location-modal-overlay');
+    const closeLocationModal = document.querySelector('.location-modal-close');
+    const citySelect = locationModal ? locationModal.querySelector('select') : null;
+
+    if (deliveryBtns.length && locationModal) {
+      deliveryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          locationModal.style.display = 'flex';
+        });
+      });
+      
+      if (closeLocationModal) {
+        closeLocationModal.addEventListener('click', function() {
+          locationModal.style.display = 'none';
+        });
+      }
+
+      locationModal.addEventListener('click', function(e) {
+        if (e.target === locationModal) {
+          locationModal.style.display = 'none';
+        }
+      });
+
+      if (citySelect) {
+        citySelect.addEventListener('change', function(e) {
+          const selectedText = e.target.options[e.target.selectedIndex].text;
+          deliveryBtns.forEach(btn => {
+            const valDiv = btn.querySelector('.delivery__value');
+            if (valDiv) {
+              valDiv.textContent = selectedText + '، المملكة';
+            }
+          });
+          locationModal.style.display = 'none';
+        });
+      }
+    }
   });
 </script>
+
 </body>
 
 </html>

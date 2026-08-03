@@ -52,8 +52,7 @@
       <div class="navbar">
         <div class="container">
           <a class="logo" href="../index.html">
-            <div class="logo__title">بازار السعودية</div>
-            <div class="logo__subtitle">SAUDI BAZAAR</div>
+            <img src="../assets/bazar logo.png" alt="بازار السعودية" style="height: 48px; width: auto; object-fit: contain;">
           </a>
 
           <div class="search">
@@ -124,18 +123,34 @@
       <!-- Tier 3: bottom bar -->
       <div class="subnav">
         <div class="container">
-          <a href="../html/category.html" class="subnav__all">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="7" height="7" rx="1" />
-              <rect x="14" y="3" width="7" height="7" rx="1" />
-              <rect x="3" y="14" width="7" height="7" rx="1" />
-              <rect x="14" y="14" width="7" height="7" rx="1" />
-            </svg>
-            جميع الأقسام
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </a>
+          <div class="subnav__dropdown-wrapper" style="position: relative;">
+            <button class="subnav__all" type="button" onclick="this.parentElement.classList.toggle('active')" style="border: none; cursor: pointer; font-family: inherit;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+              جميع الأقسام
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="subnav__dropdown-menu">
+              <ul class="subnav__dropdown-list">
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📱</span><span class="link-text">الجوالات وملحقاتها</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📺</span><span class="link-text">التلفزيونات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🧺</span><span class="link-text">الأجهزة المنزلية</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💻</span><span class="link-text">الكمبيوتر واللابتوب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎧</span><span class="link-text">الصوتيات والسماعات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📷</span><span class="link-text">الكاميرات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎮</span><span class="link-text">الألعاب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💄</span><span class="link-text">العناية والجمال</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></a></li>
+              </ul>
+            </div>
+          </div>
           <nav class="subnav__links">
             <a href="../html/deals.html" class="subnav__link special">
               <span class="pulse-dot"></span>
@@ -145,6 +160,19 @@
             <a href="../html/seller-store.html" class="subnav__link">الماركات</a>
             <a href="../html/contact-us.html" class="subnav__link">الدعم</a>
           </nav>
+          <button class="delivery" type="button" style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: var(--radius-pill);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: none;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div class="delivery__text" style="text-align: right; display: flex; flex-direction: column; justify-content: center;">
+              <div class="delivery__label" style="font-size: 12px; color: var(--color-text-secondary); line-height: 1;">التوصيل إلى</div>
+              <div class="delivery__value" style="font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-top: 2px; line-height: 1;">الرياض، المملكة</div>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
         </div>
       </div>
 

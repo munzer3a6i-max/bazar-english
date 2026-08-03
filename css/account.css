@@ -75,18 +75,21 @@ body {
 .wrap {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 32px
+  padding: 0px;
 }
 
 /* ===================== HEADER REMOVED ===================== */
 
 /* ===================== BREADCRUMB ===================== */
 .crumb {
+  padding-top: 20px;
+}
+
+.crumb .container {
   display: flex;
   align-items: center;
   gap: 8px;
   justify-content: flex-start;
-  padding-top: 20px
 }
 
 .crumb a,
@@ -1516,7 +1519,10 @@ ul {
   display: flex;
   gap: 12px;
   align-items: center
-}\n
+}
+
+\n
+
 /* Toggle Switch */
 .toggle {
   width: 50px;
@@ -1541,7 +1547,7 @@ ul {
   border: 1px solid #cbd5e1;
   border-radius: 50%;
   transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .toggle.is-on {

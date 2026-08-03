@@ -559,11 +559,11 @@
     }
 
     .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 24px;
-      align-items: start
-    }
+  display: grid;
+  grid-template-columns: 2.8fr 1fr 1fr 1.5fr 2.8fr;
+  gap: 48px;
+  align-items: start;
+}
 
     .footer-col__title {
       margin: 0 0 24px;
