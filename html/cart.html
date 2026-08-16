@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -81,13 +81,23 @@
           </a>
 
           <div class="search">
-            <button class="search__categories" type="button">
-              كل الأقسام
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+            <div class="search__cat-wrap">
+              <button class="search__categories" type="button">
+                كل الأقسام
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="search__dropdown">
+                <button type="button" class="search__dropdown-item">الجوالات وملحقاتها</button>
+                <button type="button" class="search__dropdown-item">التلفزيونات</button>
+                <button type="button" class="search__dropdown-item">الأجهزة المنزلية</button>
+                <button type="button" class="search__dropdown-item">الكمبيوتر واللابتوب</button>
+                <button type="button" class="search__dropdown-item">الصوتيات والسماعات</button>
+                <button type="button" class="search__dropdown-item">العناية والجمال</button>
+              </div>
+            </div>
             <div class="search__input-wrapper">
               <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
               <button class="search__clear" aria-label="مسح البحث" style="display: none;" type="button">
@@ -109,6 +119,15 @@
             </button>
           </div>
 
+          <!-- Mobile hamburger toggle (hidden on desktop) -->
+          <button class="mobile-menu-toggle" aria-label="القائمة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+
           <div class="account">
             <a class="login" href="login.html">
               <span class="login__avatar">
@@ -125,11 +144,15 @@
             </a>
 
             <a class="fav" href="account-favorites.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <div class="fav_avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+
+              </div>
+
               <span>المفضلة</span>
             </a>
 
@@ -145,8 +168,8 @@
               </span>
               <span class="cart__text">
                 <div class="cart__label">سلة التسوق</div>
-                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                    alt="ر.س" /></div>
+                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" />
+                </div>
               </span>
             </a>
           </div>
@@ -157,8 +180,7 @@
       <div class="subnav">
         <div class="container">
           <div class="subnav__dropdown-wrapper" style="position: relative;">
-            <button class="subnav__all" type="button" onclick="this.parentElement.classList.toggle('active')"
-              style="border: none; cursor: pointer; font-family: inherit;">
+            <button class="subnav__all" type="button" style="border: none; cursor: pointer; font-family: inherit;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -173,48 +195,305 @@
               </svg>
             </button>
             <div class="subnav__dropdown-menu">
-              <ul class="subnav__dropdown-list">
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📱</span><span
-                      class="link-text">الجوالات وملحقاتها</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📺</span><span
-                      class="link-text">التلفزيونات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🧺</span><span
-                      class="link-text">الأجهزة المنزلية</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💻</span><span
-                      class="link-text">الكمبيوتر واللابتوب</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎧</span><span
-                      class="link-text">الصوتيات والسماعات</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📷</span><span
-                      class="link-text">الكاميرات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎮</span><span
-                      class="link-text">الألعاب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💄</span><span
-                      class="link-text">العناية والجمال</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-              </ul>
+              ﻿<ul class="subnav__dropdown-list">
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📱</span>
+      <span class="link-text">الجوالات وملحقاتها</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>آبل (Apple)</h4>
+         <ul>
+           <li><a href="category.html">آيفون 15 برو ماكس</a></li>
+           <li><a href="category.html">آيفون 15</a></li>
+           <li><a href="category.html">آيفون 14</a></li>
+           <li><a href="category.html">اكسسوارات آبل</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>سامسونج (Samsung)</h4>
+         <ul>
+           <li><a href="category.html">جالاكسي S24 ألترا</a></li>
+           <li><a href="category.html">جالاكسي S23</a></li>
+           <li><a href="category.html">جالاكسي A</a></li>
+           <li><a href="category.html">اكسسوارات سامسونج</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات ذكية</h4>
+         <ul>
+           <li><a href="category.html">شواحن وكابلات</a></li>
+           <li><a href="category.html">كفرات وحماية شاشة</a></li>
+           <li><a href="category.html">بطاريات متنقلة (Power Banks)</a></li>
+           <li><a href="category.html">حوامل سيارات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📺</span>
+      <span class="link-text">التلفزيونات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>حسب الحجم</h4>
+         <ul>
+           <li><a href="category.html">تلفزيونات 32 - 43 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 50 - 55 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 65 - 75 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 85 بوصة فأكثر</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>حسب التقنية</h4>
+         <ul>
+           <li><a href="category.html">OLED & QLED</a></li>
+           <li><a href="category.html">4K Ultra HD</a></li>
+           <li><a href="category.html">8K Smart TVs</a></li>
+           <li><a href="category.html">تلفزيونات ذكية (Smart)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات التلفزيون</h4>
+         <ul>
+           <li><a href="category.html">مسرح منزلي وساوند بار</a></li>
+           <li><a href="category.html">أجهزة البث (Apple TV, Chromecast)</a></li>
+           <li><a href="category.html">حوامل التلفزيون</a></li>
+           <li><a href="category.html">ريموت كنترول وملحقات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🧺</span>
+      <span class="link-text">الأجهزة المنزلية</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة كبيرة</h4>
+         <ul>
+           <li><a href="category.html">ثلاجات وفريزرات</a></li>
+           <li><a href="category.html">غسالات ونشافات</a></li>
+           <li><a href="category.html">أفران وطباخات</a></li>
+           <li><a href="category.html">غسالات صحون</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>أجهزة صغيرة</h4>
+         <ul>
+           <li><a href="category.html">محضرات طعام وخلاطات</a></li>
+           <li><a href="category.html">ميكروويف وأفران صغيرة</a></li>
+           <li><a href="category.html">مكانس كهربائية</a></li>
+           <li><a href="category.html">مكاوي بخار</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مشروبات وقهوة</h4>
+         <ul>
+           <li><a href="category.html">ماكينات اسبريسو</a></li>
+           <li><a href="category.html">صانعات قهوة تركية</a></li>
+           <li><a href="category.html">غلايات ماء</a></li>
+           <li><a href="category.html">برادات ماء</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💻</span>
+      <span class="link-text">الكمبيوتر واللابتوب</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة كمبيوتر</h4>
+         <ul>
+           <li><a href="category.html">لابتوبات أعمال ودراسة</a></li>
+           <li><a href="category.html">لابتوبات ألعاب (Gaming)</a></li>
+           <li><a href="category.html">أجهزة كمبيوتر مكتبية</a></li>
+           <li><a href="category.html">أجهزة ماك (Mac)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مكونات وقطع غيار</h4>
+         <ul>
+           <li><a href="category.html">كروت شاشة (VGA)</a></li>
+           <li><a href="category.html">معالجات ولوحات أم</a></li>
+           <li><a href="category.html">ذاكرة عشوائية (RAM)</a></li>
+           <li><a href="category.html">أقراص تخزين (SSD / HDD)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات</h4>
+         <ul>
+           <li><a href="category.html">شاشات كمبيوتر</a></li>
+           <li><a href="category.html">ماوس وكيبورد</a></li>
+           <li><a href="category.html">طابعات وماسحات ضوئية</a></li>
+           <li><a href="category.html">راوترات وأجهزة شبكات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎧</span>
+      <span class="link-text">الصوتيات والسماعات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>سماعات أذن</h4>
+         <ul>
+           <li><a href="category.html">سماعات لاسلكية (TWS)</a></li>
+           <li><a href="category.html">سماعات رياضية</a></li>
+           <li><a href="category.html">سماعات أذن سلكية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>سماعات رأس</h4>
+         <ul>
+           <li><a href="category.html">سماعات رأس بلوتوث</a></li>
+           <li><a href="category.html">سماعات ألعاب (Gaming Headsets)</a></li>
+           <li><a href="category.html">سماعات عازلة للضوضاء</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مكبرات صوت</h4>
+         <ul>
+           <li><a href="category.html">مكبرات صوت محمولة (Bluetooth)</a></li>
+           <li><a href="category.html">أنظمة صوت منزلية</a></li>
+           <li><a href="category.html">ساوند بار (Soundbars)</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📷</span>
+      <span class="link-text">الكاميرات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أنواع الكاميرات</h4>
+         <ul>
+           <li><a href="category.html">كاميرات احترافية (DSLR)</a></li>
+           <li><a href="category.html">كاميرات ميرورليس (Mirrorless)</a></li>
+           <li><a href="category.html">كاميرات مدمجة</a></li>
+           <li><a href="category.html">كاميرات فورية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>كاميرات فيديو وحركة</h4>
+         <ul>
+           <li><a href="category.html">كاميرات أكشن (GoPro)</a></li>
+           <li><a href="category.html">طائرات درون (Drones)</a></li>
+           <li><a href="category.html">كاميرات مراقبة وأمان</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>عدسات وملحقات</h4>
+         <ul>
+           <li><a href="category.html">عدسات الكاميرا</a></li>
+           <li><a href="category.html">حوامل (Tripods)</a></li>
+           <li><a href="category.html">إضاءة وفلاشات</a></li>
+           <li><a href="category.html">حقائب كاميرات وبطاقات ذاكرة</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎮</span>
+      <span class="link-text">الألعاب</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة الكونسول</h4>
+         <ul>
+           <li><a href="category.html">بلايستيشن 5 (PS5)</a></li>
+           <li><a href="category.html">اكس بوكس (Xbox Series X/S)</a></li>
+           <li><a href="category.html">نينتندو سويتش (Nintendo Switch)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ألعاب الفيديو</h4>
+         <ul>
+           <li><a href="category.html">ألعاب بلايستيشن</a></li>
+           <li><a href="category.html">ألعاب اكس بوكس</a></li>
+           <li><a href="category.html">ألعاب نينتندو</a></li>
+           <li><a href="category.html">بطاقات رقمية (PSN, Xbox Live)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>إكسسوارات الألعاب</h4>
+         <ul>
+           <li><a href="category.html">أيادي تحكم (Controllers)</a></li>
+           <li><a href="category.html">كراسي ألعاب</a></li>
+           <li><a href="category.html">سماعات قيمنق</a></li>
+           <li><a href="category.html">مقود ألعاب سباق</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💄</span>
+      <span class="link-text">العناية والجمال</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>العناية الشخصية</h4>
+         <ul>
+           <li><a href="category.html">أجهزة إزالة الشعر</a></li>
+           <li><a href="category.html">ماكينات حلاقة للرجال</a></li>
+           <li><a href="category.html">فرش أسنان كهربائية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>العناية بالشعر</h4>
+         <ul>
+           <li><a href="category.html">مجففات شعر (استشوار)</a></li>
+           <li><a href="category.html">مملسات شعر (سيراميك)</a></li>
+           <li><a href="category.html">مكواة تجعيد الشعر</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>صحة وجمال</h4>
+         <ul>
+           <li><a href="category.html">أجهزة مساج وتدليك</a></li>
+           <li><a href="category.html">موازين ذكية</a></li>
+           <li><a href="category.html">أجهزة تنظيف البشرة</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+
             </div>
           </div>
           <nav class="subnav__links">
@@ -227,22 +506,19 @@
             <a href="contact-us.html" class="subnav__link">الدعم</a>
           </nav>
           <button class="delivery" type="button"
-            style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: var(--radius-pill);">
+            style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px;">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" style="width: 20px; height: 20px; flex: none;">
+              stroke-linejoin="round" style="color: var(--color-primary);">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <div class="delivery__text"
-              style="text-align: right; display: flex; flex-direction: column; justify-content: center;">
-              <div class="delivery__label" style="font-size: 12px; color: var(--color-text-secondary); line-height: 1;">
-                التوصيل إلى</div>
-              <div class="delivery__value"
-                style="font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-top: 2px; line-height: 1;">
-                الرياض، المملكة</div>
+            <div class="delivery__text">
+              <div class="delivery__label" style="font-size: 12px; line-height: 1.2;">التوصيل إلى</div>
+              <div class="delivery__value" style="font-size: 16px; line-height: 1.2; margin-top: 2px;">الرياض، المملكة
+              </div>
             </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--color-primary);">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
@@ -516,21 +792,23 @@
 
           <div class="cart-card">
             <div class="crosssell-item">
-              <div class="crosssell-item__image">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="10" rx="4" />
-                  <line x1="7" y1="11" x2="7" y2="13" />
-                  <line x1="6" y1="12" x2="8" y2="12" />
-                  <circle cx="16" cy="11.5" r="1" />
-                  <circle cx="18.5" cy="13" r="1" />
-                </svg>
-              </div>
-              <div class="crosssell-item__details">
-                <h3 class="crosssell-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
-                <p class="crosssell-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
-                <p class="crosssell-item__seller">يباع بواسطة: سوني</p>
-                <span class="crosssell-item__price"><span class="amount">١٬٨٩٩</span><span class="cur">ر.س</span></span>
+              <div class="crosssell-item__top">
+                <div class="crosssell-item__image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="10" rx="4" />
+                    <line x1="7" y1="11" x2="7" y2="13" />
+                    <line x1="6" y1="12" x2="8" y2="12" />
+                    <circle cx="16" cy="11.5" r="1" />
+                    <circle cx="18.5" cy="13" r="1" />
+                  </svg>
+                </div>
+                <div class="crosssell-item__details">
+                  <h3 class="crosssell-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
+                  <p class="crosssell-item__rating">★★★★★ ٤.٩ (٤٥٦ تقييم)</p>
+                  <p class="crosssell-item__seller">يباع بواسطة: سوني</p>
+                  <span class="crosssell-item__price"><span class="amount">١٬٨٩٩</span><span class="cur">ر.س</span></span>
+                </div>
               </div>
               <button class="btn-add-product">إضافة المنتج <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -540,15 +818,17 @@
 
             </div>
             <div class="crosssell-item">
-              <div class="crosssell-item__image">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="10" rx="4" />
-                  <line x1="7" y1="11" x2="7" y2="13" />
-                  <line x1="6" y1="12" x2="8" y2="12" />
-                  <circle cx="16" cy="11.5" r="1" />
-                  <circle cx="18.5" cy="13" r="1" />
-                </svg>
+              <div class="crosssell-item__top">
+                <div class="crosssell-item__image">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="10" rx="4" />
+                    <line x1="7" y1="11" x2="7" y2="13" />
+                    <line x1="6" y1="12" x2="8" y2="12" />
+                    <circle cx="16" cy="11.5" r="1" />
+                    <circle cx="18.5" cy="13" r="1" />
+                  </svg>
+                </div>
               </div>
               <div class="crosssell-item__details">
                 <h3 class="crosssell-item__title">وحدة تحكم لاسلكية دوال سينس لجهاز بلاي ستيشن ٥ - أبيض</h3>
@@ -597,16 +877,16 @@
 
           <div class="installments">
             <div class="inst-row">
-              <span class="inst-badge inst-badge--tamara">تمارا</span>
+              <span class="inst-badge inst-badge--tamara"><img src="../assets/Tamara Logo.png" alt="تمارا"></span>
               <p class="inst-row__text">قسمّها على ٤ دفعات بقيمة ٤٧٢.٣٩ بدون فوائد. متوافق مع أحكام الشريعة. لمعرفة
                 المزيد</p>
             </div>
             <div class="inst-row">
-              <span class="inst-badge inst-badge--madfu">مدفوع</span>
+              <span class="inst-badge inst-badge--madfu"><img src="../assets/Madfooat Logo.png" alt="مدفوع"></span>
               <p class="inst-row__text">قسطها مع مدفوع على ٤ اقساط</p>
             </div>
             <div class="inst-row">
-              <span class="inst-badge inst-badge--mis">ميسّر</span>
+              <span class="inst-badge inst-badge--mis"><img src="../assets/Mis Pay Logo.png" alt="ميسّر"></span>
               <p class="inst-row__text">قسطها مع ميسّر على ٤ اقساط</p>
             </div>
           </div>
@@ -633,10 +913,10 @@
           <div>
             <h3 class="footer-col__title">روابط سريعة</h3>
             <ul class="footer-links">
-              <li><a href="#">عن الشركة</a></li>
-              <li><a href="#">اتصل بنا</a></li>
-              <li><a href="#">الأسئلة الشائعة</a></li>
-              <li><a href="#">المدونة</a></li>
+              <li><a href="category.html">عن الشركة</a></li>
+              <li><a href="category.html">الأسئلة الشائعة</a></li>
+              <li><a href="category.html">الدعم والمساعدة</a></li>
+              <li><a href="category.html">اتصل بنا</a></li>
             </ul>
           </div>
 
@@ -644,10 +924,10 @@
           <div>
             <h3 class="footer-col__title">السياسات</h3>
             <ul class="footer-links">
-              <li><a href="#">الشروط والأحكام</a></li>
-              <li><a href="#">سياسة الخصوصية</a></li>
-              <li><a href="#">سياسة الاسترجاع</a></li>
-              <li><a href="#">سياسة الشحن</a></li>
+              <li><a href="category.html">الشروط والأحكام</a></li>
+              <li><a href="category.html">سياسة الخصوصية</a></li>
+              <li><a href="category.html">سياسة الاسترجاع</a></li>
+              <li><a href="category.html">سياسة الشحن</a></li>
             </ul>
           </div>
 
@@ -704,7 +984,7 @@
 
         <div class="footer-bottom">
           <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
-          <p>© 2024 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+          <p>© 2026 Saudi Bazaar. جميع الحقوق محفوظة.</p>
         </div>
 
       </div>
@@ -846,6 +1126,346 @@
     });
   </script>
 
+<script>
+    // Categories dropdown toggle
+    (function () {
+      document.querySelectorAll('.search__categories').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = btn.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var dd = wrap.querySelector('.search__dropdown');
+          if (!dd) return;
+          var isOpen = dd.classList.contains('is-open');
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+          if (!isOpen) {
+            dd.classList.add('is-open');
+          }
+        });
+      });
+
+      // Clicking a category item selects it
+      document.querySelectorAll('.search__dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = item.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var btn = wrap.querySelector('.search__categories');
+          if (!btn) return;
+          // Get the text nodes of the button (skip the SVG)
+          var svg = btn.querySelector('svg');
+          // Replace button text content but keep the SVG
+          var textNode = null;
+          for (var i = 0; i < btn.childNodes.length; i++) {
+            if (btn.childNodes[i].nodeType === 3 && btn.childNodes[i].textContent.trim()) {
+              textNode = btn.childNodes[i];
+              break;
+            }
+          }
+          if (textNode) {
+            textNode.textContent = '\n              ' + item.textContent.trim() + '\n              ';
+          }
+          // Close dropdown
+          var dd = wrap.querySelector('.search__dropdown');
+          if (dd) dd.classList.remove('is-open');
+          // Focus the search field
+          var searchField = wrap.closest('.search');
+          if (searchField) {
+            var input = searchField.querySelector('.search__field');
+            if (input) input.focus();
+          }
+        });
+      });
+
+      // Click outside to close
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.search__cat-wrap')) {
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+  </div><!-- /page -->
+
+  <script>
+    // ── Quantity stepper ──
+    function changeQty(btn, delta) {
+      var stepper = btn.closest('.qty-stepper');
+      var valEl = stepper.querySelector('.qty-stepper__val');
+      var item = btn.closest('.cart-item');
+      var qty = Math.max(1, (+valEl.textContent) + delta);
+      valEl.textContent = qty;
+      if (item) item.dataset.qty = qty;
+    }
+
+    // ── Remove item (fades then removes the row) ──
+    function removeItem(el) {
+      var item = el.closest('.cart-item');
+      if (!item) return;
+      item.style.transition = 'opacity .2s ease';
+      item.style.opacity = '0';
+      setTimeout(function () { item.remove(); }, 200);
+    }
+
+    // ── Item select checkbox ──
+    function toggleCheck(el) {
+      el.classList.toggle('checked');
+    }
+  </script>
+
+
+  <!-- Location Modal Overlay -->
+  <div class="location-modal-overlay"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="location-modal"
+      style="background: white; border-radius: 12px; width: 90%; max-width: 400px; overflow: hidden; font-family: inherit; direction: rtl; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <!-- Header -->
+      <div
+        style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">إختر عنوان التوصيل</h3>
+        <button class="location-modal-close"
+          style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div style="padding: 24px 20px;">
+        <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6; text-align: right;">
+          قد تختلف خيارات التوصيل وسرعات التوصيل باختلاف المواقع
+        </p>
+        <a href="login.html"
+          style="display: block; width: 100%; background: var(--color-primary, #046c4e); color: white; text-align: center; padding: 12px; border-radius: 24px; text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 20px;">
+          سجل دخولك لمشاهدة عناوينك
+        </a>
+
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+          <div style="padding: 0 12px; font-size: 14px; color: #64748b;">او</div>
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+        </div>
+
+        <div style="position: relative;">
+          <select
+            style="width: 100%; appearance: none; background: white; border: 1px solid #64748b; border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #1e293b; font-family: inherit; cursor: pointer;">
+            <option value="" disabled selected>إختر المدينة</option>
+            <option value="riyadh">الرياض</option>
+            <option value="jeddah">جدة</option>
+            <option value="dammam">الدمام</option>
+          </select>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round"
+            style="width: 20px; height: 20px; position: absolute; left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+
+        <div
+          style="margin-top: 20px; background-color: #fef3c7; border: 1px solid #b45309; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <span style="font-size: 14px; color: #b45309; line-height: 1.5; text-align: right; flex: 1;">
+            في حالة تغيير المدينة قد تفقد بعض او كل المنتجات التي تم اضافتها للسلة مؤخرا
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const deliveryBtns = document.querySelectorAll('.delivery');
+      const locationModal = document.querySelector('.location-modal-overlay');
+      const closeLocationModal = document.querySelector('.location-modal-close');
+      const citySelect = locationModal ? locationModal.querySelector('select') : null;
+
+      if (deliveryBtns.length && locationModal) {
+        deliveryBtns.forEach(btn => {
+          btn.addEventListener('click', function () {
+            locationModal.style.display = 'flex';
+          });
+        });
+
+        if (closeLocationModal) {
+          closeLocationModal.addEventListener('click', function () {
+            locationModal.style.display = 'none';
+          });
+        }
+
+        locationModal.addEventListener('click', function (e) {
+          if (e.target === locationModal) {
+            locationModal.style.display = 'none';
+          }
+        });
+
+        if (citySelect) {
+          citySelect.addEventListener('change', function (e) {
+            const selectedText = e.target.options[e.target.selectedIndex].text;
+            deliveryBtns.forEach(btn => {
+              const valDiv = btn.querySelector('.delivery__value');
+              if (valDiv) {
+                valDiv.textContent = selectedText + '، المملكة';
+              }
+            });
+            locationModal.style.display = 'none';
+          });
+        }
+      }
+    });
+  </script>
+
+<script>
+    // Categories dropdown toggle
+    (function () {
+      document.querySelectorAll('.search__categories').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = btn.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var dd = wrap.querySelector('.search__dropdown');
+          if (!dd) return;
+          var isOpen = dd.classList.contains('is-open');
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+          if (!isOpen) {
+            dd.classList.add('is-open');
+          }
+        });
+      });
+
+      // Clicking a category item selects it
+      document.querySelectorAll('.search__dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = item.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var btn = wrap.querySelector('.search__categories');
+          if (!btn) return;
+          // Get the text nodes of the button (skip the SVG)
+          var svg = btn.querySelector('svg');
+          // Replace button text content but keep the SVG
+          var textNode = null;
+          for (var i = 0; i < btn.childNodes.length; i++) {
+            if (btn.childNodes[i].nodeType === 3 && btn.childNodes[i].textContent.trim()) {
+              textNode = btn.childNodes[i];
+              break;
+            }
+          }
+          if (textNode) {
+            textNode.textContent = '\n              ' + item.textContent.trim() + '\n              ';
+          }
+          // Close dropdown
+          var dd = wrap.querySelector('.search__dropdown');
+          if (dd) dd.classList.remove('is-open');
+          // Focus the search field
+          var searchField = wrap.closest('.search');
+          if (searchField) {
+            var input = searchField.querySelector('.search__field');
+            if (input) input.focus();
+          }
+        });
+      });
+
+      // Click outside to close
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.search__cat-wrap')) {
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+        }
+      });
+    })();
+  </script>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu-drawer">
+      <div class="mobile-menu-header">
+        <a class="logo" href="../index.html">
+          <img src="../assets/bazar logo.png" alt="بازار" style="height:40px;width:auto;">
+        </a>
+        <button class="mobile-menu-close" aria-label="إغلاق">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <a href="login.html" class="mobile-menu-user" style="text-decoration: none;">
+        <span class="login__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <div>
+          <div class="mobile-menu-user-text">مرحباً بك</div>
+          <div class="mobile-menu-user-sub">تسجيل الدخول أو إنشاء حساب</div>
+        </div>
+      </a>
+      <nav class="mobile-menu-nav">
+        <a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>الرئيسية</a>
+        <a href="category.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>جميع الأقسام</a>
+        <a href="deals.html" class="special"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>العروض والتخفيضات</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="account-orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>طلباتي</a>
+        <a href="account-favorites.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>المفضلة</a>
+        <a href="order-tracking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>تتبع طلبك</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="contact-us.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>تواصل معنا</a>
+        <a href="login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>تسجيل الدخول</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="../index.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>الرئيسية</span>
+      </a>
+      <a href="category.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>الأقسام</span>
+      </a>
+      <a href="cart.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="mobile-bottom-nav__badge">٣</span>
+        <span>السلة</span>
+      </a>
+      <a href="account-favorites.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>المفضلة</span>
+      </a>
+      <a href="login.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>حسابي</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/mobile-nav.js"></script>
 </body>
 
 </html>
+
+
+

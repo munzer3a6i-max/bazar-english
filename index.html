@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -80,18 +80,28 @@
       <div class="navbar">
         <div class="container">
           <a class="logo" href="index.html">
-            <img src="./assets/bazar logo.png" alt="بازار السعودية"
+            <img src="../assets/bazar logo.png" alt="بازار السعودية"
               style="height: 62px; width: auto; object-fit: contain;">
           </a>
 
           <div class="search">
-            <button class="search__categories" type="button">
-              كل الأقسام
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+            <div class="search__cat-wrap">
+              <button class="search__categories" type="button">
+                كل الأقسام
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="search__dropdown">
+                <button type="button" class="search__dropdown-item">الجوالات وملحقاتها</button>
+                <button type="button" class="search__dropdown-item">التلفزيونات</button>
+                <button type="button" class="search__dropdown-item">الأجهزة المنزلية</button>
+                <button type="button" class="search__dropdown-item">الكمبيوتر واللابتوب</button>
+                <button type="button" class="search__dropdown-item">الصوتيات والسماعات</button>
+                <button type="button" class="search__dropdown-item">العناية والجمال</button>
+              </div>
+            </div>
             <div class="search__input-wrapper">
               <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
               <button class="search__clear" aria-label="مسح البحث" style="display: none;" type="button">
@@ -113,6 +123,16 @@
             </button>
           </div>
 
+          <!-- Mobile hamburger toggle (hidden on desktop) -->
+          <button class="mobile-menu-toggle" aria-label="القائمة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+
           <div class="account">
             <a class="login" href="html/login.html">
               <span class="login__avatar">
@@ -129,11 +149,15 @@
             </a>
 
             <a class="fav" href="html/account-favorites.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <div class="fav_avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+
+              </div>
+
               <span>المفضلة</span>
             </a>
 
@@ -149,7 +173,8 @@
               </span>
               <span class="cart__text">
                 <div class="cart__label">سلة التسوق</div>
-                <div class="cart__price">٣٤٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" />
+                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                    alt="ر.س" />
                 </div>
               </span>
             </a>
@@ -161,8 +186,7 @@
       <div class="subnav">
         <div class="container">
           <div class="subnav__dropdown-wrapper" style="position: relative;">
-            <button class="subnav__all" type="button" onclick="this.parentElement.classList.toggle('active')"
-              style="border: none; cursor: pointer; font-family: inherit;">
+            <button class="subnav__all" type="button" style="border: none; cursor: pointer; font-family: inherit;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -177,48 +201,313 @@
               </svg>
             </button>
             <div class="subnav__dropdown-menu">
-              <ul class="subnav__dropdown-list">
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">📱</span><span
-                      class="link-text">الجوالات وملحقاتها</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              ﻿<ul class="subnav__dropdown-list">
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">📱</span>
+                    <span class="link-text">الجوالات وملحقاتها</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">📺</span><span
-                      class="link-text">التلفزيونات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>آبل (Apple)</h4>
+                      <ul>
+                        <li><a href="html/category.html">آيفون 15 برو ماكس</a></li>
+                        <li><a href="html/category.html">آيفون 15</a></li>
+                        <li><a href="html/category.html">آيفون 14</a></li>
+                        <li><a href="html/category.html">اكسسوارات آبل</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>سامسونج (Samsung)</h4>
+                      <ul>
+                        <li><a href="html/category.html">جالاكسي S24 ألترا</a></li>
+                        <li><a href="html/category.html">جالاكسي S23</a></li>
+                        <li><a href="html/category.html">جالاكسي A</a></li>
+                        <li><a href="html/category.html">اكسسوارات سامسونج</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>ملحقات ذكية</h4>
+                      <ul>
+                        <li><a href="html/category.html">شواحن وكابلات</a></li>
+                        <li><a href="html/category.html">كفرات وحماية شاشة</a></li>
+                        <li><a href="html/category.html">بطاريات متنقلة (Power Banks)</a></li>
+                        <li><a href="html/category.html">حوامل سيارات</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">📺</span>
+                    <span class="link-text">التلفزيونات</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">🧺</span><span
-                      class="link-text">الأجهزة المنزلية</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>حسب الحجم</h4>
+                      <ul>
+                        <li><a href="html/category.html">تلفزيونات 32 - 43 بوصة</a></li>
+                        <li><a href="html/category.html">تلفزيونات 50 - 55 بوصة</a></li>
+                        <li><a href="html/category.html">تلفزيونات 65 - 75 بوصة</a></li>
+                        <li><a href="html/category.html">تلفزيونات 85 بوصة فأكثر</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>حسب التقنية</h4>
+                      <ul>
+                        <li><a href="html/category.html">OLED & QLED</a></li>
+                        <li><a href="html/category.html">4K Ultra HD</a></li>
+                        <li><a href="html/category.html">8K Smart TVs</a></li>
+                        <li><a href="html/category.html">تلفزيونات ذكية (Smart)</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>ملحقات التلفزيون</h4>
+                      <ul>
+                        <li><a href="html/category.html">مسرح منزلي وساوند بار</a></li>
+                        <li><a href="html/category.html">أجهزة البث (Apple TV, Chromecast)</a></li>
+                        <li><a href="html/category.html">حوامل التلفزيون</a></li>
+                        <li><a href="html/category.html">ريموت كنترول وملحقات</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">🧺</span>
+                    <span class="link-text">الأجهزة المنزلية</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">💻</span><span
-                      class="link-text">الكمبيوتر واللابتوب</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>أجهزة كبيرة</h4>
+                      <ul>
+                        <li><a href="html/category.html">ثلاجات وفريزرات</a></li>
+                        <li><a href="html/category.html">غسالات ونشافات</a></li>
+                        <li><a href="html/category.html">أفران وطباخات</a></li>
+                        <li><a href="html/category.html">غسالات صحون</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>أجهزة صغيرة</h4>
+                      <ul>
+                        <li><a href="html/category.html">محضرات طعام وخلاطات</a></li>
+                        <li><a href="html/category.html">ميكروويف وأفران صغيرة</a></li>
+                        <li><a href="html/category.html">مكانس كهربائية</a></li>
+                        <li><a href="html/category.html">مكاوي بخار</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>مشروبات وقهوة</h4>
+                      <ul>
+                        <li><a href="html/category.html">ماكينات اسبريسو</a></li>
+                        <li><a href="html/category.html">صانعات قهوة تركية</a></li>
+                        <li><a href="html/category.html">غلايات ماء</a></li>
+                        <li><a href="html/category.html">برادات ماء</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">💻</span>
+                    <span class="link-text">الكمبيوتر واللابتوب</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎧</span><span
-                      class="link-text">الصوتيات والسماعات</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>أجهزة كمبيوتر</h4>
+                      <ul>
+                        <li><a href="html/category.html">لابتوبات أعمال ودراسة</a></li>
+                        <li><a href="html/category.html">لابتوبات ألعاب (Gaming)</a></li>
+                        <li><a href="html/category.html">أجهزة كمبيوتر مكتبية</a></li>
+                        <li><a href="html/category.html">أجهزة ماك (Mac)</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>مكونات وقطع غيار</h4>
+                      <ul>
+                        <li><a href="html/category.html">كروت شاشة (VGA)</a></li>
+                        <li><a href="html/category.html">معالجات ولوحات أم</a></li>
+                        <li><a href="html/category.html">ذاكرة عشوائية (RAM)</a></li>
+                        <li><a href="html/category.html">أقراص تخزين (SSD / HDD)</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>ملحقات</h4>
+                      <ul>
+                        <li><a href="html/category.html">شاشات كمبيوتر</a></li>
+                        <li><a href="html/category.html">ماوس وكيبورد</a></li>
+                        <li><a href="html/category.html">طابعات وماسحات ضوئية</a></li>
+                        <li><a href="html/category.html">راوترات وأجهزة شبكات</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">🎧</span>
+                    <span class="link-text">الصوتيات والسماعات</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">📷</span><span
-                      class="link-text">الكاميرات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>سماعات أذن</h4>
+                      <ul>
+                        <li><a href="html/category.html">سماعات لاسلكية (TWS)</a></li>
+                        <li><a href="html/category.html">سماعات رياضية</a></li>
+                        <li><a href="html/category.html">سماعات أذن سلكية</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>سماعات رأس</h4>
+                      <ul>
+                        <li><a href="html/category.html">سماعات رأس بلوتوث</a></li>
+                        <li><a href="html/category.html">سماعات ألعاب (Gaming Headsets)</a></li>
+                        <li><a href="html/category.html">سماعات عازلة للضوضاء</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>مكبرات صوت</h4>
+                      <ul>
+                        <li><a href="html/category.html">مكبرات صوت محمولة (Bluetooth)</a></li>
+                        <li><a href="html/category.html">أنظمة صوت منزلية</a></li>
+                        <li><a href="html/category.html">ساوند بار (Soundbars)</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">📷</span>
+                    <span class="link-text">الكاميرات</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎮</span><span
-                      class="link-text">الألعاب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>أنواع الكاميرات</h4>
+                      <ul>
+                        <li><a href="html/category.html">كاميرات احترافية (DSLR)</a></li>
+                        <li><a href="html/category.html">كاميرات ميرورليس (Mirrorless)</a></li>
+                        <li><a href="html/category.html">كاميرات مدمجة</a></li>
+                        <li><a href="html/category.html">كاميرات فورية</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>كاميرات فيديو وحركة</h4>
+                      <ul>
+                        <li><a href="html/category.html">كاميرات أكشن (GoPro)</a></li>
+                        <li><a href="html/category.html">طائرات درون (Drones)</a></li>
+                        <li><a href="html/category.html">كاميرات مراقبة وأمان</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>عدسات وملحقات</h4>
+                      <ul>
+                        <li><a href="html/category.html">عدسات الكاميرا</a></li>
+                        <li><a href="html/category.html">حوامل (Tripods)</a></li>
+                        <li><a href="html/category.html">إضاءة وفلاشات</a></li>
+                        <li><a href="html/category.html">حقائب كاميرات وبطاقات ذاكرة</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">🎮</span>
+                    <span class="link-text">الألعاب</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="html/category.html" class="subnav__dropdown-link"><span class="icon-wrap">💄</span><span
-                      class="link-text">العناية والجمال</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>أجهزة الكونسول</h4>
+                      <ul>
+                        <li><a href="html/category.html">بلايستيشن 5 (PS5)</a></li>
+                        <li><a href="html/category.html">اكس بوكس (Xbox Series X/S)</a></li>
+                        <li><a href="html/category.html">نينتندو سويتش (Nintendo Switch)</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>ألعاب الفيديو</h4>
+                      <ul>
+                        <li><a href="html/category.html">ألعاب بلايستيشن</a></li>
+                        <li><a href="html/category.html">ألعاب اكس بوكس</a></li>
+                        <li><a href="html/category.html">ألعاب نينتندو</a></li>
+                        <li><a href="html/category.html">بطاقات رقمية (PSN, Xbox Live)</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>إكسسوارات الألعاب</h4>
+                      <ul>
+                        <li><a href="html/category.html">أيادي تحكم (Controllers)</a></li>
+                        <li><a href="html/category.html">كراسي ألعاب</a></li>
+                        <li><a href="html/category.html">سماعات قيمنق</a></li>
+                        <li><a href="html/category.html">مقود ألعاب سباق</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="html/category.html" class="subnav__dropdown-link">
+                    <span class="icon-wrap">💄</span>
+                    <span class="link-text">العناية والجمال</span>
+                    <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
+                    </svg>
+                  </a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__col">
+                      <h4>العناية الشخصية</h4>
+                      <ul>
+                        <li><a href="html/category.html">أجهزة إزالة الشعر</a></li>
+                        <li><a href="html/category.html">ماكينات حلاقة للرجال</a></li>
+                        <li><a href="html/category.html">فرش أسنان كهربائية</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>العناية بالشعر</h4>
+                      <ul>
+                        <li><a href="html/category.html">مجففات شعر (استشوار)</a></li>
+                        <li><a href="html/category.html">مملسات شعر (سيراميك)</a></li>
+                        <li><a href="html/category.html">مكواة تجعيد الشعر</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-menu__col">
+                      <h4>صحة وجمال</h4>
+                      <ul>
+                        <li><a href="html/category.html">أجهزة مساج وتدليك</a></li>
+                        <li><a href="html/category.html">موازين ذكية</a></li>
+                        <li><a href="html/category.html">أجهزة تنظيف البشرة</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
               </ul>
+
             </div>
           </div>
           <nav class="subnav__links">
@@ -311,29 +600,29 @@
 
           <a class="cat-card" href="html/category.html">
             <div class="cat-card__thumb">
-              <img src="./assets/category images/a58112cf-5e1a-4580-831e-411a42eac096.jpg.png"
+              <img src="./assets/category images/5c06bef8-27a3-44e3-a929-92d350f21813.jpg.png"
                 alt="الإلكترونيات والجوالات">
-            </div>
-            <div class="cat-card__label">الإلكترونيات والجوالات</div>
-          </a>
-
-          <a class="cat-card" href="html/category.html">
-            <div class="cat-card__thumb">
-              <img src="./assets/category images/7f517dd4-35d6-412f-9181-1db01dca38af.jpg.png" alt="مكيفات الهواء">
             </div>
             <div class="cat-card__label">مكيفات الهواء</div>
           </a>
 
           <a class="cat-card" href="html/category.html">
             <div class="cat-card__thumb">
-              <img src="./assets/category images/image 11.png" alt="الأجهزة المنزلية">
+              <img src="./assets/category images/image 1.png" alt="مكيفات الهواء">
+            </div>
+            <div class="cat-card__label">الإلكترونيات والجوالات</div>
+          </a>
+
+          <a class="cat-card" href="html/category.html">
+            <div class="cat-card__thumb">
+              <img src="./assets/category images/7f517dd4-35d6-412f-9181-1db01dca38af.jpg.png" alt="الأجهزة المنزلية">
             </div>
             <div class="cat-card__label">الأجهزة المنزلية</div>
           </a>
 
           <a class="cat-card" href="html/category.html">
             <div class="cat-card__thumb">
-              <img src="./assets/category images/712d7cbc-c36f-4163-9a35-4b470801905a.jpg.png"
+              <img src="./assets/category images/a58112cf-5e1a-4580-831e-411a42eac096.jpg.png"
                 alt="العناية الشخصية والجمال">
             </div>
             <div class="cat-card__label">العناية الشخصية والجمال</div>
@@ -341,30 +630,16 @@
 
           <a class="cat-card" href="html/category.html">
             <div class="cat-card__thumb">
-              <img src="./assets/category images/5c06bef8-27a3-44e3-a929-92d350f21813.jpg.png" alt="مستلزمات الطبخ">
+              <img src="./assets/category images/image 11.png" alt="الرياضة والصحة">
+            </div>
+            <div class="cat-card__label">الرياضة والصحة</div>
+          </a>
+
+          <a class="cat-card" href="html/category.html">
+            <div class="cat-card__thumb">
+              <img src="./assets/category images/712d7cbc-c36f-4163-9a35-4b470801905a.jpg.png" alt="مستلزمات الطبخ">
             </div>
             <div class="cat-card__label">مستلزمات الطبخ</div>
-          </a>
-
-          <a class="cat-card" href="html/category.html">
-            <div class="cat-card__thumb">
-              <img src="./assets/category images/image 1.png" alt="الرياضة والصحة">
-            </div>
-            <div class="cat-card__label">الرياضة والصحة</div>
-          </a>
-
-          <a class="cat-card" href="html/category.html">
-            <div class="cat-card__thumb">
-              <img src="./assets/category images/image 11.png" alt="الأجهزة المنزلية">
-            </div>
-            <div class="cat-card__label">الأجهزة المنزلية</div>
-          </a>
-
-          <a class="cat-card" href="html/category.html">
-            <div class="cat-card__thumb">
-              <img src="./assets/category images/image 1.png" alt="الرياضة والصحة">
-            </div>
-            <div class="cat-card__label">الرياضة والصحة</div>
           </a>
 
         </div>
@@ -2972,13 +3247,13 @@
     <section class="small-banners container">
       <div class="small-banners__grid">
         <a href="html/category.html" class="small-banner__link">
-          <img src="./assets/Small Banner 1.png" alt="العناية الشخصية تبدأ من 9 ريال">
+          <img src="./assets/Small Banner 1.png" alt="العناية الشخصية تبدأ من ٩ ريال">
         </a>
         <a href="html/category.html" class="small-banner__link">
-          <img src="./assets/Small Banner 2.png" alt="أجهزة الشعر تبدأ من 55 ريال">
+          <img src="./assets/Small Banner 2.png" alt="أجهزة الشعر تبدأ من ٥٥ ريال">
         </a>
         <a href="html/category.html" class="small-banner__link">
-          <img src="./assets/Small Banner 3.png" alt="استعرضي أناقتك وتألقي بإكسسواراتنا تبدأ من 20 ريال">
+          <img src="./assets/Small Banner 3.png" alt="استعرضي أناقتك وتألقي بإكسسواراتنا تبدأ من ٢٠ ريال">
         </a>
       </div>
     </section>
@@ -4719,326 +4994,344 @@
               <img src="./assets/اجهزتك الكهربائية من Arrow.png" alt="Arrow Appliances">
             </a>
             <div class="brand-block__carousel-wrapper">
-              <button class="brand-block__arrow brand-block__arrow--right" aria-label="السابق" onclick="this.nextElementSibling.scrollBy({left: 320, behavior: 'smooth'})">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <button class="brand-block__arrow brand-block__arrow--right" aria-label="السابق"
+                onclick="this.nextElementSibling.scrollBy({left: 320, behavior: 'smooth'})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
               </button>
               <div class="brand-block__products">
                 <!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
+                </article>
 
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-<!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                <!-- Card 1 -->
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
+                </article>
+                <!-- Card 1 -->
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
 
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 1 -->
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-              </div>
-              <button class="brand-block__arrow brand-block__arrow--left" aria-label="التالي" onclick="this.previousElementSibling.scrollBy({left: -320, behavior: 'smooth'})">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <button class="brand-block__arrow brand-block__arrow--left" aria-label="التالي"
+                onclick="this.previousElementSibling.scrollBy({left: -320, behavior: 'smooth'})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
               </button>
             </div>
-</div>
+          </div>
         </div>
 
         <!-- Ugine Block -->
@@ -5052,326 +5345,344 @@
               <img src="./assets/اجهزتك الكهربائية من Ugine.png" alt="Ugine Appliances">
             </a>
             <div class="brand-block__carousel-wrapper">
-              <button class="brand-block__arrow brand-block__arrow--right" aria-label="السابق" onclick="this.nextElementSibling.scrollBy({left: 320, behavior: 'smooth'})">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              <button class="brand-block__arrow brand-block__arrow--right" aria-label="السابق"
+                onclick="this.nextElementSibling.scrollBy({left: 320, behavior: 'smooth'})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
               </button>
               <div class="brand-block__products">
                 <!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
+                </article>
 
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-<!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                <!-- Card 1 -->
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
-              </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Card 1 -->
-            <article class="product-card" style="cursor:pointer;" onclick="window.location.href='html/product.html'">
-              <div class="product-card__media">
-                <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
-                    class="timer">09:53:03</span></span>
-                <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg></button>
-                <div class="product-card__img">
-                  <div class="carousel-track">
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <line x1="12" y1="17" x2="12" y2="20" />
-                      </svg></div>
-                    <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <rect x="3" y="5" width="18" height="12" rx="1.5" />
-                        <path d="M2 20h20" />
-                        <circle cx="12" cy="11" r="2" />
-                      </svg></div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
                   </div>
-                </div>
-                <div class="product-card__overlay-bottom">
-                  <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
-                  <button class="product-card__plus" aria-label="أضف للسلة">
-                    <span class="state-default">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </span>
-                    <span class="state-active">
-                      <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                      </svg>
-                      <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
+                </article>
+                <!-- Card 1 -->
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
 
-                      <span class="qty">1</span>
-                      <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </span>
-                  </button>
-                </div>
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 1 -->
+                <article class="product-card" style="cursor:pointer;"
+                  onclick="window.location.href='html/product.html'">
+                  <div class="product-card__media">
+                    <span class="product-card__promo"><span class="discount">تخفيض ٤٥%</span><span
+                        class="timer">09:53:03</span></span>
+                    <button class="product-card__wishlist" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg></button>
+                    <div class="product-card__img">
+                      <div class="carousel-track">
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f7f7f5,#eef0ec)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#eef2ff,#dde6fb)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <line x1="12" y1="17" x2="12" y2="20" />
+                          </svg></div>
+                        <div class="carousel-slide" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><svg
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="12" rx="1.5" />
+                            <path d="M2 20h20" />
+                            <circle cx="12" cy="11" r="2" />
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="product-card__overlay-bottom">
+                      <span class="product-card__dots"><i class="on"></i><i></i><i></i></span>
+                      <button class="product-card__plus" aria-label="أضف للسلة">
+                        <span class="state-default">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>
+                        </span>
+                        <span class="state-active">
+                          <svg class="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                          </svg>
+                          <svg class="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+
+                          <span class="qty">1</span>
+                          <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
+                    <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span>
+                      <span class="count">(456 تقييم)</span>
+                    </div>
+                    <div class="product-card__price">
+                      <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
+                            src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
+                      <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
+                          alt="ر.س" /></span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ماك بوك برو بمساحة تخزينية 512 قيقا ، و رام 16 قيقا</h3>
-                <div class="product-card__rating"><span class="stars">★★★★★</span> <span class="num">4.9</span> <span
-                    class="count">(456 تقييم)</span></div>
-                <div class="product-card__price">
-                  <span class="price-new"><span class="amount">١٬٨٩٩</span><span class="cur"><img
-                        src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" /></span></span>
-                  <span class="price-old">٢٬٤٩٩ <img src="./assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                      alt="ر.س" /></span>
-                </div>
-              </div>
-            </article>
-              </div>
-              <button class="brand-block__arrow brand-block__arrow--left" aria-label="التالي" onclick="this.previousElementSibling.scrollBy({left: -320, behavior: 'smooth'})">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <button class="brand-block__arrow brand-block__arrow--left" aria-label="التالي"
+                onclick="this.previousElementSibling.scrollBy({left: -320, behavior: 'smooth'})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
               </button>
             </div>
-</div>
+          </div>
         </div>
 
       </div>
@@ -5627,10 +5938,10 @@
           <div>
             <h3 class="footer-col__title">روابط سريعة</h3>
             <ul class="footer-links">
-              <li><a href="#">عن الشركة</a></li>
-              <li><a href="#">الأسئلة الشائعة</a></li>
-              <li><a href="#">الدعم والمساعدة</a></li>
-              <li><a href="#">اتصل بنا</a></li>
+              <li><a href="html/category.html">عن الشركة</a></li>
+              <li><a href="html/category.html">الأسئلة الشائعة</a></li>
+              <li><a href="html/category.html">الدعم والمساعدة</a></li>
+              <li><a href="html/category.html">اتصل بنا</a></li>
             </ul>
           </div>
 
@@ -5638,10 +5949,10 @@
           <div>
             <h3 class="footer-col__title">السياسات</h3>
             <ul class="footer-links">
-              <li><a href="#">الشروط والأحكام</a></li>
-              <li><a href="#">سياسة الخصوصية</a></li>
-              <li><a href="#">سياسة الاسترجاع</a></li>
-              <li><a href="#">سياسة الشحن</a></li>
+              <li><a href="html/category.html">الشروط والأحكام</a></li>
+              <li><a href="html/category.html">سياسة الخصوصية</a></li>
+              <li><a href="html/category.html">سياسة الاسترجاع</a></li>
+              <li><a href="html/category.html">سياسة الشحن</a></li>
             </ul>
           </div>
 
@@ -5698,7 +6009,7 @@
 
         <div class="footer-bottom">
           <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
-          <p>© 2024 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+          <p>© 2026 Saudi Bazaar. جميع الحقوق محفوظة.</p>
         </div>
 
       </div>
@@ -5924,6 +6235,132 @@
     });
   </script>
 
+  <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="index.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>الرئيسية</span>
+      </a>
+      <a href="html/category.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>الأقسام</span>
+      </a>
+      <a href="html/cart.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="mobile-bottom-nav__badge">٣</span>
+        <span>السلة</span>
+      </a>
+      <a href="html/account-favorites.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>المفضلة</span>
+      </a>
+      <a href="html/login.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>حسابي</span>
+      </a>
+    </div>
+  </nav>
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu-drawer">
+      <div class="mobile-menu-header">
+        <a class="logo" href="index.html">
+          <img src="./assets/bazar logo.png" alt="بازار السعودية" style="height:40px;width:auto;">
+        </a>
+        <button class="mobile-menu-close" aria-label="إغلاق">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <a href="html/login.html" class="mobile-menu-user" style="text-decoration: none;">
+        <span class="login__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg></span>
+        <div>
+          <div class="mobile-menu-user-text">تسجيل الدخول</div>
+          <div class="mobile-menu-user-sub">أهلاً بك في بازار السعودية</div>
+        </div>
+      </a>
+      <nav class="mobile-menu-nav">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>الرئيسية</a>
+        <a href="html/category.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>جميع الأقسام</a>
+        <a href="html/deals.html" class="special"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+            <line x1="7" y1="7" x2="7.01" y2="7" />
+          </svg>عروض بازار بلس</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="html/account-orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16.5 9.4 7.5 4.21" />
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+          </svg>الطلبات</a>
+        <a href="html/account-favorites.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>المفضلة</a>
+        <a href="html/order-tracking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>تتبع الطلب</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="html/contact-us.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>تواصل معنا</a>
+        <a href="html/login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+            <polyline points="10 17 15 12 10 7" />
+            <line x1="15" y1="12" x2="3" y2="12" />
+          </svg>تسجيل الخروج</a>
+      </nav>
+    </div>
+  </div>
+  <script src="./js/mobile-nav.js"></script>
 </body>
 
 </html>
+

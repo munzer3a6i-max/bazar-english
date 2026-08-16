@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -81,13 +81,23 @@
           </a>
 
           <div class="search">
-            <button class="search__categories" type="button">
-              كل الأقسام
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+            <div class="search__cat-wrap">
+              <button class="search__categories" type="button">
+                كل الأقسام
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="search__dropdown">
+                <button type="button" class="search__dropdown-item">الجوالات وملحقاتها</button>
+                <button type="button" class="search__dropdown-item">التلفزيونات</button>
+                <button type="button" class="search__dropdown-item">الأجهزة المنزلية</button>
+                <button type="button" class="search__dropdown-item">الكمبيوتر واللابتوب</button>
+                <button type="button" class="search__dropdown-item">الصوتيات والسماعات</button>
+                <button type="button" class="search__dropdown-item">العناية والجمال</button>
+              </div>
+            </div>
             <div class="search__input-wrapper">
               <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
               <button class="search__clear" aria-label="مسح البحث" style="display: none;" type="button">
@@ -109,6 +119,15 @@
             </button>
           </div>
 
+          <!-- Mobile hamburger toggle (hidden on desktop) -->
+          <button class="mobile-menu-toggle" aria-label="القائمة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+
           <div class="account">
             <a class="login" href="login.html">
               <span class="login__avatar">
@@ -125,11 +144,15 @@
             </a>
 
             <a class="fav" href="account-favorites.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <div class="fav_avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+
+              </div>
+
               <span>المفضلة</span>
             </a>
 
@@ -145,8 +168,8 @@
               </span>
               <span class="cart__text">
                 <div class="cart__label">سلة التسوق</div>
-                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                    alt="ر.س" /></div>
+                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" />
+                </div>
               </span>
             </a>
           </div>
@@ -157,8 +180,7 @@
       <div class="subnav">
         <div class="container">
           <div class="subnav__dropdown-wrapper" style="position: relative;">
-            <button class="subnav__all" type="button" onclick="this.parentElement.classList.toggle('active')"
-              style="border: none; cursor: pointer; font-family: inherit;">
+            <button class="subnav__all" type="button" style="border: none; cursor: pointer; font-family: inherit;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -173,48 +195,305 @@
               </svg>
             </button>
             <div class="subnav__dropdown-menu">
-              <ul class="subnav__dropdown-list">
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📱</span><span
-                      class="link-text">الجوالات وملحقاتها</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📺</span><span
-                      class="link-text">التلفزيونات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🧺</span><span
-                      class="link-text">الأجهزة المنزلية</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💻</span><span
-                      class="link-text">الكمبيوتر واللابتوب</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎧</span><span
-                      class="link-text">الصوتيات والسماعات</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📷</span><span
-                      class="link-text">الكاميرات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎮</span><span
-                      class="link-text">الألعاب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💄</span><span
-                      class="link-text">العناية والجمال</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-              </ul>
+              ﻿<ul class="subnav__dropdown-list">
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📱</span>
+      <span class="link-text">الجوالات وملحقاتها</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>آبل (Apple)</h4>
+         <ul>
+           <li><a href="category.html">آيفون 15 برو ماكس</a></li>
+           <li><a href="category.html">آيفون 15</a></li>
+           <li><a href="category.html">آيفون 14</a></li>
+           <li><a href="category.html">اكسسوارات آبل</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>سامسونج (Samsung)</h4>
+         <ul>
+           <li><a href="category.html">جالاكسي S24 ألترا</a></li>
+           <li><a href="category.html">جالاكسي S23</a></li>
+           <li><a href="category.html">جالاكسي A</a></li>
+           <li><a href="category.html">اكسسوارات سامسونج</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات ذكية</h4>
+         <ul>
+           <li><a href="category.html">شواحن وكابلات</a></li>
+           <li><a href="category.html">كفرات وحماية شاشة</a></li>
+           <li><a href="category.html">بطاريات متنقلة (Power Banks)</a></li>
+           <li><a href="category.html">حوامل سيارات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📺</span>
+      <span class="link-text">التلفزيونات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>حسب الحجم</h4>
+         <ul>
+           <li><a href="category.html">تلفزيونات 32 - 43 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 50 - 55 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 65 - 75 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 85 بوصة فأكثر</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>حسب التقنية</h4>
+         <ul>
+           <li><a href="category.html">OLED & QLED</a></li>
+           <li><a href="category.html">4K Ultra HD</a></li>
+           <li><a href="category.html">8K Smart TVs</a></li>
+           <li><a href="category.html">تلفزيونات ذكية (Smart)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات التلفزيون</h4>
+         <ul>
+           <li><a href="category.html">مسرح منزلي وساوند بار</a></li>
+           <li><a href="category.html">أجهزة البث (Apple TV, Chromecast)</a></li>
+           <li><a href="category.html">حوامل التلفزيون</a></li>
+           <li><a href="category.html">ريموت كنترول وملحقات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🧺</span>
+      <span class="link-text">الأجهزة المنزلية</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة كبيرة</h4>
+         <ul>
+           <li><a href="category.html">ثلاجات وفريزرات</a></li>
+           <li><a href="category.html">غسالات ونشافات</a></li>
+           <li><a href="category.html">أفران وطباخات</a></li>
+           <li><a href="category.html">غسالات صحون</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>أجهزة صغيرة</h4>
+         <ul>
+           <li><a href="category.html">محضرات طعام وخلاطات</a></li>
+           <li><a href="category.html">ميكروويف وأفران صغيرة</a></li>
+           <li><a href="category.html">مكانس كهربائية</a></li>
+           <li><a href="category.html">مكاوي بخار</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مشروبات وقهوة</h4>
+         <ul>
+           <li><a href="category.html">ماكينات اسبريسو</a></li>
+           <li><a href="category.html">صانعات قهوة تركية</a></li>
+           <li><a href="category.html">غلايات ماء</a></li>
+           <li><a href="category.html">برادات ماء</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💻</span>
+      <span class="link-text">الكمبيوتر واللابتوب</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة كمبيوتر</h4>
+         <ul>
+           <li><a href="category.html">لابتوبات أعمال ودراسة</a></li>
+           <li><a href="category.html">لابتوبات ألعاب (Gaming)</a></li>
+           <li><a href="category.html">أجهزة كمبيوتر مكتبية</a></li>
+           <li><a href="category.html">أجهزة ماك (Mac)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مكونات وقطع غيار</h4>
+         <ul>
+           <li><a href="category.html">كروت شاشة (VGA)</a></li>
+           <li><a href="category.html">معالجات ولوحات أم</a></li>
+           <li><a href="category.html">ذاكرة عشوائية (RAM)</a></li>
+           <li><a href="category.html">أقراص تخزين (SSD / HDD)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات</h4>
+         <ul>
+           <li><a href="category.html">شاشات كمبيوتر</a></li>
+           <li><a href="category.html">ماوس وكيبورد</a></li>
+           <li><a href="category.html">طابعات وماسحات ضوئية</a></li>
+           <li><a href="category.html">راوترات وأجهزة شبكات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎧</span>
+      <span class="link-text">الصوتيات والسماعات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>سماعات أذن</h4>
+         <ul>
+           <li><a href="category.html">سماعات لاسلكية (TWS)</a></li>
+           <li><a href="category.html">سماعات رياضية</a></li>
+           <li><a href="category.html">سماعات أذن سلكية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>سماعات رأس</h4>
+         <ul>
+           <li><a href="category.html">سماعات رأس بلوتوث</a></li>
+           <li><a href="category.html">سماعات ألعاب (Gaming Headsets)</a></li>
+           <li><a href="category.html">سماعات عازلة للضوضاء</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مكبرات صوت</h4>
+         <ul>
+           <li><a href="category.html">مكبرات صوت محمولة (Bluetooth)</a></li>
+           <li><a href="category.html">أنظمة صوت منزلية</a></li>
+           <li><a href="category.html">ساوند بار (Soundbars)</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📷</span>
+      <span class="link-text">الكاميرات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أنواع الكاميرات</h4>
+         <ul>
+           <li><a href="category.html">كاميرات احترافية (DSLR)</a></li>
+           <li><a href="category.html">كاميرات ميرورليس (Mirrorless)</a></li>
+           <li><a href="category.html">كاميرات مدمجة</a></li>
+           <li><a href="category.html">كاميرات فورية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>كاميرات فيديو وحركة</h4>
+         <ul>
+           <li><a href="category.html">كاميرات أكشن (GoPro)</a></li>
+           <li><a href="category.html">طائرات درون (Drones)</a></li>
+           <li><a href="category.html">كاميرات مراقبة وأمان</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>عدسات وملحقات</h4>
+         <ul>
+           <li><a href="category.html">عدسات الكاميرا</a></li>
+           <li><a href="category.html">حوامل (Tripods)</a></li>
+           <li><a href="category.html">إضاءة وفلاشات</a></li>
+           <li><a href="category.html">حقائب كاميرات وبطاقات ذاكرة</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎮</span>
+      <span class="link-text">الألعاب</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة الكونسول</h4>
+         <ul>
+           <li><a href="category.html">بلايستيشن 5 (PS5)</a></li>
+           <li><a href="category.html">اكس بوكس (Xbox Series X/S)</a></li>
+           <li><a href="category.html">نينتندو سويتش (Nintendo Switch)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ألعاب الفيديو</h4>
+         <ul>
+           <li><a href="category.html">ألعاب بلايستيشن</a></li>
+           <li><a href="category.html">ألعاب اكس بوكس</a></li>
+           <li><a href="category.html">ألعاب نينتندو</a></li>
+           <li><a href="category.html">بطاقات رقمية (PSN, Xbox Live)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>إكسسوارات الألعاب</h4>
+         <ul>
+           <li><a href="category.html">أيادي تحكم (Controllers)</a></li>
+           <li><a href="category.html">كراسي ألعاب</a></li>
+           <li><a href="category.html">سماعات قيمنق</a></li>
+           <li><a href="category.html">مقود ألعاب سباق</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💄</span>
+      <span class="link-text">العناية والجمال</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>العناية الشخصية</h4>
+         <ul>
+           <li><a href="category.html">أجهزة إزالة الشعر</a></li>
+           <li><a href="category.html">ماكينات حلاقة للرجال</a></li>
+           <li><a href="category.html">فرش أسنان كهربائية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>العناية بالشعر</h4>
+         <ul>
+           <li><a href="category.html">مجففات شعر (استشوار)</a></li>
+           <li><a href="category.html">مملسات شعر (سيراميك)</a></li>
+           <li><a href="category.html">مكواة تجعيد الشعر</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>صحة وجمال</h4>
+         <ul>
+           <li><a href="category.html">أجهزة مساج وتدليك</a></li>
+           <li><a href="category.html">موازين ذكية</a></li>
+           <li><a href="category.html">أجهزة تنظيف البشرة</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+
             </div>
           </div>
           <nav class="subnav__links">
@@ -226,16 +505,20 @@
             <a href="seller-store.html" class="subnav__link">الماركات</a>
             <a href="contact-us.html" class="subnav__link">الدعم</a>
           </nav>
-          <button class="delivery" type="button" style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: var(--radius-pill);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: none;">
+          <button class="delivery" type="button"
+            style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="color: var(--color-primary);">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <div class="delivery__text" style="text-align: right; display: flex; flex-direction: column; justify-content: center;">
-              <div class="delivery__label" style="font-size: 12px; color: var(--color-text-secondary); line-height: 1;">التوصيل إلى</div>
-              <div class="delivery__value" style="font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-top: 2px; line-height: 1;">الرياض، المملكة</div>
+            <div class="delivery__text">
+              <div class="delivery__label" style="font-size: 12px; line-height: 1.2;">التوصيل إلى</div>
+              <div class="delivery__value" style="font-size: 16px; line-height: 1.2; margin-top: 2px;">الرياض، المملكة
+              </div>
             </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--color-primary);">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
@@ -266,7 +549,7 @@
       <div class="cat-layout">
 
         <!-- ==================  FILTER SIDEBAR (RIGHT in RTL)  =========== -->
-        <aside class="filter-panel">
+        <aside class="filter-panel" id="filterPanel">
 
           <!-- Header -->
           <div class="filter-header">
@@ -505,8 +788,14 @@
           <div class="cat-toolbar">
             <!-- left: result count -->
             <div class="toolbar-left">عرض ١ - ٢٤ من ١٠٨ نتيجة</div>
-            <!-- right: view toggle + sort -->
+            <!-- right: view toggle + sort + filter button -->
             <div class="toolbar-right">
+              <button class="mobile-filter-toggle" onclick="toggleMobileFilter(true)" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+                <span>التصفية</span>
+              </button>
               <div class="sort-group" style="position:relative">
                 <span class="sort-label">ترتيب حسب:</span>
                 <div class="sort-menu" id="sortMenu">
@@ -1394,10 +1683,10 @@
           <div>
             <h3 class="footer-col__title">روابط سريعة</h3>
             <ul class="footer-links">
-              <li><a href="#">عن الشركة</a></li>
-              <li><a href="#">اتصل بنا</a></li>
-              <li><a href="#">الأسئلة الشائعة</a></li>
-              <li><a href="#">المدونة</a></li>
+              <li><a href="category.html">عن الشركة</a></li>
+              <li><a href="category.html">الأسئلة الشائعة</a></li>
+              <li><a href="category.html">الدعم والمساعدة</a></li>
+              <li><a href="category.html">اتصل بنا</a></li>
             </ul>
           </div>
 
@@ -1405,10 +1694,10 @@
           <div>
             <h3 class="footer-col__title">السياسات</h3>
             <ul class="footer-links">
-              <li><a href="#">الشروط والأحكام</a></li>
-              <li><a href="#">سياسة الخصوصية</a></li>
-              <li><a href="#">سياسة الاسترجاع</a></li>
-              <li><a href="#">سياسة الشحن</a></li>
+              <li><a href="category.html">الشروط والأحكام</a></li>
+              <li><a href="category.html">سياسة الخصوصية</a></li>
+              <li><a href="category.html">سياسة الاسترجاع</a></li>
+              <li><a href="category.html">سياسة الشحن</a></li>
             </ul>
           </div>
 
@@ -1465,7 +1754,7 @@
 
         <div class="footer-bottom">
           <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
-          <p>© 2024 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+          <p>© 2026 Saudi Bazaar. جميع الحقوق محفوظة.</p>
         </div>
 
       </div>
@@ -1484,13 +1773,13 @@
 
       // ── State ───────────────────────────────────────────────
       var state = {
-        delivery: true,
-        categories: ['غسالات'],
+        delivery: false,
+        categories: [],
         priceMin: 0,
         priceMax: 4000,
-        brands: ['يوجين'],
-        rating: 5,          // minimum stars
-        inStock: true,
+        brands: [],
+        rating: 0,
+        inStock: false,
         freeShip: false,
         cod: false,
         discount: false,
@@ -1629,59 +1918,62 @@
         applyFilters();
       };
 
-      // ── Inline onclick stubs (logic handled by addEventListener) ───
+      // ── Inline onclick handlers ───────────────────────────────────
       window.toggleCheck = function (el) {
-        var id = el.id;
-        if (!id) return;
-
+        var id = el.id || '';
         var labelText = '';
-        var row = el.closest('.filter-row');
+        var row = el.closest('.filter-row') || el.closest('div');
         if (row) {
           var labelEl = row.querySelector('.filter-row__label');
           if (labelEl) labelText = labelEl.textContent.trim();
         }
 
-        if (id.startsWith('cat-')) {
+        if (id.startsWith('cat-') || id.startsWith('m-cat-')) {
           toggleArrayItem(state.categories, labelText);
           syncCatUI();
-        } else if (id.startsWith('brand-')) {
+        } else if (id.startsWith('brand-') || id.startsWith('m-brand-')) {
           toggleArrayItem(state.brands, labelText);
           syncBrandUI();
-        } else if (id === 'other-instock') {
+        } else if (id === 'other-instock' || id === 'm-other-instock') {
           state.inStock = !state.inStock;
-          setCheck(id, state.inStock);
-        } else if (id === 'other-freeship') {
+          syncOtherUI();
+        } else if (id === 'other-freeship' || id === 'm-other-freeship') {
           state.freeShip = !state.freeShip;
-          setCheck(id, state.freeShip);
-        } else if (id === 'other-cod') {
+          syncOtherUI();
+        } else if (id === 'other-cod' || id === 'm-other-cod') {
           state.cod = !state.cod;
-          setCheck(id, state.cod);
-        } else if (id === 'other-discount') {
+          syncOtherUI();
+        } else if (id === 'other-discount' || id === 'm-other-discount') {
           state.discount = !state.discount;
-          setCheck(id, state.discount);
-        }
-        applyFilters();
-      };
-      
-      window.toggleRadio = function (el) {
-        var id = el.id;
-        if (!id) return;
-        var stars = parseInt(id.replace('rating-', ''));
-        if (state.rating === stars) {
-          state.rating = 0; // Toggle off
+          syncOtherUI();
         } else {
-          state.rating = stars;
+          el.classList.toggle('checked');
         }
-        syncRatingUI();
         applyFilters();
       };
 
-      // ── Toggle helpers ──────────────────────────────────────
+      window.toggleRadio = function (el) {
+        var id = el.id || '';
+        var stars = parseInt(id.replace('m-rating-', '').replace('rating-', ''));
+        if (stars) {
+          if (state.rating === stars) {
+            state.rating = 0;
+          } else {
+            state.rating = stars;
+          }
+          syncRatingUI();
+          applyFilters();
+        }
+      };
+
+      // ── Toggle helpers & Sync ────────────────────────────────
       function setCheck(id, val) {
         var el = document.getElementById(id);
         if (el) el.classList.toggle('checked', val);
       }
+
       function toggleArrayItem(arr, item) {
+        if (!item) return arr;
         var i = arr.indexOf(item);
         if (i > -1) arr.splice(i, 1); else arr.push(item);
         return arr;
@@ -1690,71 +1982,106 @@
       function syncCatUI() {
         ['cat-1', 'cat-2', 'cat-3', 'cat-4'].forEach(function (id, i) {
           var label = ['غسالات', 'غسالات أوتوماتيكية', 'غسالات ملابس', 'غسالات صحون'][i];
-          var el = document.getElementById(id);
-          if (el) el.classList.toggle('checked', state.categories.indexOf(label) > -1);
+          setCheck(id, state.categories.indexOf(label) > -1);
+          setCheck('m-' + id, state.categories.indexOf(label) > -1);
         });
       }
+
       function syncBrandUI() {
         ['brand-1', 'brand-2', 'brand-3', 'brand-4'].forEach(function (id, i) {
           var label = ['يوجين', 'سامسونج', 'إل جي', 'بانسونيك'][i];
-          var el = document.getElementById(id);
-          if (el) el.classList.toggle('checked', state.brands.indexOf(label) > -1);
+          setCheck(id, state.brands.indexOf(label) > -1);
+          setCheck('m-' + id, state.brands.indexOf(label) > -1);
         });
       }
+
       function syncRatingUI() {
         [5, 4, 3].forEach(function (stars) {
-          var el = document.getElementById('rating-' + stars);
-          if (el) el.classList.toggle('checked', state.rating === stars);
+          setCheck('rating-' + stars, state.rating === stars);
+          setCheck('m-rating-' + stars, state.rating === stars);
         });
+      }
+
+      function syncOtherUI() {
+        setCheck('other-instock', state.inStock); setCheck('m-other-instock', state.inStock);
+        setCheck('other-freeship', state.freeShip); setCheck('m-other-freeship', state.freeShip);
+        setCheck('other-cod', state.cod); setCheck('m-other-cod', state.cod);
+        setCheck('other-discount', state.discount); setCheck('m-other-discount', state.discount);
       }
 
       // ── Price slider ────────────────────────────────────────
       function syncSlider() {
+        var mMin = document.getElementById('m-rangeMin');
+        var mMax = document.getElementById('m-rangeMax');
         if (rangeMin) rangeMin.value = state.priceMin;
         if (rangeMax) rangeMax.value = state.priceMax;
+        if (mMin) mMin.value = state.priceMin;
+        if (mMax) mMax.value = state.priceMax;
         updateSliderTrack();
         updatePriceDisplays();
       }
+
       function updateSliderTrack() {
-        if (!rangeMin || !rangeMax || !trackFill) return;
-        var mn = +rangeMin.value, mx = +rangeMax.value;
+        var mn = state.priceMin, mx = state.priceMax;
         var p1 = (mn / PRICE_MAX) * 100, p2 = (mx / PRICE_MAX) * 100;
-        trackFill.style.left = p1 + '%';
-        trackFill.style.width = (p2 - p1) + '%';
+        if (trackFill) {
+          trackFill.style.left = p1 + '%';
+          trackFill.style.width = (p2 - p1) + '%';
+        }
+        var mTrack = document.getElementById('m-trackFill');
+        if (mTrack) {
+          mTrack.style.left = p1 + '%';
+          mTrack.style.width = (p2 - p1) + '%';
+        }
       }
+
       function updatePriceDisplays() {
         if (minDisplay) minDisplay.value = toAr(state.priceMin);
         if (maxDisplay) maxDisplay.value = toAr(state.priceMax);
+        var mMinDisp = document.getElementById('m-priceMinDisplay');
+        var mMaxDisp = document.getElementById('m-priceMaxDisplay');
+        if (mMinDisp) mMinDisp.value = toAr(state.priceMin);
+        if (mMaxDisp) mMaxDisp.value = toAr(state.priceMax);
       }
 
-      if (rangeMin) {
-        rangeMin.addEventListener('input', function () {
-          var mn = +rangeMin.value, mx = +rangeMax.value;
-          if (mn > mx - 50) { rangeMin.value = mx - 50; return; }
-          state.priceMin = +rangeMin.value;
-          updateSliderTrack(); updatePriceDisplays(); applyFilters();
+      function setupSliderGroup(minEl, maxEl) {
+        if (!minEl || !maxEl) return;
+        minEl.addEventListener('input', function () {
+          var mn = +minEl.value, mx = +maxEl.value;
+          if (mn > mx - 50) { minEl.value = mx - 50; }
+          state.priceMin = +minEl.value;
+          syncSlider();
+          applyFilters();
+        });
+        maxEl.addEventListener('input', function () {
+          var mn = +minEl.value, mx = +maxEl.value;
+          if (mx < mn + 50) { maxEl.value = mn + 50; }
+          state.priceMax = +maxEl.value;
+          syncSlider();
+          applyFilters();
         });
       }
-      if (rangeMax) {
-        rangeMax.addEventListener('input', function () {
-          var mn = +rangeMin.value, mx = +rangeMax.value;
-          if (mx < mn + 50) { rangeMax.value = mn + 50; return; }
-          state.priceMax = +rangeMax.value;
-          updateSliderTrack(); updatePriceDisplays(); applyFilters();
-        });
-      }
+
+      setupSliderGroup(rangeMin, rangeMax);
+      setupSliderGroup(document.getElementById('m-rangeMin'), document.getElementById('m-rangeMax'));
 
       // ── Delivery toggle ─────────────────────────────────────
       if (delivToggle) {
         delivToggle.addEventListener('change', function () {
           state.delivery = this.checked;
+          var mDeliv = document.getElementById('m-toggle-delivery');
+          if (mDeliv) mDeliv.checked = this.checked;
           applyFilters();
         });
       }
-
-      // ── Category checkboxes ─────────────────────────────────
-      // Removed redundant event listeners for categories, brands, rating, and other options
-      // since window.toggleCheck and window.toggleRadio handle them directly now.
+      var mDeliv = document.getElementById('m-toggle-delivery');
+      if (mDeliv) {
+        mDeliv.addEventListener('change', function () {
+          state.delivery = this.checked;
+          if (delivToggle) delivToggle.checked = this.checked;
+          applyFilters();
+        });
+      }
 
       // ── Sort dropdown ───────────────────────────────────────
       var sortLabels = {
@@ -1801,8 +2128,24 @@
       });
 
       // ── Filter section collapse ─────────────────────────────
-      window.toggleSection = function (id) {
-        document.getElementById(id).classList.toggle('collapsed');
+      window.toggleSection = function (target) {
+        var sec = typeof target === 'string' ? document.getElementById(target) : (target && target.closest ? target.closest('.filter-section') : null);
+        if (sec) {
+          sec.classList.toggle('collapsed');
+        }
+      };
+
+      // ── Mobile Filter Drawer ────────────────────────────────
+      window.toggleMobileFilter = function(show) {
+        var overlay = document.getElementById('mobileFilterOverlay');
+        if (!overlay) return;
+        if (show) {
+          overlay.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          overlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
       };
 
       // ── Page number active ──────────────────────────────────
@@ -1844,104 +2187,309 @@
     })();
   </script>
 
-  <script src="../js/cart.js"></script>
-
-<!-- Location Modal Overlay -->
-<div class="location-modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
-  <div class="location-modal" style="background: white; border-radius: 12px; width: 90%; max-width: 400px; overflow: hidden; font-family: inherit; direction: rtl; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <!-- Header -->
-    <div style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0;">
-      <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">إختر عنوان التوصيل</h3>
-      <button class="location-modal-close" style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-    </div>
-    <!-- Body -->
-    <div style="padding: 24px 20px;">
-      <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6; text-align: right;">
-        قد تختلف خيارات التوصيل وسرعات التوصيل باختلاف المواقع
-      </p>
-      <a href="login.html" style="display: block; width: 100%; background: var(--color-primary, #046c4e); color: white; text-align: center; padding: 12px; border-radius: 24px; text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 20px;">
-        سجل دخولك لمشاهدة عناوينك
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay">
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu-drawer">
+      <div class="mobile-menu-header">
+        <a class="logo" href="../index.html">
+          <img src="../assets/bazar logo.png" alt="بازار" style="height:40px;width:auto;">
+        </a>
+        <button class="mobile-menu-close" aria-label="إغلاق">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <a href="login.html" class="mobile-menu-user" style="text-decoration: none;">
+        <span class="login__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <div>
+          <div class="mobile-menu-user-text">مرحباً بك</div>
+          <div class="mobile-menu-user-sub">تسجيل الدخول أو إنشاء حساب</div>
+        </div>
       </a>
-      
-      <div style="display: flex; align-items: center; margin-bottom: 20px;">
-        <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
-        <div style="padding: 0 12px; font-size: 14px; color: #64748b;">او</div>
-        <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
-      </div>
-      
-      <div style="position: relative;">
-        <select style="width: 100%; appearance: none; background: white; border: 1px solid #64748b; border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #1e293b; font-family: inherit; cursor: pointer;">
-          <option value="" disabled selected>إختر المدينة</option>
-          <option value="riyadh">الرياض</option>
-          <option value="jeddah">جدة</option>
-          <option value="dammam">الدمام</option>
-        </select>
-        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; position: absolute; left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;">
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
-      </div>
+      <nav class="mobile-menu-nav">
+        <a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>الرئيسية</a>
+        <a href="category.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>جميع الأقسام</a>
+        <a href="deals.html" class="special"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>العروض والتخفيضات</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="account-orders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>طلباتي</a>
+        <a href="account-favorites.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>المفضلة</a>
+        <a href="order-tracking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>تتبع طلبك</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="contact-us.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>تواصل معنا</a>
+        <a href="login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>تسجيل الدخول</a>
+      </nav>
+    </div>
+  </div>
 
-      <div style="margin-top: 20px; background-color: #fef3c7; border: 1px solid #b45309; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: center;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
-          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-          <line x1="12" y1="9" x2="12" y2="13" />
-          <line x1="12" y1="17" x2="12.01" y2="17" />
-        </svg>
-        <span style="font-size: 14px; color: #b45309; line-height: 1.5; text-align: right; flex: 1;">
-          في حالة تغيير المدينة قد تفقد بعض او كل المنتجات التي تم اضافتها للسلة مؤخرا
-        </span>
+  <!-- Mobile Filter Bottom Sheet Modal -->
+  <div class="mobile-filter-overlay" id="mobileFilterOverlay">
+    <div class="mobile-filter-backdrop" onclick="toggleMobileFilter(false)"></div>
+    <div class="mobile-filter-sheet" dir="rtl">
+      <div class="mobile-filter-sheet__header">
+        <h3 class="mobile-filter-sheet__title">عوامل التصفية</h3>
+        <button class="mobile-filter-sheet__close" onclick="toggleMobileFilter(false)" aria-label="إغلاق">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-filter-sheet__body">
+        
+        <!-- Delivery toggle -->
+        <div class="filter-delivery" style="padding-bottom:16px;border-bottom:1px solid #f1f5f9;">
+          <div class="filter-delivery__row" style="display:flex;justify-content:space-between;align-items:center;">
+            <div class="filter-delivery__labels">
+              <span class="filter-delivery__title" style="font-weight:700;font-size:15px;display:block;color:#181a17;">المتوفر للتوصيل فقط</span>
+              <span class="filter-delivery__sub" style="font-size:12px;color:#64748b;display:block;margin-top:2px;">6 من 14 منتج يشحن للرياض</span>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="m-toggle-delivery" checked />
+              <span class="toggle__track"></span>
+              <span class="toggle__thumb"></span>
+            </label>
+          </div>
+          <div style="margin-top:10px;font-size:13px;color:#016342;display:flex;align-items:center;gap:6px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>الرياض</span>
+            <a href="#" style="color:#016342;text-decoration:underline;margin-right:auto;">تغيير المدينة</a>
+          </div>
+        </div>
+
+        <!-- الفئة -->
+        <div class="filter-section" id="m-sec-cat" style="padding-block:16px;border-bottom:1px solid #f1f5f9;">
+          <div class="filter-section__head" onclick="toggleSection('m-sec-cat')">
+            <span style="font-weight:700;font-size:16px;color:#181a17;">الفئة</span>
+            <svg class="filter-section__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-section__body">
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-cat-1" class="f-check checked" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">غسالات</span>
+              </div>
+              <span class="filter-row__count">٢٤</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-cat-2" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">غسالات أوتوماتيكية</span>
+              </div>
+              <span class="filter-row__count">١٣</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-cat-3" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">غسالات ملابس</span>
+              </div>
+              <span class="filter-row__count">٤٥</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-cat-4" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">غسالات صحون</span>
+              </div>
+              <span class="filter-row__count">١٢</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- السعر -->
+        <div class="filter-section" id="m-sec-price" style="padding-block:16px;border-bottom:1px solid #f1f5f9;">
+          <div class="filter-section__head" onclick="toggleSection('m-sec-price')">
+            <span style="font-weight:700;font-size:16px;color:#181a17;">السعر</span>
+            <svg class="filter-section__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-section__body">
+            <div class="price-inputs" style="display:flex;gap:12px;margin-bottom:16px;">
+              <div class="price-input" style="flex:1;">
+                <span style="font-size:12px;color:#64748b;display:block;margin-bottom:4px;text-align:right;">من</span>
+                <input type="text" id="m-priceMinDisplay" value="٠" dir="rtl" readonly style="width:100%;padding:8px;border:1px solid #e2e8f0;border-radius:8px;text-align:center;font-size:14px;" />
+              </div>
+              <div class="price-input" style="flex:1;">
+                <span style="font-size:12px;color:#64748b;display:block;margin-bottom:4px;text-align:right;">إلى</span>
+                <input type="text" id="m-priceMaxDisplay" value="٤٠٠٠" dir="rtl" readonly style="width:100%;padding:8px;border:1px solid #e2e8f0;border-radius:8px;text-align:center;font-size:14px;" />
+              </div>
+            </div>
+            <div class="price-slider-wrap" dir="ltr">
+              <div class="price-track-bg"></div>
+              <div class="price-track-fill" id="m-trackFill"></div>
+              <input type="range" class="price-thumb" id="m-rangeMin" min="0" max="4000" value="0" step="50" />
+              <input type="range" class="price-thumb" id="m-rangeMax" min="0" max="4000" value="4000" step="50" />
+            </div>
+          </div>
+        </div>
+
+        <!-- العلامات التجارية -->
+        <div class="filter-section" id="m-sec-brands" style="padding-block:16px;border-bottom:1px solid #f1f5f9;">
+          <div class="filter-section__head" onclick="toggleSection('m-sec-brands')">
+            <span style="font-weight:700;font-size:16px;color:#181a17;">العلامات التجارية</span>
+            <svg class="filter-section__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-section__body">
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-brand-1" class="f-check checked" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">يوجين</span>
+              </div>
+              <span class="filter-row__count">٢٤</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-brand-2" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">سامسونج</span>
+              </div>
+              <span class="filter-row__count">١٣</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-brand-3" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">إل جي</span>
+              </div>
+              <span class="filter-row__count">٤٥</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-brand-4" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">بانسونيك</span>
+              </div>
+              <span class="filter-row__count">١٢</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- التقييم -->
+        <div class="filter-section" id="m-sec-rating" style="padding-block:16px;border-bottom:1px solid #f1f5f9;">
+          <div class="filter-section__head" onclick="toggleSection('m-sec-rating')">
+            <span style="font-weight:700;font-size:16px;color:#181a17;">التقييم</span>
+            <svg class="filter-section__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-section__body" style="display:flex;flex-direction:column;gap:12px;">
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-rating-5" class="f-radio checked" onclick="toggleRadio(this)"></span>
+                <span class="filter-row__label" style="display:flex;align-items:center;gap:6px;">
+                  <span style="color:#f59e0b;font-size:14px;">★★★★★</span>
+                  <span style="font-size:14px;color:#475569;">فأعلى</span>
+                </span>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-rating-4" class="f-radio" onclick="toggleRadio(this)"></span>
+                <span class="filter-row__label" style="display:flex;align-items:center;gap:6px;">
+                  <span style="color:#f59e0b;font-size:14px;">★★★★</span>
+                  <span style="font-size:14px;color:#475569;">فأعلى</span>
+                </span>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-rating-3" class="f-radio" onclick="toggleRadio(this)"></span>
+                <span class="filter-row__label" style="display:flex;align-items:center;gap:6px;">
+                  <span style="color:#f59e0b;font-size:14px;">★★★</span>
+                  <span style="font-size:14px;color:#475569;">فأعلى</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- خيارات أخرى -->
+        <div class="filter-section" id="m-sec-other" style="padding-block:16px;">
+          <div class="filter-section__head" onclick="toggleSection('m-sec-other')">
+            <span style="font-weight:700;font-size:16px;color:#181a17;">خيارات أخرى</span>
+            <svg class="filter-section__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="filter-section__body" style="display:flex;flex-direction:column;gap:12px;">
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-other-instock" class="f-check checked" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">متوفر بالمخزون</span>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-other-freeship" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">شحن مجاني</span>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-other-cod" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">الدفع عن الإستلام</span>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-row__right">
+                <span id="m-other-discount" class="f-check" onclick="toggleCheck(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <span class="filter-row__label">عليه تخفيض</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Bottom CTA Action Bar -->
+      <div class="mobile-filter-sheet__footer" style="padding:16px 20px;border-top:1px solid #e2e8f0;background:#fff;position:sticky;bottom:0;z-index:10;">
+        <button onclick="toggleMobileFilter(false)" style="width:100%;height:46px;background:#016342;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">
+          <span>تطبيق التصفية</span>
+        </button>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const deliveryBtns = document.querySelectorAll('.delivery');
-    const locationModal = document.querySelector('.location-modal-overlay');
-    const closeLocationModal = document.querySelector('.location-modal-close');
-    const citySelect = locationModal ? locationModal.querySelector('select') : null;
+  <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="../index.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>الرئيسية</span>
+      </a>
+      <a href="category.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>الأقسام</span>
+      </a>
+      <a href="cart.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="mobile-bottom-nav__badge">٣</span>
+        <span>السلة</span>
+      </a>
+      <a href="account-favorites.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>المفضلة</span>
+      </a>
+      <a href="login.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>حسابي</span>
+      </a>
+    </div>
+  </nav>
 
-    if (deliveryBtns.length && locationModal) {
-      deliveryBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          locationModal.style.display = 'flex';
-        });
-      });
-      
-      if (closeLocationModal) {
-        closeLocationModal.addEventListener('click', function() {
-          locationModal.style.display = 'none';
-        });
-      }
-
-      locationModal.addEventListener('click', function(e) {
-        if (e.target === locationModal) {
-          locationModal.style.display = 'none';
-        }
-      });
-
-      if (citySelect) {
-        citySelect.addEventListener('change', function(e) {
-          const selectedText = e.target.options[e.target.selectedIndex].text;
-          deliveryBtns.forEach(btn => {
-            const valDiv = btn.querySelector('.delivery__value');
-            if (valDiv) {
-              valDiv.textContent = selectedText + '، المملكة';
-            }
-          });
-          locationModal.style.display = 'none';
-        });
-      }
-    }
-  });
-</script>
-
+  <script src="../js/mobile-nav.js"></script>
 </body>
 
 </html>
+
+
+
+

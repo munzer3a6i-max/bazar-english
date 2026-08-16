@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -81,13 +81,23 @@
           </a>
 
           <div class="search">
-            <button class="search__categories" type="button">
-              كل الأقسام
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+            <div class="search__cat-wrap">
+              <button class="search__categories" type="button">
+                كل الأقسام
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="search__dropdown">
+                <button type="button" class="search__dropdown-item">الجوالات وملحقاتها</button>
+                <button type="button" class="search__dropdown-item">التلفزيونات</button>
+                <button type="button" class="search__dropdown-item">الأجهزة المنزلية</button>
+                <button type="button" class="search__dropdown-item">الكمبيوتر واللابتوب</button>
+                <button type="button" class="search__dropdown-item">الصوتيات والسماعات</button>
+                <button type="button" class="search__dropdown-item">العناية والجمال</button>
+              </div>
+            </div>
             <div class="search__input-wrapper">
               <input class="search__field" type="text" placeholder="ابحث عن المنتجات والماركات..." />
               <button class="search__clear" aria-label="مسح البحث" style="display: none;" type="button">
@@ -125,11 +135,15 @@
             </a>
 
             <a class="fav" href="account-favorites.html">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <div class="fav_avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+
+              </div>
+
               <span>المفضلة</span>
             </a>
 
@@ -145,8 +159,8 @@
               </span>
               <span class="cart__text">
                 <div class="cart__label">سلة التسوق</div>
-                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym"
-                    alt="ر.س" /></div>
+                <div class="cart__price">٣٤٩ <img src="../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="ر.س" />
+                </div>
               </span>
             </a>
           </div>
@@ -157,8 +171,7 @@
       <div class="subnav">
         <div class="container">
           <div class="subnav__dropdown-wrapper" style="position: relative;">
-            <button class="subnav__all" type="button" onclick="this.parentElement.classList.toggle('active')"
-              style="border: none; cursor: pointer; font-family: inherit;">
+            <button class="subnav__all" type="button" style="border: none; cursor: pointer; font-family: inherit;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -173,48 +186,305 @@
               </svg>
             </button>
             <div class="subnav__dropdown-menu">
-              <ul class="subnav__dropdown-list">
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📱</span><span
-                      class="link-text">الجوالات وملحقاتها</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📺</span><span
-                      class="link-text">التلفزيونات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🧺</span><span
-                      class="link-text">الأجهزة المنزلية</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💻</span><span
-                      class="link-text">الكمبيوتر واللابتوب</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎧</span><span
-                      class="link-text">الصوتيات والسماعات</span><svg class="chevron-left" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">📷</span><span
-                      class="link-text">الكاميرات</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">🎮</span><span
-                      class="link-text">الألعاب</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-                <li><a href="category.html" class="subnav__dropdown-link"><span class="icon-wrap">💄</span><span
-                      class="link-text">العناية والجمال</span><svg class="chevron-left" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 18 9 12 15 6" />
-                    </svg></a></li>
-              </ul>
+              ﻿<ul class="subnav__dropdown-list">
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📱</span>
+      <span class="link-text">الجوالات وملحقاتها</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>آبل (Apple)</h4>
+         <ul>
+           <li><a href="category.html">آيفون 15 برو ماكس</a></li>
+           <li><a href="category.html">آيفون 15</a></li>
+           <li><a href="category.html">آيفون 14</a></li>
+           <li><a href="category.html">اكسسوارات آبل</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>سامسونج (Samsung)</h4>
+         <ul>
+           <li><a href="category.html">جالاكسي S24 ألترا</a></li>
+           <li><a href="category.html">جالاكسي S23</a></li>
+           <li><a href="category.html">جالاكسي A</a></li>
+           <li><a href="category.html">اكسسوارات سامسونج</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات ذكية</h4>
+         <ul>
+           <li><a href="category.html">شواحن وكابلات</a></li>
+           <li><a href="category.html">كفرات وحماية شاشة</a></li>
+           <li><a href="category.html">بطاريات متنقلة (Power Banks)</a></li>
+           <li><a href="category.html">حوامل سيارات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📺</span>
+      <span class="link-text">التلفزيونات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>حسب الحجم</h4>
+         <ul>
+           <li><a href="category.html">تلفزيونات 32 - 43 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 50 - 55 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 65 - 75 بوصة</a></li>
+           <li><a href="category.html">تلفزيونات 85 بوصة فأكثر</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>حسب التقنية</h4>
+         <ul>
+           <li><a href="category.html">OLED & QLED</a></li>
+           <li><a href="category.html">4K Ultra HD</a></li>
+           <li><a href="category.html">8K Smart TVs</a></li>
+           <li><a href="category.html">تلفزيونات ذكية (Smart)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات التلفزيون</h4>
+         <ul>
+           <li><a href="category.html">مسرح منزلي وساوند بار</a></li>
+           <li><a href="category.html">أجهزة البث (Apple TV, Chromecast)</a></li>
+           <li><a href="category.html">حوامل التلفزيون</a></li>
+           <li><a href="category.html">ريموت كنترول وملحقات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🧺</span>
+      <span class="link-text">الأجهزة المنزلية</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة كبيرة</h4>
+         <ul>
+           <li><a href="category.html">ثلاجات وفريزرات</a></li>
+           <li><a href="category.html">غسالات ونشافات</a></li>
+           <li><a href="category.html">أفران وطباخات</a></li>
+           <li><a href="category.html">غسالات صحون</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>أجهزة صغيرة</h4>
+         <ul>
+           <li><a href="category.html">محضرات طعام وخلاطات</a></li>
+           <li><a href="category.html">ميكروويف وأفران صغيرة</a></li>
+           <li><a href="category.html">مكانس كهربائية</a></li>
+           <li><a href="category.html">مكاوي بخار</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مشروبات وقهوة</h4>
+         <ul>
+           <li><a href="category.html">ماكينات اسبريسو</a></li>
+           <li><a href="category.html">صانعات قهوة تركية</a></li>
+           <li><a href="category.html">غلايات ماء</a></li>
+           <li><a href="category.html">برادات ماء</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💻</span>
+      <span class="link-text">الكمبيوتر واللابتوب</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة كمبيوتر</h4>
+         <ul>
+           <li><a href="category.html">لابتوبات أعمال ودراسة</a></li>
+           <li><a href="category.html">لابتوبات ألعاب (Gaming)</a></li>
+           <li><a href="category.html">أجهزة كمبيوتر مكتبية</a></li>
+           <li><a href="category.html">أجهزة ماك (Mac)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مكونات وقطع غيار</h4>
+         <ul>
+           <li><a href="category.html">كروت شاشة (VGA)</a></li>
+           <li><a href="category.html">معالجات ولوحات أم</a></li>
+           <li><a href="category.html">ذاكرة عشوائية (RAM)</a></li>
+           <li><a href="category.html">أقراص تخزين (SSD / HDD)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ملحقات</h4>
+         <ul>
+           <li><a href="category.html">شاشات كمبيوتر</a></li>
+           <li><a href="category.html">ماوس وكيبورد</a></li>
+           <li><a href="category.html">طابعات وماسحات ضوئية</a></li>
+           <li><a href="category.html">راوترات وأجهزة شبكات</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎧</span>
+      <span class="link-text">الصوتيات والسماعات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>سماعات أذن</h4>
+         <ul>
+           <li><a href="category.html">سماعات لاسلكية (TWS)</a></li>
+           <li><a href="category.html">سماعات رياضية</a></li>
+           <li><a href="category.html">سماعات أذن سلكية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>سماعات رأس</h4>
+         <ul>
+           <li><a href="category.html">سماعات رأس بلوتوث</a></li>
+           <li><a href="category.html">سماعات ألعاب (Gaming Headsets)</a></li>
+           <li><a href="category.html">سماعات عازلة للضوضاء</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>مكبرات صوت</h4>
+         <ul>
+           <li><a href="category.html">مكبرات صوت محمولة (Bluetooth)</a></li>
+           <li><a href="category.html">أنظمة صوت منزلية</a></li>
+           <li><a href="category.html">ساوند بار (Soundbars)</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📷</span>
+      <span class="link-text">الكاميرات</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أنواع الكاميرات</h4>
+         <ul>
+           <li><a href="category.html">كاميرات احترافية (DSLR)</a></li>
+           <li><a href="category.html">كاميرات ميرورليس (Mirrorless)</a></li>
+           <li><a href="category.html">كاميرات مدمجة</a></li>
+           <li><a href="category.html">كاميرات فورية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>كاميرات فيديو وحركة</h4>
+         <ul>
+           <li><a href="category.html">كاميرات أكشن (GoPro)</a></li>
+           <li><a href="category.html">طائرات درون (Drones)</a></li>
+           <li><a href="category.html">كاميرات مراقبة وأمان</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>عدسات وملحقات</h4>
+         <ul>
+           <li><a href="category.html">عدسات الكاميرا</a></li>
+           <li><a href="category.html">حوامل (Tripods)</a></li>
+           <li><a href="category.html">إضاءة وفلاشات</a></li>
+           <li><a href="category.html">حقائب كاميرات وبطاقات ذاكرة</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎮</span>
+      <span class="link-text">الألعاب</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>أجهزة الكونسول</h4>
+         <ul>
+           <li><a href="category.html">بلايستيشن 5 (PS5)</a></li>
+           <li><a href="category.html">اكس بوكس (Xbox Series X/S)</a></li>
+           <li><a href="category.html">نينتندو سويتش (Nintendo Switch)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>ألعاب الفيديو</h4>
+         <ul>
+           <li><a href="category.html">ألعاب بلايستيشن</a></li>
+           <li><a href="category.html">ألعاب اكس بوكس</a></li>
+           <li><a href="category.html">ألعاب نينتندو</a></li>
+           <li><a href="category.html">بطاقات رقمية (PSN, Xbox Live)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>إكسسوارات الألعاب</h4>
+         <ul>
+           <li><a href="category.html">أيادي تحكم (Controllers)</a></li>
+           <li><a href="category.html">كراسي ألعاب</a></li>
+           <li><a href="category.html">سماعات قيمنق</a></li>
+           <li><a href="category.html">مقود ألعاب سباق</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💄</span>
+      <span class="link-text">العناية والجمال</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>العناية الشخصية</h4>
+         <ul>
+           <li><a href="category.html">أجهزة إزالة الشعر</a></li>
+           <li><a href="category.html">ماكينات حلاقة للرجال</a></li>
+           <li><a href="category.html">فرش أسنان كهربائية</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>العناية بالشعر</h4>
+         <ul>
+           <li><a href="category.html">مجففات شعر (استشوار)</a></li>
+           <li><a href="category.html">مملسات شعر (سيراميك)</a></li>
+           <li><a href="category.html">مكواة تجعيد الشعر</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>صحة وجمال</h4>
+         <ul>
+           <li><a href="category.html">أجهزة مساج وتدليك</a></li>
+           <li><a href="category.html">موازين ذكية</a></li>
+           <li><a href="category.html">أجهزة تنظيف البشرة</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+
             </div>
           </div>
           <nav class="subnav__links">
@@ -226,16 +496,20 @@
             <a href="seller-store.html" class="subnav__link">الماركات</a>
             <a href="contact-us.html" class="subnav__link">الدعم</a>
           </nav>
-          <button class="delivery" type="button" style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: var(--radius-pill);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; flex: none;">
+          <button class="delivery" type="button"
+            style="border: none; margin-right: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="color: var(--color-primary);">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <div class="delivery__text" style="text-align: right; display: flex; flex-direction: column; justify-content: center;">
-              <div class="delivery__label" style="font-size: 12px; color: var(--color-text-secondary); line-height: 1;">التوصيل إلى</div>
-              <div class="delivery__value" style="font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-top: 2px; line-height: 1;">الرياض، المملكة</div>
+            <div class="delivery__text">
+              <div class="delivery__label" style="font-size: 12px; line-height: 1.2;">التوصيل إلى</div>
+              <div class="delivery__value" style="font-size: 16px; line-height: 1.2; margin-top: 2px;">الرياض، المملكة
+              </div>
             </div>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--color-primary);">
               <polyline points="6 9 12 15 18 9" />
             </svg>
           </button>
@@ -853,7 +1127,7 @@
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                   <select
-                    style="border:0;outline:none;background:transparent;width:100%;text-align:right;font-family:var(--font-ar);font-size:14px;color:var(--color-text-primary);direction:rtl;appearance:none">
+                    style="border:0;outline:none;background:transparent;width: 100%;text-align:right;font-family:var(--font-ar);font-size:14px;color:var(--color-text-primary);direction:rtl;appearance:none">
                     <option>إستفسار عن طلب</option>
                     <option>مشكلة في الدفع</option>
                     <option>إرجاع أو استبدال</option>
@@ -907,11 +1181,10 @@
           <div>
             <h3 class="footer-col__title">روابط سريعة</h3>
             <ul class="footer-links">
-              <li><a href="#">عن الشركة</a></li>
-              <li><a href="#">الأسئلة الشائعة</a></li>
-              <li><a href="#">الدعم والمساعدة</a></li>
-              <li><a href="#">تواصل معنا</a></li>
-
+              <li><a href="category.html">عن الشركة</a></li>
+              <li><a href="category.html">الأسئلة الشائعة</a></li>
+              <li><a href="category.html">الدعم والمساعدة</a></li>
+              <li><a href="category.html">اتصل بنا</a></li>
             </ul>
           </div>
 
@@ -919,10 +1192,10 @@
           <div>
             <h3 class="footer-col__title">السياسات</h3>
             <ul class="footer-links">
-              <li><a href="#">الشروط والأحكام</a></li>
-              <li><a href="#">سياسة الخصوصية</a></li>
-              <li><a href="#">سياسة الاسترجاع</a></li>
-              <li><a href="#">سياسة الشحن</a></li>
+              <li><a href="category.html">الشروط والأحكام</a></li>
+              <li><a href="category.html">سياسة الخصوصية</a></li>
+              <li><a href="category.html">سياسة الاسترجاع</a></li>
+              <li><a href="category.html">سياسة الشحن</a></li>
             </ul>
           </div>
 
@@ -979,7 +1252,7 @@
 
         <div class="footer-bottom">
           <p>صنع بكل فخر في المملكة العربية السعودية 🇸🇦</p>
-          <p>© 2024 Saudi Bazaar. جميع الحقوق محفوظة.</p>
+          <p>© 2026 Saudi Bazaar. جميع الحقوق محفوظة.</p>
         </div>
 
       </div>
@@ -1139,6 +1412,118 @@
   });
 </script>
 
+<script>
+    // Categories dropdown toggle
+    (function () {
+      document.querySelectorAll('.search__categories').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = btn.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var dd = wrap.querySelector('.search__dropdown');
+          if (!dd) return;
+          var isOpen = dd.classList.contains('is-open');
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+          if (!isOpen) {
+            dd.classList.add('is-open');
+          }
+        });
+      });
+
+      // Clicking a category item selects it
+      document.querySelectorAll('.search__dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = item.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var btn = wrap.querySelector('.search__categories');
+          if (!btn) return;
+          // Get the text nodes of the button (skip the SVG)
+          var svg = btn.querySelector('svg');
+          // Replace button text content but keep the SVG
+          var textNode = null;
+          for (var i = 0; i < btn.childNodes.length; i++) {
+            if (btn.childNodes[i].nodeType === 3 && btn.childNodes[i].textContent.trim()) {
+              textNode = btn.childNodes[i];
+              break;
+            }
+          }
+          if (textNode) {
+            textNode.textContent = '\n              ' + item.textContent.trim() + '\n              ';
+          }
+          // Close dropdown
+          var dd = wrap.querySelector('.search__dropdown');
+          if (dd) dd.classList.remove('is-open');
+          // Focus the search field
+          var searchField = wrap.closest('.search');
+          if (searchField) {
+            var input = searchField.querySelector('.search__field');
+            if (input) input.focus();
+          }
+        });
+      });
+
+      // Click outside to close
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.search__cat-wrap')) {
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+        }
+      });
+    })();
+  </script>
+  <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="../index.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>الرئيسية</span>
+      </a>
+      <a href="category.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>الأقسام</span>
+      </a>
+      <a href="cart.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="mobile-bottom-nav__badge">٣</span>
+        <span>السلة</span>
+      </a>
+      <a href="account-favorites.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>المفضلة</span>
+      </a>
+      <a href="login.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>حسابي</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/mobile-nav.js"></script>
 </body>
 
 </html>
+
+
+
+

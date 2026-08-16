@@ -121,7 +121,8 @@
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .search__categories {
@@ -226,15 +227,28 @@
 
 .fav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
+}
+
+.fav_avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+
 }
 
 .fav svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   color: var(--color-text-gray);
+
 }
 
 .fav span {
@@ -1099,6 +1113,19 @@
 }
 
 @media(max-width:860px) {
+  .topbar__group { width: 100%; justify-content: center; }
+  .navbar .container { flex-wrap: wrap; gap: 12px; padding-block: 12px; }
+  .logo img { height: 48px !important; }
+  .search { order: 10; width: 100%; flex: none; }
+  .search__categories, .search__cat-wrap { display: none; }
+  .login__text, .fav span, .cart__text { display: none; }
+  .cart { padding: 10px 12px; height: auto; }
+  .account { gap: 16px; margin-inline-start: auto; }
+  .subnav__links { display: none; }
+  .mobile-menu-toggle { display: flex; order: -1; }
+  .subnav { display: none; }
+  .delivery { display: none; }
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr)
   }
@@ -1120,6 +1147,16 @@
 }
 
 @media(max-width:600px) {
+  .container { padding-inline: 16px; }
+  .topbar { font-size: 11px; }
+  .topbar .divider { display: none; }
+  .navbar .container { padding-block: 10px; gap: 10px; }
+  .logo img { height: 40px !important; }
+  .search { height: 42px; }
+  .search__btn span { display: none; }
+  .search__btn { padding: 0 14px; }
+  .account { gap: 12px; margin-inline-start: auto; }
+
   .order-item {
     flex-wrap: wrap
   }
@@ -1132,6 +1169,12 @@
   .btn-continue-shopping {
     width: 100%
   }
+
+  .site-footer { padding: 40px 16px 100px; }
+  .footer-bottom p { font-size: 11px; }
+
+  .mobile-bottom-nav { display: block; }
+  .page { padding-bottom: 68px; }
 }
 
 @media(max-width:520px) {

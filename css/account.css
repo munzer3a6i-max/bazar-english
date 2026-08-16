@@ -75,7 +75,7 @@ body {
 .wrap {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0px;
+  padding: 0 32px;
 }
 
 /* ===================== HEADER REMOVED ===================== */
@@ -389,7 +389,7 @@ ul {
 .ocard__ptext {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 4px;
   text-align: right
 }
@@ -617,7 +617,7 @@ ul {
   line-height: 24px;
   color: var(--text-muted);
   text-align: right;
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .menu__list {
@@ -1559,4 +1559,614 @@ ul {
   left: calc(100% - 26px);
   border-color: transparent;
   box-shadow: none;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1280px) {
+  .favorites-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .favorites-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .favorites-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* =====================================================================
+   ACCOUNT DASHBOARD — MOBILE RESPONSIVE
+   ===================================================================== */
+@media (max-width: 1100px) {
+  .cols {
+    flex-direction: column;
+  }
+
+  .side {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 85vw;
+    background: #ffffff;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .side.is-open {
+    transform: translateX(0);
+    padding: 16px;
+  }
+
+  .side .scard {
+    border: none;
+    padding: 0 0 24px 0;
+    margin-bottom: 0;
+    background: transparent;
+  }
+
+  .side .prof__top {
+    padding-top: 16px;
+  }
+
+  .side .logout {
+    border: none;
+    background: transparent;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .account-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #ffffff;
+    border: 1.5px solid var(--border-default);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 20px;
+    width: max-content !important;
+    transition: all 0.2s ease;
+  }
+
+  .account-menu-toggle:hover {
+    border-color: var(--action-primary);
+    color: var(--action-primary);
+  }
+
+  .account-menu-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .account-menu-backdrop.is-open {
+    display: block;
+    opacity: 1;
+  }
+
+  .account-menu-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--bg-page);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1101px) {
+
+  .account-menu-toggle,
+  .account-menu-backdrop,
+  .account-menu-close {
+    display: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 0;
+    padding-block: 6px;
+  }
+
+  .topbar__group {
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar .container {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-block: 12px;
+  }
+
+  .logo img {
+    height: 48px !important;
+  }
+
+  .search {
+    order: 10;
+    width: 100%;
+    flex: none;
+  }
+
+  .search__categories,
+  .search__cat-wrap {
+    display: none;
+  }
+
+  .login__text,
+  .fav span,
+  .cart__text {
+    display: none;
+  }
+
+  .cart {
+    padding: 10px 12px;
+    height: auto;
+  }
+
+  .account {
+    gap: 16px;
+  }
+
+  .subnav__links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .subnav {
+    display: none;
+  }
+
+  .delivery {
+    display: none;
+  }
+
+  .ordhead {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ordhead__tools {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .topbar {
+    font-size: 11px;
+  }
+
+  .topbar .divider {
+    display: none;
+  }
+
+  .navbar .container {
+    padding-block: 10px;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 40px !important;
+  }
+
+  .search {
+    height: 42px;
+  }
+
+  .search__btn span {
+    display: none;
+  }
+
+  .search__btn {
+    padding: 0 14px;
+  }
+
+  .account {
+    gap: 12px;
+  }
+
+  .site-footer {
+    padding: 40px 16px 100px;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+  }
+
+  .mobile-bottom-nav {
+    display: block;
+  }
+
+  .page {
+    padding-bottom: 68px;
+  }
+
+  .store {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .store>div:first-child {
+    align-items: flex-start !important;
+  }
+
+  .store__info {
+    align-items: flex-start;
+  }
+
+  .store__name {
+    justify-content: flex-start;
+  }
+
+  .store__meta {
+    flex-direction: column;
+    gap: 4px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .store__meta span:nth-child(1) {
+    order: 2;
+  }
+
+  .store__meta span:nth-child(2) {
+    order: 1;
+  }
+
+  .store__meta span:nth-child(3) {
+    display: none;
+  }
+
+  .store__btns {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .store__btns .btn {
+    flex: 1;
+    padding: 0;
+  }
+}
+
+/* =====================================================================
+   RESPONSIVE ORDER & RETURN CARD LAYOUT (MOBILE DESIGN MATCH)
+   ===================================================================== */
+@media (max-width: 768px) {
+  .ocard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e3e4de;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+
+  /* --- Row 1: Header (Order ID, Date, Status Chip) --- */
+  .ocard__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: none;
+    border-bottom: 1px solid #e3e4de;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .ocard__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    gap: 2px;
+  }
+
+  .ocard__id {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #181a17;
+  }
+
+  .ocard__id .lbl {
+    font-size: 15px;
+    font-weight: 600;
+    color: #43463f;
+  }
+
+  .ocard__id .code {
+    font-size: 15px;
+    font-weight: 700;
+    color: #181a17;
+    font-family: var(--family-en, 'Inter', sans-serif);
+  }
+
+  .ocard__date {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7a7e73;
+    line-height: 18px;
+  }
+
+  .statuschip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #e6f4ea;
+    color: #006241;
+    border: 1px solid #bbf7d0;
+    flex-shrink: 0;
+  }
+
+  .statuschip span {
+    font-size: 13px;
+    font-weight: 600;
+    color: inherit;
+  }
+
+  .statuschip .ic {
+    color: inherit;
+    width: 14px;
+    height: 14px;
+  }
+
+  .statuschip.is-warning {
+    background: #fefce8 !important;
+    color: #ca8a04 !important;
+    border-color: #fef08a !important;
+  }
+
+  .statuschip.is-warning span,
+  .statuschip.is-warning .ic {
+    color: #ca8a04 !important;
+  }
+
+  /* Banner inside active order/return */
+  .ocard__banner {
+    padding: 10px 14px;
+    font-size: 12.5px;
+    line-height: 18px;
+    border-bottom: 1px solid #e3e4de;
+  }
+
+  /* Compact tracking bar on mobile */
+  .ocard__track {
+    padding: 14px 12px;
+    gap: 8px;
+    border-bottom: 1px solid #e3e4de;
+  }
+
+  .track-lbl {
+    font-size: 10px;
+  }
+
+  /* --- Row 2: Body (Product Image, Name, Qty, Price) --- */
+  .ocard__body {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background: #ffffff;
+    border: none;
+    border-bottom: 1px solid #e3e4de;
+    gap: 12px;
+  }
+
+  .ocard__product {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Thumbnail image on the RIGHT side in RTL */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .ocard__img {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .ocard__img svg,
+  .ocard__img img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+  }
+
+  .ocard__ptext {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .ocard__pname {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #181a17;
+    margin: 0;
+  }
+
+  .ocard__qty {
+    font-size: 13px;
+    font-weight: 500;
+    color: #7a7e73;
+    margin-top: 2px;
+  }
+
+  .ocard__return-reason {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 4px;
+  }
+
+  .ocard__price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #181a17;
+    text-align: right;
+    margin-top: 4px;
+    width: 100%;
+  }
+
+  /* --- Row 3: Footer (Actions + Total Price) --- */
+  .ocard__foot {
+    display: flex;
+    flex-direction: column-reverse;
+    /* Action buttons on top, Total Price at the bottom */
+    gap: 14px;
+    padding: 16px;
+    background: #f9fbf9;
+    border: none;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .ocard__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px 10px;
+    width: 100%;
+  }
+
+  .obtn {
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #181a17;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .obtn span {
+    font-size: 13px;
+    font-weight: 600;
+    color: inherit;
+  }
+
+  .obtn .ic {
+    width: 15px;
+    height: 15px;
+    color: inherit;
+  }
+
+  /* Green button style like "قيم المنتج" in screenshot */
+  .obtn.is-primary,
+  .obtn:hover {
+    border-color: #006241;
+    color: #006241;
+    background: #ffffff;
+  }
+
+  .obtn.is-primary span,
+  .obtn.is-primary .ic {
+    color: #006241;
+  }
+
+  .ocard__total {
+    font-size: 14px;
+    font-weight: 600;
+    color: #181a17;
+    text-align: right;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .ocard__total b {
+    font-size: 16px;
+    font-weight: 800;
+    color: #181a17;
+  }
 }
