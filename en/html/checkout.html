@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saudi Bazaar | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+</head>
+
+<body>
+  <div class="page">
+    <!-- ============================ HEADER ============================ -->
+    <header>
+
+      <!-- Tier 1: top bar -->
+      <div class="topbar">
+        <div class="container">
+          <div class="topbar__group">
+            <a class="topbar__lang" href="../../html/checkout.html">
+              العربية
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" />
+              </svg>
+            </a>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              920012345
+            </span>
+            <span class="divider"></span>
+            <a class="topbar__item" href="order-tracking.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M16.5 9.4 7.5 4.21" />
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+              Track Your Order
+            </a>
+          </div>
+
+          <div class="topbar__group">
+            <span class="topbar__item">
+              Tax No: 310489274700003
+            </span>
+            <span class="divider"></span>
+            <span class="topbar__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Officially Verified Saudi Store
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 2: main navbar -->
+      <div class="navbar">
+        <div class="container">
+          <a class="logo" href="../index.html">
+            <img src="../../assets/bazar logo.png" alt="Saudi Bazaar"
+              style="height: 62px; width: auto; object-fit: contain;">
+          </a>
+
+          <div class="search">
+            <div class="search__cat-wrap">
+              <button class="search__categories" type="button">
+                All Categories
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div class="search__dropdown">
+                <button type="button" class="search__dropdown-item">Mobiles & Accessories</button>
+                <button type="button" class="search__dropdown-item">TVs</button>
+                <button type="button" class="search__dropdown-item">Home Appliances</button>
+                <button type="button" class="search__dropdown-item">Computers & Laptops</button>
+                <button type="button" class="search__dropdown-item">Audio & Headphones</button>
+                <button type="button" class="search__dropdown-item">Beauty & Care</button>
+              </div>
+            </div>
+            <div class="search__input-wrapper">
+              <input class="search__field" type="text" placeholder="Search for products and brands..." />
+              <button class="search__clear" aria-label="Clear search" style="display: none;" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m15 9-6 6" />
+                  <path d="m9 9 6 6" />
+                </svg>
+              </button>
+            </div>
+            <button class="search__btn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <span>Search</span>
+            </button>
+          </div>
+
+          <div class="account">
+            <a class="login" href="login.html">
+              <span class="login__avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+              <span class="login__text">
+                <div class="login__hi">Hello</div>
+                <div class="login__cta">Sign In</div>
+              </span>
+            </a>
+
+            <a class="fav" href="account-favorites.html">
+              <div class="fav_avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+
+              </div>
+
+              <span>Favorites</span>
+            </a>
+
+            <a class="cart" href="cart.html">
+              <span class="cart__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="cart__badge">3</span>
+              </span>
+              <span class="cart__text">
+                <div class="cart__label">Shopping Cart</div>
+                <div class="cart__price">349 <img src="../../assets/Saudi_Riyal_Symbol-1.png" class="riyal-sym" alt="SAR" />
+                </div>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 3: bottom bar -->
+      <div class="subnav">
+        <div class="container">
+          <div class="subnav__dropdown-wrapper" style="position: relative;">
+            <button class="subnav__all" type="button" style="border: none; cursor: pointer; font-family: inherit;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+              All Categories
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="subnav__dropdown-menu">
+              <ul class="subnav__dropdown-list">
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📱</span>
+      <span class="link-text">Mobiles & Accessories</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Apple</h4>
+         <ul>
+           <li><a href="category.html">iPhone 15 Pro Max</a></li>
+           <li><a href="category.html">iPhone 15</a></li>
+           <li><a href="category.html">iPhone 14</a></li>
+           <li><a href="category.html">Apple Accessories</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Samsung</h4>
+         <ul>
+           <li><a href="category.html">Galaxy S24 Ultra</a></li>
+           <li><a href="category.html">Galaxy S23</a></li>
+           <li><a href="category.html">Galaxy A Series</a></li>
+           <li><a href="category.html">Samsung Accessories</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Smart Accessories</h4>
+         <ul>
+           <li><a href="category.html">Chargers & Cables</a></li>
+           <li><a href="category.html">Cases & Screen Protectors</a></li>
+           <li><a href="category.html">Power Banks</a></li>
+           <li><a href="category.html">Car Mounts</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📺</span>
+      <span class="link-text">TVs</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>By Size</h4>
+         <ul>
+           <li><a href="category.html">32" - 43" TVs</a></li>
+           <li><a href="category.html">50" - 55" TVs</a></li>
+           <li><a href="category.html">65" - 75" TVs</a></li>
+           <li><a href="category.html">85" TVs & Above</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>By Technology</h4>
+         <ul>
+           <li><a href="category.html">OLED & QLED</a></li>
+           <li><a href="category.html">4K Ultra HD</a></li>
+           <li><a href="category.html">8K Smart TVs</a></li>
+           <li><a href="category.html">Smart TVs</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>TV Accessories</h4>
+         <ul>
+           <li><a href="category.html">Home Theater & Soundbars</a></li>
+           <li><a href="category.html">Streaming Devices (Apple TV, Chromecast)</a></li>
+           <li><a href="category.html">TV Stands & Mounts</a></li>
+           <li><a href="category.html">Remote Controls & Accessories</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🧺</span>
+      <span class="link-text">Home Appliances</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Large Appliances</h4>
+         <ul>
+           <li><a href="category.html">Refrigerators & Freezers</a></li>
+           <li><a href="category.html">Washers & Dryers</a></li>
+           <li><a href="category.html">Ovens & Cookers</a></li>
+           <li><a href="category.html">Dishwashers</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Small Appliances</h4>
+         <ul>
+           <li><a href="category.html">Food Processors & Blenders</a></li>
+           <li><a href="category.html">Microwaves & Mini Ovens</a></li>
+           <li><a href="category.html">Vacuum Cleaners</a></li>
+           <li><a href="category.html">Steam Irons</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Drinks & Coffee</h4>
+         <ul>
+           <li><a href="category.html">Espresso Machines</a></li>
+           <li><a href="category.html">Turkish Coffee Makers</a></li>
+           <li><a href="category.html">Electric Kettles</a></li>
+           <li><a href="category.html">Water Coolers</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💻</span>
+      <span class="link-text">Computers & Laptops</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Computers</h4>
+         <ul>
+           <li><a href="category.html">Business & Study Laptops</a></li>
+           <li><a href="category.html">Gaming Laptops</a></li>
+           <li><a href="category.html">Desktop Computers</a></li>
+           <li><a href="category.html">Mac Computers</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Components & Parts</h4>
+         <ul>
+           <li><a href="category.html">Graphics Cards (VGA)</a></li>
+           <li><a href="category.html">Processors & Motherboards</a></li>
+           <li><a href="category.html">RAM (Memory)</a></li>
+           <li><a href="category.html">Storage Drives (SSD / HDD)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Accessories</h4>
+         <ul>
+           <li><a href="category.html">Computer Monitors</a></li>
+           <li><a href="category.html">Mouse & Keyboard</a></li>
+           <li><a href="category.html">Printers & Scanners</a></li>
+           <li><a href="category.html">Routers & Networking</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎧</span>
+      <span class="link-text">Audio & Headphones</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Earphones</h4>
+         <ul>
+           <li><a href="category.html">True Wireless (TWS)</a></li>
+           <li><a href="category.html">Sports Earphones</a></li>
+           <li><a href="category.html">Wired Earphones</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Headphones</h4>
+         <ul>
+           <li><a href="category.html">Bluetooth Headphones</a></li>
+           <li><a href="category.html">Gaming Headsets</a></li>
+           <li><a href="category.html">Noise-Cancelling Headphones</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Speakers</h4>
+         <ul>
+           <li><a href="category.html">Portable Bluetooth Speakers</a></li>
+           <li><a href="category.html">Home Audio Systems</a></li>
+           <li><a href="category.html">Soundbars</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">📷</span>
+      <span class="link-text">Cameras</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Camera Types</h4>
+         <ul>
+           <li><a href="category.html">DSLR Cameras</a></li>
+           <li><a href="category.html">Mirrorless Cameras</a></li>
+           <li><a href="category.html">Compact Cameras</a></li>
+           <li><a href="category.html">Instant Cameras</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Video & Action Cameras</h4>
+         <ul>
+           <li><a href="category.html">Action Cameras (GoPro)</a></li>
+           <li><a href="category.html">Drones</a></li>
+           <li><a href="category.html">Security Cameras</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Lenses & Accessories</h4>
+         <ul>
+           <li><a href="category.html">Camera Lenses</a></li>
+           <li><a href="category.html">Tripods</a></li>
+           <li><a href="category.html">Lighting & Flashes</a></li>
+           <li><a href="category.html">Camera Bags & Memory Cards</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">🎮</span>
+      <span class="link-text">Gaming</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Consoles</h4>
+         <ul>
+           <li><a href="category.html">PlayStation 5 (PS5)</a></li>
+           <li><a href="category.html">Xbox Series X/S</a></li>
+           <li><a href="category.html">Nintendo Switch</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Video Games</h4>
+         <ul>
+           <li><a href="category.html">PlayStation Games</a></li>
+           <li><a href="category.html">Xbox Games</a></li>
+           <li><a href="category.html">Nintendo Games</a></li>
+           <li><a href="category.html">Digital Cards (PSN, Xbox Live)</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Gaming Accessories</h4>
+         <ul>
+           <li><a href="category.html">Controllers</a></li>
+           <li><a href="category.html">Gaming Chairs</a></li>
+           <li><a href="category.html">Gaming Headsets</a></li>
+           <li><a href="category.html">Racing Wheels</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <a href="category.html" class="subnav__dropdown-link">
+      <span class="icon-wrap">💄</span>
+      <span class="link-text">Beauty & Care</span>
+      <svg class="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </a>
+    <div class="mega-menu__panel">
+      <div class="mega-menu__col">
+         <h4>Personal Care</h4>
+         <ul>
+           <li><a href="category.html">Hair Removal Devices</a></li>
+           <li><a href="category.html">Men's Shavers</a></li>
+           <li><a href="category.html">Electric Toothbrushes</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Hair Care</h4>
+         <ul>
+           <li><a href="category.html">Hair Dryers</a></li>
+           <li><a href="category.html">Hair Straighteners (Ceramic)</a></li>
+           <li><a href="category.html">Curling Irons</a></li>
+         </ul>
+      </div>
+      <div class="mega-menu__col">
+         <h4>Health & Beauty</h4>
+         <ul>
+           <li><a href="category.html">Massage Devices</a></li>
+           <li><a href="category.html">Smart Scales</a></li>
+           <li><a href="category.html">Skin Cleansing Devices</a></li>
+         </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+
+            </div>
+          </div>
+          <nav class="subnav__links">
+            <a href="deals.html" class="subnav__link special">
+              <span class="pulse-dot"></span>
+              Today's Deals
+            </a>
+            <a href="category.html" class="subnav__link">Most Ordered</a>
+            <a href="seller-store.html" class="subnav__link">Brands</a>
+            <a href="contact-us.html" class="subnav__link">Support</a>
+          </nav>
+          <button class="delivery" type="button" onclick="document.querySelector('.location-modal-overlay').style.display='flex'"
+            style="border: none; margin-left: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="color: var(--color-primary);">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div class="delivery__text">
+              <div class="delivery__label" style="font-size: 12px; line-height: 1.2;">Deliver to</div>
+              <div class="delivery__value" style="font-size: 16px; line-height: 1.2; margin-top: 2px;">Riyadh, Saudi Arabia
+              </div>
+            </div>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--color-primary);">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ============================  BREADCRUMB  ========================= -->
+    <nav class="crumb">
+      <div class="container" style="padding-top: 20px;">
+        <a class="crumb__home" href="../index.html">Home</a>
+        <span class="crumb__sep">/</span>
+        <a class="crumb__item" href="cart.html">Shopping Cart</a>
+        <span class="crumb__sep">/</span>
+        <span class="crumb__cur">Checkout</span>
+      </div>
+    </nav>
+
+    <!-- ============================== MAIN ============================= -->
+    <main class="checkout-main container">
+
+      <div class="checkout-title">
+        <h1 class="checkout-title__h1">Checkout</h1>
+        <div class="checkout-title__meta">
+          <span class="checkout-title__num">Order No. <strong>SB‑2026‑784512</strong></span>
+          <span class="checkout-title__date">Date: June 6, 2026 · 2 products</span>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+
+        <!-- =====================  ACCORDION STEPS (right)  ============== -->
+        <div class="steps">
+
+          <!-- ============ STEP 1 — ADDRESS ============ -->
+          <section class="step is-active is-reached" id="step-address" data-step="1">
+            <div class="step__head">
+              <span class="step__badge">1</span>
+              <span class="step__title">Delivery Address</span>
+            </div>
+
+            <!-- collapsed summary (shown once completed) -->
+            <div class="step__summary">
+              <div class="step__summary-text">
+                <p class="step__summary-detail" id="addrSummaryText">Al Yasmin District, Prince Mohammed bin Salman Street,
+                  Building 4, Apartment 12 — Riyadh 13325</p>
+              </div>
+              <button class="step__edit" onclick="goToStep(1)">Edit</button>
+            </div>
+
+            <!-- expanded body -->
+            <div class="step__body">
+              <div class="purchase-type-toggle" style="display: flex; gap: 16px; margin-bottom: 24px;">
+                <div class="addr-option selected"
+                  style="flex: 1; align-items: center; border-color: var(--color-primary);" data-type="individual"
+                  onclick="selectPurchaseType(this)">
+                  <span class="addr-option__radio"></span>
+                  <div class="addr-option__info">
+                    <span class="addr-option__name">Buy as an Individual</span>
+                    <span class="addr-option__address">For personal use</span>
+                  </div>
+                </div>
+                <div class="addr-option" style="flex: 1; align-items: center;" data-type="company"
+                  onclick="selectPurchaseType(this)">
+                  <span class="addr-option__radio"></span>
+                  <div class="addr-option__info">
+                    <span class="addr-option__name">Buy as a Company</span>
+                    <span class="addr-option__address">Tax Invoice</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="tax-invoice-details"
+                style="display: none; border: 1px solid var(--color-primary); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+                <div
+                  style="display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin-bottom: 16px; color: var(--color-primary); font-weight: 700; flex-direction: row;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width: 20px; height: 20px;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span style="flex: 1; text-align: left;">Tax Invoice Details</span>
+                </div>
+                <div style="margin-bottom: 16px;">
+                  <input type="text" placeholder="Name as registered for tax purposes"
+                    style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+                </div>
+                <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                  <div style="flex: 1;">
+                    <input type="text" placeholder="City"
+                      style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+                  </div>
+                  <div style="flex: 1;">
+                    <input type="text" placeholder="Tax Number"
+                      style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+                  </div>
+                </div>
+                <div style="display: flex; gap: 16px;">
+                  <div style="flex: 1;">
+                    <input type="text" placeholder="Postal Code"
+                      style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+                  </div>
+                  <div style="flex: 1;">
+                    <input type="text" placeholder="Building Number"
+                      style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+                  </div>
+                  <div style="flex: 1;">
+                    <input type="text" placeholder="Street"
+                      style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+                  </div>
+                </div>
+              </div>
+              <div class="addr-option selected" data-name="Munzir Abdul Aati Saeed Abdulkarim"
+                data-address="Al Yasmin District, Prince Mohammed bin Salman Street, Building 4, Apartment 12 — Riyadh 13325"
+                onclick="selectAddress(this)">
+                <span class="addr-option__radio"></span>
+                <div class="addr-option__info">
+                  <span class="addr-option__name">Munzir Abdul Aati Saeed Abdulkarim</span>
+                  <span class="addr-option__address">Al Yasmin District, Prince Mohammed bin Salman Street, Building 4, Apartment 12 — Riyadh
+                    13325</span>
+                </div>
+              </div>
+              <div class="addr-option" data-name="Munzir Abdul Aati Saeed Abdulkarim"
+                data-address="Al Narjis District, Al Takhassousi Street, Building 7, Apartment 3 — Riyadh 12444" onclick="selectAddress(this)">
+                <span class="addr-option__radio"></span>
+                <div class="addr-option__info">
+                  <span class="addr-option__name">Munzir Abdul Aati Saeed Abdulkarim</span>
+                  <span class="addr-option__address">Al Narjis District, Al Takhassousi Street, Building 7, Apartment 3 — Riyadh 12444</span>
+                </div>
+              </div>
+              <button class="addr-add-new"
+                onclick="document.querySelector('.address-modal-overlay').style.display='flex'"
+                style="flex-direction: row-reverse;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Add New Address</span>
+              </button>
+              <div class="step__footer">
+                <button class="btn-step-continue" onclick="completeStep(1)">Continue to Delivery Method</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ STEP 2 — DELIVERY METHOD ============ -->
+          <section class="step" id="step-delivery" data-step="2">
+            <div class="step__head">
+              <span class="step__badge">2</span>
+              <span class="step__title">Delivery Method</span>
+            </div>
+
+            <div class="step__summary">
+              <div class="step__summary-text">
+                <p class="step__summary-detail" id="deliverySummaryText">Free Standard Delivery — arrives within 2–3 business days
+                </p>
+              </div>
+              <button class="step__edit" onclick="goToStep(2)">Edit</button>
+            </div>
+
+            <div class="step__body">
+              <div class="deliv-option selected" data-title="Free Standard Delivery" data-cost="0"
+                onclick="selectDelivery(this)">
+                <span class="deliv-option__radio"></span>
+                <div class="deliv-option__body">
+                  <div class="deliv-option__text">
+                    <span class="deliv-option__title">Free Standard Delivery</span>
+                    <span class="deliv-option__eta">Arrives within 2–3 business days · Wednesday, June 10</span>
+                  </div>
+                  <span class="deliv-option__price free">Free</span>
+                </div>
+              </div>
+              <div class="deliv-option" data-title="Express Delivery" data-cost="25" onclick="selectDelivery(this)">
+                <span class="deliv-option__radio"></span>
+                <div class="deliv-option__body">
+                  <div class="deliv-option__text">
+                    <span class="deliv-option__title">Express Delivery</span>
+                    <span class="deliv-option__eta">Arrives within 1 business day · Monday, June 8</span>
+                  </div>
+                  <span class="deliv-option__price">25.00 SAR</span>
+                </div>
+              </div>
+              <div class="deliv-option" data-title="Store Pickup" data-cost="0" onclick="selectDelivery(this)">
+                <span class="deliv-option__radio"></span>
+                <div class="deliv-option__body">
+                  <div class="deliv-option__text">
+                    <span class="deliv-option__title">Store Pickup</span>
+                    <span class="deliv-option__eta">Ready within 2 hours · Al Yasmin Branch, Riyadh</span>
+                  </div>
+                  <span class="deliv-option__price free">Free</span>
+                </div>
+              </div>
+              <div class="step__footer">
+                <button class="btn-step-continue" onclick="completeStep(2)">Continue to Payment</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ STEP 3 — PAYMENT METHOD ============ -->
+          <section class="step" id="step-payment" data-step="3">
+            <div class="step__head">
+              <span class="step__badge">3</span>
+              <span class="step__title">Payment Method</span>
+            </div>
+
+            <div class="step__body">
+
+              <div class="pay-option selected" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">mada / Credit Card</span>
+                    <span class="pay-option__sub">mada · Visa · Mastercard</span>
+                  </div>
+                  <div class="pay-option__logos">
+                    <img src="../../assets/Visa Logo.png" alt="Visa" style="height: 24px; object-fit: contain;">
+                    <img src="../../assets/Mastercard.png" alt="Mastercard" style="height: 24px; object-fit: contain;">
+                    <img src="../../assets/Mada Logo.png" alt="Mada" style="height: 24px; object-fit: contain;">
+                  </div>
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">Cash on Delivery</span>
+                    <span class="pay-option__sub">Pay in cash or by card when your order arrives</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="pay-section-label">Installment & Financing Options</p>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">Split it with Tamara</span>
+                    <span class="pay-option__sub">4 interest-free payments · Sharia-compliant</span>
+                  </div>
+                  <img src="../../assets/Tamara Logo.png" alt="Tamara" style="height: 24px; object-fit: contain;">
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">Split it with Tabby</span>
+                    <span class="pay-option__sub">4 interest-free payments · No fees at all</span>
+                  </div>
+                  <img src="../../assets/Tabby Logo.png" alt="Tabby" style="height: 24px; object-fit: contain;">
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">Split it with Madfu</span>
+                    <span class="pay-option__sub">4 interest-free payments · Sharia-compliant</span>
+                  </div>
+                  <img src="../../assets/Madfooat Logo.png" alt="Madfu" style="height: 24px; object-fit: contain;">
+                </div>
+              </div>
+
+              <div class="pay-option" onclick="selectPayment(this)">
+                <span class="pay-option__radio"></span>
+                <div class="pay-option__body">
+                  <div class="pay-option__text">
+                    <span class="pay-option__title">Split it with Mis Pay</span>
+                    <span class="pay-option__sub">4 interest-free payments · Sharia-compliant</span>
+                  </div>
+                  <img src="../../assets/Mis Pay Logo.png" alt="Mis Pay" style="height: 24px; object-fit: contain;">
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </div><!-- /steps -->
+
+        <!-- =====================  ORDER SUMMARY (left)  ================ -->
+        <aside class="order-card">
+          <h2 class="order-card__title">Order Summary</h2>
+
+          <div class="order-product">
+
+            <div class="order-product__img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <line x1="7" y1="9" x2="7" y2="15" />
+                <line x1="12" y1="9" x2="12" y2="15" />
+                <line x1="17" y1="9" x2="17" y2="15" />
+              </svg>
+            </div>
+            <div class="order-product__info">
+              <p class="order-product__desc">Eugene Electric Oil Heater, 15 Fins, 2500W, with Laundry Rack</p>
+              <span class="order-product__price"><span>SAR</span><span>445.89</span></span>
+            </div>
+          </div>
+
+          <div class="order-pricing">
+            <div class="order-pricing__rows">
+              <div class="order-pricing__row"><span>Subtotal (2)</span><span class="value">405 SAR</span></div>
+              <div class="order-pricing__row"><span>Discount (save 12%)</span><span class="value success">60 SAR</span>
+              </div>
+              <div class="order-pricing__row"><span>Shipping</span><span class="value success"
+                  id="shippingCostLabel">Free</span></div>
+            </div>
+            <div class="order-promo">
+              <button class="order-promo__apply">Apply</button>
+              <div class="order-promo__input"><input type="text" placeholder="Have a discount code?" /></div>
+            </div>
+          </div>
+
+          <hr class="order-divider" />
+
+          <div class="order-total">
+            <div class="order-total__row">
+              <span class="order-total__label">Total</span>
+              <span class="order-total__price"><span class="cur">SAR</span><span class="amount"
+                  id="grandTotal">1,899</span></span>
+            </div>
+            <p class="order-total__vat">VAT included (15%): 58.16 SAR</p>
+          </div>
+
+          <button class="btn-confirm-order">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            Confirm Order &nbsp; 405 SAR
+          </button>
+        </aside>
+      </div><!-- /checkout-layout -->
+    </main>
+
+    <!-- ============================= FOOTER =========================== -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+
+        <div class="footer-grid">
+
+          <!-- Brand -->
+          <div class="footer-brand">
+            <img src="../../assets/bazar logo.png" alt="Saudi Bazaar"
+              style="height: 62px; width: auto; object-fit: contain;">
+            <p class="footer-brand__desc">Saudi Arabia's leading e-commerce platform, bringing you the best
+              international and local products at high quality and competitive prices.</p>
+          </div>
+
+          <!-- Quick links -->
+          <div>
+            <h3 class="footer-col__title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="category.html">About Us</a></li>
+              <li><a href="category.html">FAQ</a></li>
+              <li><a href="category.html">Support & Help</a></li>
+              <li><a href="category.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Policies -->
+          <div>
+            <h3 class="footer-col__title">Policies</h3>
+            <ul class="footer-links">
+              <li><a href="category.html">Terms & Conditions</a></li>
+              <li><a href="category.html">Privacy Policy</a></li>
+              <li><a href="category.html">Return Policy</a></li>
+              <li><a href="category.html">Shipping Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Certificates & Payment -->
+          <div class="footer-pay">
+            <h3 class="footer-col__title">Certification & Payment</h3>
+            <div class="footer-pay__methods">
+              <img src="../../assets/pay_ar_footer.png.png" alt="Payment Methods" style="max-width: 100%; height: auto;">
+            </div>
+            <p class="footer-pay__reg">Tax No: 300123456700003</p>
+            <p class="footer-pay__reg">Commercial Registration: 1010123456</p>
+            <div class="footer-pay__certs">
+              <img src="../../assets/Frame%2010.png" alt="Certificates" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-news">
+            <div class="footer-news__title">Be the First to Know About Our Deals</div>
+            <p class="footer-news__desc">Subscribe to our newsletter to get our best exclusive savings coupons as
+              soon as they launch.</p>
+            <div class="footer-news__form">
+              <input class="footer-news__input" type="email" placeholder="Enter your email address" />
+              <button class="footer-news__btn">Subscribe</button>
+            </div>
+            <div class="footer-social">
+              <span class="footer-social__label">Follow us on social media:</span>
+              <span class="footer-social__icons">
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg></a>
+                <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                  </svg></a>
+                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg></a>
+                <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 8.5a3 3 0 0 0-2-2.1C18.2 6 12 6 12 6s-6.2 0-8 .4A3 3 0 0 0 2 8.5 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.5a3 3 0 0 0 2 2.1C5.8 18 12 18 12 18s6.2 0 8-.4a3 3 0 0 0 2-2.1 31 31 0 0 0 .4-3.5A31 31 0 0 0 22 8.5z" />
+                    <polygon points="10 9.5 15 12 10 14.5" fill="currentColor" stroke="none" />
+                  </svg></a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>Proudly made in the Kingdom of Saudi Arabia 🇸🇦</p>
+          <p>© 2026 Saudi Bazaar. All rights reserved.</p>
+        </div>
+
+      </div>
+    </footer>
+
+  </div><!-- /page -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const deliveryBtns = document.querySelectorAll('.delivery');
+      const locationModal = document.querySelector('.location-modal-overlay');
+      const closeLocationModal = document.querySelector('.location-modal-close');
+      const citySelect = locationModal ? locationModal.querySelector('select') : null;
+
+      if (deliveryBtns.length && locationModal) {
+        deliveryBtns.forEach(btn => {
+          btn.addEventListener('click', function () {
+            locationModal.style.display = 'flex';
+          });
+        });
+
+        if (closeLocationModal) {
+          closeLocationModal.addEventListener('click', function () {
+            locationModal.style.display = 'none';
+          });
+        }
+
+        locationModal.addEventListener('click', function (e) {
+          if (e.target === locationModal) {
+            locationModal.style.display = 'none';
+          }
+        });
+
+        if (citySelect) {
+          citySelect.addEventListener('change', function (e) {
+            const selectedText = e.target.options[e.target.selectedIndex].text;
+            deliveryBtns.forEach(btn => {
+              const valDiv = btn.querySelector('.delivery__value');
+              if (valDiv) {
+                valDiv.textContent = selectedText + ', Saudi Arabia';
+              }
+            });
+            locationModal.style.display = 'none';
+          });
+        }
+      }
+    });
+  </script>
+
+  <script>
+    var currentStep = 1;
+    var shippingCost = 0;
+    var subtotalAfterDiscount = 345; // 405 - 60 discount, mock base
+
+    function updateStepClasses() {
+      document.querySelectorAll('.step').forEach(function (step) {
+        var n = +step.dataset.step;
+        step.classList.toggle('is-reached', n <= currentStep);
+        step.classList.toggle('is-active', n === currentStep);
+        step.classList.toggle('is-collapsed', n < currentStep);
+      });
+    }
+
+    function goToStep(n) {
+      currentStep = n;
+      updateStepClasses();
+      document.getElementById('step-' + (n === 1 ? 'address' : n === 2 ? 'delivery' : 'payment'))
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function completeStep(n) {
+      currentStep = n + 1;
+      updateStepClasses();
+      if (n + 1 <= 3) {
+        var ids = { 2: 'step-delivery', 3: 'step-payment' };
+        var el = document.getElementById(ids[n + 1]);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function selectAddress(el) {
+      document.querySelectorAll('.addr-option').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      document.getElementById('addrSummaryText').textContent = el.dataset.address;
+    }
+
+    function selectDelivery(el) {
+      document.querySelectorAll('.deliv-option').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      document.getElementById('deliverySummaryText').textContent =
+        el.dataset.title + (el.dataset.title === 'Free Standard Delivery' ? ' — arrives within 2–3 business days' :
+          el.dataset.title === 'Express Delivery' ? ' — arrives within 1 business day' : ' — ready within 2 hours');
+      shippingCost = +el.dataset.cost;
+      recalcTotal();
+    }
+
+    function selectPayment(el) {
+      document.querySelectorAll('.pay-option').forEach(function (o) { o.classList.remove('selected'); });
+      document.querySelectorAll('.pay-wallet').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+    }
+    function selectWallet(el) {
+      document.querySelectorAll('.pay-option').forEach(function (o) { o.classList.remove('selected'); });
+      document.querySelectorAll('.pay-wallet').forEach(function (o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+    }
+
+    function toArabicNumerals(n) {
+      return String(n);
+    }
+
+    function recalcTotal() {
+      var total = subtotalAfterDiscount + shippingCost;
+      document.getElementById('grandTotal').textContent = toArabicNumerals(total.toLocaleString('en-US'));
+      document.getElementById('shippingCostLabel').textContent = shippingCost === 0 ? 'Free' : shippingCost.toFixed(2) + ' SAR';
+      document.getElementById('shippingCostLabel').classList.toggle('success', shippingCost === 0);
+    }
+
+    function selectPurchaseType(el) {
+      // Remove selected class from both
+      const options = el.parentElement.querySelectorAll('.addr-option');
+      options.forEach(opt => opt.classList.remove('selected'));
+
+      // Add selected to clicked
+      el.classList.add('selected');
+
+      // Toggle Tax Details box
+      const taxBox = document.getElementById('tax-invoice-details');
+      if (el.getAttribute('data-type') === 'company') {
+        taxBox.style.display = 'block';
+      } else {
+        taxBox.style.display = 'none';
+      }
+    }
+
+    updateStepClasses();
+  </script>
+
+  <!-- Location Modal Overlay -->
+  <div class="location-modal-overlay"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="location-modal"
+      style="background: white; border-radius: 12px; width: 90%; max-width: 400px; overflow: hidden; font-family: inherit; direction: ltr; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <!-- Header -->
+      <div
+        style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">Choose Delivery Address</h3>
+        <button class="location-modal-close"
+          style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div style="padding: 24px 20px;">
+        <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6; text-align: left;">
+          Delivery options and speeds may vary by location
+        </p>
+        <a href="login.html"
+          style="display: block; width: 100%; background: var(--color-primary, #046c4e); color: white; text-align: center; padding: 12px; border-radius: 24px; text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 20px;">
+          Sign in to view your addresses
+        </a>
+
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+          <div style="padding: 0 12px; font-size: 14px; color: #64748b;">Or</div>
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+        </div>
+
+        <div style="position: relative;">
+          <select
+            style="width: 100%; appearance: none; background: white; border: 1px solid #64748b; border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #1e293b; font-family: inherit; cursor: pointer;">
+            <option value="" disabled selected>Select City</option>
+            <option value="riyadh">Riyadh</option>
+            <option value="jeddah">Jeddah</option>
+            <option value="dammam">Dammam</option>
+          </select>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round"
+            style="width: 20px; height: 20px; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+
+        <div
+          style="margin-top: 20px; background-color: #fef3c7; border: 1px solid #b45309; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <span style="font-size: 14px; color: #b45309; line-height: 1.5; text-align: left; flex: 1;">
+            If you change your city, you may lose some or all of the products recently added to your cart
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="address-modal-overlay"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="address-modal"
+      style="background: white; border-radius: 12px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; font-family: inherit; direction: ltr; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <!-- Header -->
+      <div
+        style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">Add New Address</h3>
+        <button class="address-modal-close"
+          style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;"
+          onclick="document.querySelector('.address-modal-overlay').style.display='none'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div style="padding: 24px 20px;">
+        <form onsubmit="event.preventDefault(); document.querySelector('.address-modal-overlay').style.display='none';">
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Country</label>
+            <div style="position: relative;">
+              <select
+                style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px; background: white; appearance: none; color: #334155;">
+                <option value="saudi" selected>Saudi Arabia</option>
+              </select>
+              <svg
+                style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; pointer-events: none;"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Full
+              Name</label>
+            <input type="text"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Mobile
+              Number</label>
+            <div
+              style="display: flex; align-items: center; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; background: white;">
+              <div
+                style="padding: 12px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #64748b; background: white;"
+                dir="ltr">
+                <span style="font-size: 16px;">🇸🇦</span>
+                <span dir="ltr">+966</span>
+              </div>
+              <div style="width: 1px; height: 24px; background: #cbd5e1; margin: 0 4px;"></div>
+              <input type="tel" placeholder="052345678"
+                style="flex: 1; padding: 12px; border: none; font-family: inherit; font-size: 14px; text-align: left; outline: none; direction: ltr;"
+                dir="ltr">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Street
+              Name</label>
+            <input type="text" placeholder="e.g., Al Farazdaq Street"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Building
+              Number/Name</label>
+            <input type="text" placeholder="e.g., Kingdom Building"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Short
+              National Address (ROHB6xxx)</label>
+            <input type="text" placeholder="e.g., ROHB6xxx"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left; direction: ltr;"
+              dir="ltr">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">City</label>
+            <input type="text" placeholder="e.g., Riyadh"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px; text-align: left;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Region</label>
+            <input type="text"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px;">
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <label
+              style="display: block; margin-bottom: 8px; font-size: 14px; font-weight: 500; color: #334155; text-align: left;">Nearest
+              Landmark</label>
+            <input type="text"
+              style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 14px;">
+          </div>
+
+          <button type="submit"
+            style="width: 100%; background: #016342; color: white; padding: 16px; border: none; border-radius: 30px; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;">
+            Add Address
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="../index.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="category.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>Categories</span>
+      </a>
+      <a href="cart.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="mobile-bottom-nav__badge">3</span>
+        <span>Cart</span>
+      </a>
+      <a href="account-favorites.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>Favorites</span>
+      </a>
+      <a href="login.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>My Account</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/mobile-nav.js"></script>
+</body>
+
+</html>
