@@ -396,7 +396,7 @@
 .store-banner__cover {
   width: 100%;
   height: 358px;
-  background: url('../assets/ugine store header.png') center/cover no-repeat;
+  background: url('../../assets/ugine store header.png') center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }
