@@ -55,7 +55,7 @@
 
 .logo {
   line-height: 1;
-  text-align: right;
+  text-align: left;
 }
 
 .logo__title {
@@ -109,7 +109,7 @@
 }
 
 .delivery__text {
-  text-align: right;
+  text-align: left;
 }
 
 .search {
@@ -131,7 +131,7 @@
   gap: 6px;
   padding: 0 12px;
   background: var(--color-bg-subtle);
-  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
   font-size: 12px;
   color: var(--color-primary);
   white-space: nowrap;
@@ -152,7 +152,7 @@
   font-family: var(--font-ar);
   font-size: 14px;
   color: var(--color-text-primary);
-  text-align: right;
+  text-align: left;
 }
 
 .search__field::placeholder {
@@ -193,7 +193,7 @@
 }
 
 .login__text {
-  text-align: right;
+  text-align: left;
 }
 
 .login__hi {
@@ -269,7 +269,7 @@
 }
 
 .cart__text {
-  text-align: right;
+  text-align: left;
 }
 
 .cart__label {
@@ -299,7 +299,7 @@
 .cart__badge {
   position: absolute;
   top: -7px;
-  left: -7px;
+  right: -7px;
   min-width: 16px;
   height: 16px;
   padding: 0 3px;
@@ -485,7 +485,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  text-align: right;
+  text-align: left;
   width: 100%
 }
 
@@ -584,11 +584,11 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--color-text-primary);
-  text-align: right
+  text-align: left
 }
 
 .footer-brand {
-  text-align: right
+  text-align: left
 }
 
 .footer-brand__logo {
@@ -619,7 +619,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  text-align: right
+  text-align: left
 }
 
 .footer-links a {
@@ -634,7 +634,7 @@
 }
 
 .footer-pay {
-  text-align: right
+  text-align: left
 }
 
 .footer-pay__methods {
@@ -690,7 +690,7 @@
 }
 
 .footer-news {
-  text-align: right
+  text-align: left
 }
 
 .footer-news__title {
@@ -706,7 +706,7 @@
   content: '';
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 32px;
   height: 2px;
   background: var(--color-accent-gold)
@@ -736,7 +736,7 @@
   padding: 0 10px;
   font-family: var(--font-ar);
   font-size: 12px;
-  text-align: right;
+  text-align: left;
   color: var(--color-text-primary)
 }
 
@@ -768,7 +768,7 @@
 
 .footer-social__label {
   flex: 1;
-  text-align: right;
+  text-align: left;
   font-size: 10px;
   color: rgba(0, 0, 0, .6)
 }
