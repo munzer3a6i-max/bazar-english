@@ -515,7 +515,7 @@
             <a href="seller-store.html" class="subnav__link">Brands</a>
             <a href="contact-us.html" class="subnav__link">Support</a>
           </nav>
-          <button class="delivery" type="button"
+          <button class="delivery" type="button" onclick="document.querySelector('.location-modal-overlay').style.display='flex'"
             style="border: none; margin-left: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px;">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" style="color: var(--color-primary);">
@@ -2262,7 +2262,7 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
             <span>Riyadh</span>
-            <a href="#" style="color:#016342;text-decoration:underline;margin-right:auto;">Change City</a>
+            <a href="#" onclick="event.preventDefault(); document.querySelector('.location-modal-overlay').style.display='flex';" style="color:#016342;text-decoration:underline;margin-left:auto;">Change City</a>
           </div>
         </div>
 
@@ -2494,6 +2494,113 @@
   </nav>
 
   <script src="../js/mobile-nav.js"></script>
+  <!-- Location Modal Overlay -->
+  <div class="location-modal-overlay"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="location-modal"
+      style="background: white; border-radius: 12px; width: 90%; max-width: 400px; overflow: hidden; font-family: inherit; direction: ltr; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <!-- Header -->
+      <div
+        style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">Select Delivery Address</h3>
+        <button class="location-modal-close"
+          style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div style="padding: 24px 20px;">
+        <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6; text-align: left;">
+          Delivery options and speeds may vary by location
+        </p>
+        <a href="login.html"
+          style="display: block; width: 100%; background: var(--color-primary, #046c4e); color: white; text-align: center; padding: 12px; border-radius: 24px; text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 20px;">
+          Sign in to view your addresses
+        </a>
+
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+          <div style="padding: 0 12px; font-size: 14px; color: #64748b;">or</div>
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+        </div>
+
+        <div style="position: relative;">
+          <select
+            style="width: 100%; appearance: none; background: white; border: 1px solid #64748b; border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #1e293b; font-family: inherit; cursor: pointer;">
+            <option value="" disabled selected>Select City</option>
+            <option value="riyadh">Riyadh</option>
+            <option value="jeddah">Jeddah</option>
+            <option value="dammam">Dammam</option>
+          </select>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round"
+            style="width: 20px; height: 20px; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+
+        <div
+          style="margin-top: 20px; background-color: #fef3c7; border: 1px solid #b45309; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <span style="font-size: 14px; color: #b45309; line-height: 1.5; text-align: left; flex: 1;">
+            If you change your city, you may lose some or all of the items recently added to your cart
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const deliveryBtns = document.querySelectorAll('.delivery');
+      const locationModal = document.querySelector('.location-modal-overlay');
+      const closeLocationModal = document.querySelector('.location-modal-close');
+      const citySelect = locationModal ? locationModal.querySelector('select') : null;
+
+      if (deliveryBtns.length && locationModal) {
+        deliveryBtns.forEach(btn => {
+          btn.addEventListener('click', function () {
+            locationModal.style.display = 'flex';
+          });
+        });
+
+        if (closeLocationModal) {
+          closeLocationModal.addEventListener('click', function () {
+            locationModal.style.display = 'none';
+          });
+        }
+
+        locationModal.addEventListener('click', function (e) {
+          if (e.target === locationModal) {
+            locationModal.style.display = 'none';
+          }
+        });
+
+        if (citySelect) {
+          citySelect.addEventListener('change', function (e) {
+            const selectedText = e.target.options[e.target.selectedIndex].text;
+            deliveryBtns.forEach(btn => {
+              const valDiv = btn.querySelector('.delivery__value');
+              if (valDiv) {
+                valDiv.textContent = selectedText + ', Saudi Arabia';
+              }
+            });
+            locationModal.style.display = 'none';
+          });
+        }
+      }
+    });
+  </script>
+
 </body>
 
 </html>

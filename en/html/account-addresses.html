@@ -667,7 +667,7 @@
             <a href="seller-store.html" class="subnav__link">Brands</a>
             <a href="contact-us.html" class="subnav__link">Support</a>
           </nav>
-          <button class="delivery" type="button"
+          <button class="delivery" type="button" onclick="document.querySelector('.location-modal-overlay').style.display='flex'"
             style="border: none; margin-left: auto; height: 40px; align-self: center; background: transparent; cursor: pointer; padding: 0 12px;">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" style="color: var(--color-primary);">
@@ -1132,70 +1132,6 @@
 </script>
 
 <script>
-    // Categories dropdown toggle
-    (function () {
-      document.querySelectorAll('.search__categories').forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var wrap = btn.closest('.search__cat-wrap');
-          if (!wrap) return;
-          var dd = wrap.querySelector('.search__dropdown');
-          if (!dd) return;
-          var isOpen = dd.classList.contains('is-open');
-          document.querySelectorAll('.search__dropdown').forEach(function (d) {
-            d.classList.remove('is-open');
-          });
-          if (!isOpen) {
-            dd.classList.add('is-open');
-          }
-        });
-      });
-
-      // Clicking a category item selects it
-      document.querySelectorAll('.search__dropdown-item').forEach(function (item) {
-        item.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var wrap = item.closest('.search__cat-wrap');
-          if (!wrap) return;
-          var btn = wrap.querySelector('.search__categories');
-          if (!btn) return;
-          // Get the text nodes of the button (skip the SVG)
-          var svg = btn.querySelector('svg');
-          // Replace button text content but keep the SVG
-          var textNode = null;
-          for (var i = 0; i < btn.childNodes.length; i++) {
-            if (btn.childNodes[i].nodeType === 3 && btn.childNodes[i].textContent.trim()) {
-              textNode = btn.childNodes[i];
-              break;
-            }
-          }
-          if (textNode) {
-            textNode.textContent = '\n              ' + item.textContent.trim() + '\n              ';
-          }
-          // Close dropdown
-          var dd = wrap.querySelector('.search__dropdown');
-          if (dd) dd.classList.remove('is-open');
-          // Focus the search field
-          var searchField = wrap.closest('.search');
-          if (searchField) {
-            var input = searchField.querySelector('.search__field');
-            if (input) input.focus();
-          }
-        });
-      });
-
-      // Click outside to close
-      document.addEventListener('click', function (e) {
-        if (!e.target.closest('.search__cat-wrap')) {
-          document.querySelectorAll('.search__dropdown').forEach(function (d) {
-            d.classList.remove('is-open');
-          });
-        }
-      });
-    })();
-  </script>
-
-  <script>
     // ── Mobile Account Sidebar Drawer ────────────────────────────────
     window.toggleAccountMenu = function(show) {
       var sidebar = document.querySelector('.side');
