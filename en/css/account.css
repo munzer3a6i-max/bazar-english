@@ -75,7 +75,6 @@ body {
 .wrap {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 32px;
 }
 
 /* ===================== HEADER REMOVED ===================== */
@@ -155,7 +154,7 @@ ul {
 /* ---- Orders header ---- */
 .ordhead {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px
 }
@@ -763,7 +762,6 @@ ul {
   gap: 12px;
   padding: 12px 20px;
   background: #dcfce7;
-  border-radius: 11px 11px 0 0;
   color: #166534;
   font-weight: 600;
   font-size: 14px;
@@ -965,14 +963,14 @@ ul {
   display: flex;
   align-items: center;
   gap: 12px;
-  justify-content: flex-start
+  flex-direction: row-reverse;
 }
 
 .lrow__txt {
   display: flex;
   flex-direction: column;
   gap: 0;
-  text-align: left;
+  text-align: start;
   max-width: 520px
 }
 
@@ -1025,7 +1023,8 @@ ul {
   font-size: 18px;
   line-height: 28px;
   color: var(--chip-text-success);
-  white-space: nowrap
+  white-space: nowrap;
+  order: 1;
 }
 
 .listhead {
@@ -1102,7 +1101,10 @@ ul {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 20px;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e3e4de;
 }
 
 .frow {
@@ -2106,7 +2108,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 8px 10px;
     width: 100%;
   }

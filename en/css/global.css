@@ -1,4 +1,4 @@
-﻿/* =====================================================================
+/* =====================================================================
    DESIGN TOKENS  —  single source of truth for the whole site
    ===================================================================== */
 :root {
@@ -644,6 +644,7 @@ header {
   width: 16px;
   height: 16px;
   color: #b0b0b0;
+  transform: scaleX(-1);
 }
 
 /* =====================================================================
@@ -2483,6 +2484,7 @@ header {
 .hero-carousel__btn svg {
   width: 24px;
   height: 24px;
+  transform: scaleX(-1);
 }
 
 .subnav__links {
@@ -3346,6 +3348,7 @@ header {
   .hero-carousel__btn svg {
     width: 18px;
     height: 18px;
+    transform: scaleX(-1);
   }
 
   .hero-carousel__btn--prev {

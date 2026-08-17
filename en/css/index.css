@@ -2195,6 +2195,7 @@
 .hero-carousel__btn svg {
   width: 24px;
   height: 24px;
+  transform: scaleX(-1);
 }
 
 /* New Promo Images Section */
@@ -2766,6 +2767,7 @@
   .hero-carousel__btn svg {
     width: 16px;
     height: 16px;
+    transform: scaleX(-1);
   }
 
   .hero-carousel__btn--prev {
