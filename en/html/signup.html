@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Saudi Bazaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body data-default-auth="signup">
+  <div class="page">
+    <!-- ============================ HEADER ============================ -->
+    <header class="auth-header">
+      <div class="container">
+        <div class="auth-header__group">
+          <a class="auth-header__item auth-header__home" href="../index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Home
+          </a>
+          <span class="divider"></span>
+          <span class="auth-header__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            Officially Verified Saudi Store
+          </span>
+          <span class="divider"></span>
+          <span class="auth-header__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6" />
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+            </svg>
+            Maroof Gold No. 29843
+          </span>
+          <span class="divider"></span>
+          <span class="auth-header__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z" />
+              <path d="M8 7h8M8 11h8M8 15h5" />
+            </svg>
+            Tax No: 310489274700003
+          </span>
+        </div>
+        <div class="auth-header__group">
+          <a class="auth-header__item" href="order-tracking.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16.5 9.4 7.5 4.21" />
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+            Track Your Order
+          </a>
+          <span class="divider"></span>
+          <span class="auth-header__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            920012345
+          </span>
+          <span class="divider"></span>
+          <a class="auth-header__lang" href="../../html/signup.html">العربية</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================== MAIN ============================= -->
+    <div class="auth-layout">
+
+      <!-- =====================  FORM PANEL (left)  ===================== -->
+      <div class="auth-form-panel">
+        <div class="auth-form-wrap">
+
+          <!-- Mobile Brand Logo (visible on mobile/tablet when sidebar is hidden) -->
+          <div class="auth-mobile-logo">
+            <a href="../index.html">
+              <img src="../../assets/White Logo.png" alt="Saudi Bazaar">
+            </a>
+          </div>
+
+          <!-- help + animated tabs -->
+          <div class="auth-help">
+            <p class="auth-help__text">Need help? <strong>920000000</strong></p>
+            <div class="auth-tabs" id="authTabs" data-active="signup">
+              <div class="auth-tab-pill"></div>
+              <button type="button" class="auth-tab " id="tabBtnLogin" onclick="switchAuthTab('login')">Sign
+                In</button>
+              <button type="button" class="auth-tab active" id="tabBtnSignup" onclick="switchAuthTab('signup')">Sign
+                Up</button>
+            </div>
+          </div>
+
+          <!-- Animated viewport -->
+          <div class="auth-slider-viewport" id="authViewport">
+            <div class="auth-slider-track" id="authTrack" data-active="signup">
+
+              <!-- ================= LOGIN PANE ================= -->
+              <div class="auth-slider-pane " id="paneLogin">
+                <div class="auth-body">
+
+                  <!-- OTP MODE (default) -->
+                  <div class="auth-mode" id="mode-otp">
+                    <div class="auth-head">
+                      <h1 class="auth-head__title">Sign In</h1>
+                      <p class="auth-head__sub">Enter your mobile number and we'll send you a verification code for
+                        instant sign-in.</p>
+                    </div>
+
+                    <div class="auth-social">
+                      <button type="button" class="auth-social__btn" aria-label="Continue with Apple">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path
+                            d="M16.365 1.43c0 1.14-.416 2.06-1.246 2.87-.86.87-1.89 1.37-3.02 1.28-.11-1.09.42-2.18 1.22-2.98.85-.87 2.11-1.44 3.05-1.17ZM20.6 17.02c-.44 1.01-.97 1.98-1.7 2.86-1 1.22-2.05 2.44-3.6 2.47-1.51.03-2-.9-3.72-.9-1.72 0-2.26.87-3.7.93-1.5.06-2.65-1.3-3.66-2.52C2.28 17.5.7 13.6 2.34 10.28 3.16 8.63 4.7 7.6 6.38 7.57c1.46-.03 2.83.98 3.72.98.88 0 2.55-1.21 4.3-1.03.73.03 2.79.3 4.11 2.22-.11.07-2.45 1.43-2.42 4.27.03 3.4 2.98 4.54 3.01 4.55-.03.08-.47 1.62-1.5 3.46Z" />
+                        </svg>
+                      </button>
+                      <button type="button" class="auth-social__btn" aria-label="Continue with Google">
+                        <svg viewBox="0 0 24 24">
+                          <path fill="#4285F4"
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z" />
+                          <path fill="#34A853"
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23Z" />
+                          <path fill="#FBBC05"
+                            d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.85Z" />
+                          <path fill="#EA4335"
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.05l3.66 2.85C6.71 7.3 9.14 5.38 12 5.38Z" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div class="auth-field">
+                      <label class="auth-field__label" for="login-phone">Mobile Number</label>
+                      <div class="auth-input">
+                        <div class="phone-code">
+                          <div class="phone-code__flag">
+                            <svg viewBox="0 0 30 21">
+                              <rect width="30" height="21" fill="#006C35" />
+                              <path d="M5 4h20v13H5z" fill="#006C35" /><text x="15" y="14" font-size="8" fill="#fff"
+                                text-anchor="middle" font-family="sans-serif">🇸🇦</text>
+                            </svg>
+                          </div>
+                          <span class="phone-code__text">+966</span>
+                        </div>
+                        <div class="phone-vdiv"></div>
+                        <input type="tel" id="login-phone" placeholder="5X XXX XXXX" dir="ltr" />
+                      </div>
+                    </div>
+
+                    <button type="button" class="btn-auth-submit" onclick="submitLoginOTP()">Send Verification
+                      Code</button>
+
+                    <p class="auth-switch-note">
+                      Prefer to sign in the traditional way? <span class="link"
+                        onclick="switchMode('password')">Sign in with password</span>
+                    </p>
+                  </div>
+
+                  <!-- PASSWORD MODE -->
+                  <div class="auth-mode" id="mode-password" hidden>
+                    <div class="auth-head">
+                      <h1 class="auth-head__title">Sign In with Password</h1>
+                      <p class="auth-head__sub">Enter your email or mobile number along with your password.</p>
+                    </div>
+
+                    <div class="auth-field">
+                      <label class="auth-field__label" for="login-identifier">Email or Mobile Number</label>
+                      <div class="auth-input">
+                        <input type="text" id="login-identifier" placeholder="example@mail.com or 05xxxxxxxx" />
+                      </div>
+                    </div>
+
+                    <div class="auth-field">
+                      <label class="auth-field__label" for="login-pass">Password</label>
+                      <div class="auth-input">
+                        <span class="auth-input__icon auth-input__icon--btn"
+                          onclick="togglePassVisibility('login-pass', this)">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                          </svg>
+                        </span>
+                        <input type="password" id="login-pass" placeholder="••••••••" />
+                      </div>
+                    </div>
+
+                    <div class="auth-row-between">
+                      <a class="auth-link" href="#">Forgot Password?</a>
+                      <label class="remember-me">
+                        <span class="remember-me__label">Remember Me</span>
+                        <span class="remember-check">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+
+                    <button type="button" class="btn-auth-submit" onclick="submitLoginPassword()">Sign In</button>
+
+                    <p class="auth-switch-note">
+                      Prefer quick sign-in? <span class="link" onclick="switchMode('otp')">Sign in with verification
+                        code (OTP)</span>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- ================= SIGNUP PANE ================= -->
+              <div class="auth-slider-pane active" id="paneSignup">
+                <div class="auth-body">
+                  <div class="auth-head">
+                    <h1 class="auth-head__title">Create Your Account in Seconds</h1>
+                    <p class="auth-head__sub">Enter your mobile number and we'll send you a verification code to
+                      activate your account instantly.</p>
+                  </div>
+
+                  <div class="auth-field">
+                    <label class="auth-field__label" for="signup-name">Full Name</label>
+                    <div class="auth-input">
+                      <input type="text" id="signup-name" placeholder="Enter your full name" />
+                    </div>
+                  </div>
+
+                  <div class="auth-field">
+                    <label class="auth-field__label" for="signup-phone">Mobile Number</label>
+                    <div class="auth-input">
+                      <div class="phone-code">
+                        <div class="phone-code__flag">
+                          <svg viewBox="0 0 30 21">
+                            <rect width="30" height="21" fill="#006C35" />
+                            <path d="M5 4h20v13H5z" fill="#006C35" /><text x="15" y="14" font-size="8" fill="#fff"
+                              text-anchor="middle" font-family="sans-serif">🇸🇦</text>
+                          </svg>
+                        </div>
+                        <span class="phone-code__text">+966</span>
+                      </div>
+                      <div class="phone-vdiv"></div>
+                      <input type="tel" id="signup-phone" placeholder="5X XXX XXXX" dir="ltr" />
+                    </div>
+                  </div>
+
+                  <!-- Optional Email Accordion -->
+                  <div>
+                    <button type="button" class="email-toggle" id="emailToggleBtn" onclick="toggleEmail()">
+                      <span class="email-toggle__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19" />
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                      </span>
+                      <span>Add Email (Optional)</span>
+                    </button>
+                    <div class="email-field-wrap" id="emailFieldWrap">
+                      <div class="email-field-inner">
+                        <div class="email-field-pad">
+                          <div class="auth-field">
+                            <div class="auth-input">
+                              <input type="email" id="signup-email" placeholder="example@domain.com" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn-auth-submit" onclick="submitSignup()">Create New Account</button>
+
+                  <div class="info-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <p>Creating an account is completely free and doesn't require any fees or credit cards.</p>
+                  </div>
+
+                  <p class="auth-terms">
+                    By creating an account, you agree to <a class="link" href="#">Terms of Use</a> and <a class="link"
+                      href="#">Privacy Policy</a> of Saudi Bazaar.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =====================  BRANDING PANEL (right)  ===================== -->
+      <div class="auth-brand-panel">
+        <div class="auth-brand-inner">
+          <a href="../index.html" class="auth-brand-logo">
+            <img src="../../assets/White Logo.png" alt="Saudi Bazaar"
+              style="height: 48px; width: auto; object-fit: contain;">
+          </a>
+
+          <div class="auth-brand-content">
+            <div class="auth-brand-head">
+              <h2 class="auth-brand-head__title">A Unique, Trusted Shopping Experience</h2>
+              <p class="auth-brand-head__sub">Join over a million users enjoying authentic products, fast delivery,
+                and flexible payment options.</p>
+            </div>
+
+            <div class="auth-features">
+              <div class="auth-feature">
+                <div class="auth-feature__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <div class="auth-feature__text">
+                  <div class="auth-feature__title">100% Trusted Products</div>
+                  <div class="auth-feature__sub">Gold warranty on all products and international brands</div>
+                </div>
+              </div>
+
+              <div class="auth-feature">
+                <div class="auth-feature__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13" rx="2" />
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                    <circle cx="5.5" cy="18.5" r="2.5" />
+                    <circle cx="18.5" cy="18.5" r="2.5" />
+                  </svg>
+                </div>
+                <div class="auth-feature__text">
+                  <div class="auth-feature__title">Fast Shipping to All Regions</div>
+                  <div class="auth-feature__sub">Secure packaging and doorstep delivery</div>
+                </div>
+              </div>
+
+              <div class="auth-feature">
+                <div class="auth-feature__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <line x1="2" y1="10" x2="22" y2="10" />
+                  </svg>
+                </div>
+                <div class="auth-feature__text">
+                  <div class="auth-feature__title">Convenient Installments via Tamara and Madfu</div>
+                  <div class="auth-feature__sub">Split your purchases into 4 interest-free installments</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function switchAuthTab(targetTab) {
+      const tabs = document.getElementById('authTabs');
+      const track = document.getElementById('authTrack');
+      const paneLogin = document.getElementById('paneLogin');
+      const paneSignup = document.getElementById('paneSignup');
+      const tabLogin = document.getElementById('tabBtnLogin');
+      const tabSignup = document.getElementById('tabBtnSignup');
+
+      if (!tabs || !track) return;
+
+      tabs.setAttribute('data-active', targetTab);
+      track.setAttribute('data-active', targetTab);
+
+      if (targetTab === 'login') {
+        tabLogin.classList.add('active');
+        tabSignup.classList.remove('active');
+        paneLogin.classList.add('active');
+        paneSignup.classList.remove('active');
+        if (window.history.replaceState) {
+          window.history.replaceState(null, '', 'login.html');
+        }
+      } else {
+        tabSignup.classList.add('active');
+        tabLogin.classList.remove('active');
+        paneSignup.classList.add('active');
+        paneLogin.classList.remove('active');
+        if (window.history.replaceState) {
+          window.history.replaceState(null, '', 'signup.html');
+        }
+      }
+
+      updateViewportHeight(true);
+    }
+
+    function updateViewportHeight(animate) {
+      const viewport = document.getElementById('authViewport');
+      const track = document.getElementById('authTrack');
+      if (!viewport || !track) return;
+
+      const activeTab = track.getAttribute('data-active') || 'login';
+      const activePane = activeTab === 'login' ? document.getElementById('paneLogin') : document.getElementById('paneSignup');
+      if (activePane) {
+        if (!animate) {
+          viewport.style.transition = 'none';
+        }
+        const targetHeight = activePane.offsetHeight;
+        if (targetHeight > 0) {
+          viewport.style.height = targetHeight + 'px';
+        }
+        if (!animate) {
+          setTimeout(function () {
+            viewport.style.transition = '';
+          }, 50);
+        }
+      }
+    }
+
+    function switchMode(mode) {
+      const modeOtp = document.getElementById('mode-otp');
+      const modePassword = document.getElementById('mode-password');
+      if (modeOtp && modePassword) {
+        modeOtp.hidden = (mode !== 'otp');
+        modePassword.hidden = (mode !== 'password');
+        updateViewportHeight(true);
+      }
+    }
+
+    function toggleEmail() {
+      const btn = document.getElementById('emailToggleBtn');
+      const wrap = document.getElementById('emailFieldWrap');
+      if (btn && wrap) {
+        btn.classList.toggle('expanded');
+        wrap.classList.toggle('expanded');
+        setTimeout(function () {
+          updateViewportHeight(true);
+        }, 260);
+      }
+    }
+
+    function togglePassVisibility(inputId, iconElem) {
+      const input = document.getElementById(inputId);
+      if (input) {
+        if (input.type === 'password') {
+          input.type = 'text';
+        } else {
+          input.type = 'password';
+        }
+      }
+    }
+
+    function submitLoginOTP() {
+      const phone = document.getElementById('login-phone').value;
+      if (!phone) { alert('Please enter your mobile number'); return; }
+      alert('Verification code sent to: ' + phone);
+    }
+
+    function submitLoginPassword() {
+      const id = document.getElementById('login-identifier').value;
+      const pass = document.getElementById('login-pass').value;
+      if (!id || !pass) { alert('Please enter your username and password'); return; }
+      window.location.href = 'account-orders.html';
+    }
+
+    function submitSignup() {
+      const name = document.getElementById('signup-name').value;
+      const phone = document.getElementById('signup-phone').value;
+      if (!name || !phone) { alert('Please complete the required fields'); return; }
+      alert('Your account has been created successfully!');
+      window.location.href = 'account-orders.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const defaultAuth = document.body.getAttribute('data-default-auth') || 'signup';
+      switchAuthTab(defaultAuth);
+      updateViewportHeight(false);
+    });
+
+    window.addEventListener('load', function () {
+      updateViewportHeight(false);
+    });
+
+    window.addEventListener('resize', function () {
+      updateViewportHeight(false);
+    });
+  </script>
+
+  <!-- Location Modal Overlay -->
+  <div class="location-modal-overlay"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="location-modal"
+      style="background: white; border-radius: 12px; width: 90%; max-width: 400px; overflow: hidden; font-family: inherit; direction: rtl; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <!-- Header -->
+      <div
+        style="background: #f8f9fa; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1e293b;">Select Delivery Address</h3>
+        <button class="location-modal-close"
+          style="background: none; border: none; cursor: pointer; padding: 4px; display: flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 24px; height: 24px;">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div style="padding: 24px 20px;">
+        <p style="margin: 0 0 20px 0; font-size: 14px; color: #475569; line-height: 1.6; text-align: right;">
+          Delivery options and speeds may vary by location
+        </p>
+        <a href="login.html"
+          style="display: block; width: 100%; background: var(--color-primary, #046c4e); color: white; text-align: center; padding: 12px; border-radius: 24px; text-decoration: none; font-weight: 500; font-size: 14px; margin-bottom: 20px;">
+          Sign in to view your addresses
+        </a>
+
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+          <div style="padding: 0 12px; font-size: 14px; color: #64748b;">or</div>
+          <div style="flex: 1; height: 1px; background: #e2e8f0;"></div>
+        </div>
+
+        <div style="position: relative;">
+          <select
+            style="width: 100%; appearance: none; background: white; border: 1px solid #64748b; border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #1e293b; font-family: inherit; cursor: pointer;">
+            <option value="" disabled selected>Select City</option>
+            <option value="riyadh">Riyadh</option>
+            <option value="jeddah">Jeddah</option>
+            <option value="dammam">Dammam</option>
+          </select>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round"
+            style="width: 20px; height: 20px; position: absolute; left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+
+        <div
+          style="margin-top: 20px; background-color: #fef3c7; border: 1px solid #b45309; border-radius: 8px; padding: 12px; display: flex; gap: 12px; align-items: center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" style="width: 20px; height: 20px; flex-shrink: 0;">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <span style="font-size: 14px; color: #b45309; line-height: 1.5; text-align: right; flex: 1;">
+            If you change your city, you may lose some or all of the items recently added to your cart
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const deliveryBtns = document.querySelectorAll('.delivery');
+      const locationModal = document.querySelector('.location-modal-overlay');
+      const closeLocationModal = document.querySelector('.location-modal-close');
+      const citySelect = locationModal ? locationModal.querySelector('select') : null;
+
+      if (deliveryBtns.length && locationModal) {
+        deliveryBtns.forEach(btn => {
+          btn.addEventListener('click', function () {
+            locationModal.style.display = 'flex';
+          });
+        });
+
+        if (closeLocationModal) {
+          closeLocationModal.addEventListener('click', function () {
+            locationModal.style.display = 'none';
+          });
+        }
+
+        locationModal.addEventListener('click', function (e) {
+          if (e.target === locationModal) {
+            locationModal.style.display = 'none';
+          }
+        });
+
+        if (citySelect) {
+          citySelect.addEventListener('change', function (e) {
+            const selectedText = e.target.options[e.target.selectedIndex].text;
+            deliveryBtns.forEach(btn => {
+              const valDiv = btn.querySelector('.delivery__value');
+              if (valDiv) {
+                valDiv.textContent = selectedText + ', Saudi Arabia';
+              }
+            });
+            locationModal.style.display = 'none';
+          });
+        }
+      }
+    });
+  </script>
+
+  <script>
+    // Categories dropdown toggle
+    (function () {
+      document.querySelectorAll('.search__categories').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = btn.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var dd = wrap.querySelector('.search__dropdown');
+          if (!dd) return;
+          var isOpen = dd.classList.contains('is-open');
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+          if (!isOpen) {
+            dd.classList.add('is-open');
+          }
+        });
+      });
+
+      // Clicking a category item selects it
+      document.querySelectorAll('.search__dropdown-item').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = item.closest('.search__cat-wrap');
+          if (!wrap) return;
+          var btn = wrap.querySelector('.search__categories');
+          if (!btn) return;
+          // Get the text nodes of the button (skip the SVG)
+          var svg = btn.querySelector('svg');
+          // Replace button text content but keep the SVG
+          var textNode = null;
+          for (var i = 0; i < btn.childNodes.length; i++) {
+            if (btn.childNodes[i].nodeType === 3 && btn.childNodes[i].textContent.trim()) {
+              textNode = btn.childNodes[i];
+              break;
+            }
+          }
+          if (textNode) {
+            textNode.textContent = '\n              ' + item.textContent.trim() + '\n              ';
+          }
+          // Close dropdown
+          var dd = wrap.querySelector('.search__dropdown');
+          if (dd) dd.classList.remove('is-open');
+          // Focus the search field
+          var searchField = wrap.closest('.search');
+          if (searchField) {
+            var input = searchField.querySelector('.search__field');
+            if (input) input.focus();
+          }
+        });
+      });
+
+      // Click outside to close
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.search__cat-wrap')) {
+          document.querySelectorAll('.search__dropdown').forEach(function (d) {
+            d.classList.remove('is-open');
+          });
+        }
+      });
+    })();
+  </script>
+  <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="../index.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="category.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>Categories</span>
+      </a>
+      <a href="cart.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="mobile-bottom-nav__badge">3</span>
+        <span>Cart</span>
+      </a>
+      <a href="account-favorites.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>Favorites</span>
+      </a>
+      <a href="login.html" class="mobile-bottom-nav__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>My Account</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="../js/mobile-nav.js"></script>
+</body>
+
+</html>
+
+
+
+
