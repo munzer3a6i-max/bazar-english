@@ -121,7 +121,7 @@
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .search__categories {
