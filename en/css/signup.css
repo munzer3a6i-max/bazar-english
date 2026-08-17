@@ -350,7 +350,7 @@ input { font-family: inherit; }
 }
 
 .auth-slider-track[data-active="signup"] {
-  transform: translateX(50%);
+  transform: translateX(-50%);
 }
 
 .auth-slider-pane {
