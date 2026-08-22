@@ -1782,6 +1782,16 @@ ul {
     width: 100%;
     max-width: 100%;
   }
+
+  /* Order cards start wrapping before the full mobile layout kicks in at 768px */
+  .ocard__body {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .ocard__foot {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 600px) {

@@ -3453,9 +3453,20 @@ header {
   .topbar {
     display: none !important;
   }
-  
-  /* Hide the cart/wishlist/account icons in the header (mobile nav handles these) */
+
+  /* Compact header: hide text labels, keep icons accessible */
+  .login__text,
+  .fav span,
+  .cart__text {
+    display: none;
+  }
+
   .account {
-    display: none !important;
+    gap: 16px;
+  }
+
+  /* Show hamburger for sub-navigation access */
+  .mobile-menu-toggle {
+    display: flex;
   }
 }
